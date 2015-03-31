@@ -120,75 +120,10 @@ on post-fs-data
 # Source: device/intel/mixins/groups/storage/sdcard-mmcblk1-4xUSB-sda-emulated/init.rc
 ##############################################################
 on init
-    # See storage config details at http://source.android.com/tech/storage/
-    mkdir /mnt/shell/emulated 0700 shell shell
-    mkdir /storage/emulated 0555 root root
-
-    # make mount point for external sdcard
-    mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
-    mkdir /storage/sdcard1 0700 root root
-
-    # make mount point for usb thumb drives
-    mkdir /mnt/media_rw/usbdisk 0700 media_rw media_rw
-    mkdir /storage/usbdisk 0700 root root
-
-    # make mount point for usb thumb drives
-    mkdir /mnt/media_rw/usbdisk2 0700 media_rw media_rw
-    mkdir /storage/usbdisk2 0700 root root
-
-    # make mount point for usb thumb drives
-    mkdir /mnt/media_rw/usbdisk3 0700 media_rw media_rw
-    mkdir /storage/usbdisk3 0700 root root
-
-    # make mount point for usb thumb drives
-    mkdir /mnt/media_rw/usbdisk4 0700 media_rw media_rw
-    mkdir /storage/usbdisk4 0700 root root
-
-    export EXTERNAL_STORAGE /storage/emulated/legacy
-    export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
-    export EMULATED_STORAGE_TARGET /storage/emulated
-    export SECONDARY_STORAGE /storage/sdcard1
-
     # Support legacy paths
-    symlink /storage/emulated/legacy /sdcard
-    symlink /storage/emulated/legacy /mnt/sdcard
-    symlink /storage/emulated/legacy /storage/sdcard0
-    symlink /mnt/shell/emulated/0 /storage/emulated/legacy
+    symlink /sdcard /mnt/sdcard
+    symlink /sdcard /storage/sdcard0
 
-on fs
-    setprop ro.crypto.fuse_sdcard true
-
-# virtual sdcard daemon running as media_rw (1023)
-service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
-    class late_start
-
-#external sdcard
-service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/sdcard1 /storage/sdcard1
-    class late_start
-    disabled
-
-#external storage
-service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbdisk /storage/usbdisk
-    class late_start
-    disabled
-
-#external storage
-service fuse_usbdisk2 /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbdisk2 /storage/usbdisk2
-    class late_start
-    disabled
-
-#external storage
-service fuse_usbdisk3 /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbdisk3 /storage/usbdisk3
-    class late_start
-    disabled
-
-#external storage
-service fuse_usbdisk4 /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbdisk4 /storage/usbdisk4
-    class late_start
-    disabled
-
-on post-fs-data
-    restorecon /data/media/0
 ##############################################################
 # Source: device/intel/mixins/groups/ethernet/dhcp/init.rc
 ##############################################################

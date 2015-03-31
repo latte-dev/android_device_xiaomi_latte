@@ -30,7 +30,7 @@
 */block/sdb*                            auto             vfat    defaults                                   voldmanaged=usbdisk2:auto
 */block/sdc*                            auto             vfat    defaults                                   voldmanaged=usbdisk3:auto
 */block/sdd*                            auto             vfat    defaults                                   voldmanaged=usbdisk4:auto
-*/block/mmcblk1*                        auto             vfat    defaults                                   voldmanaged=sdcard1:auto,noemulatedsd
+*/block/mmcblk1*                        auto             vfat    defaults                                   voldmanaged=sdcard1:auto,encryptable=userdata
 /dev/block/mmcblk1p1                    /sdcard          vfat    defaults                                   recoveryonly
 
 ##############################################################
