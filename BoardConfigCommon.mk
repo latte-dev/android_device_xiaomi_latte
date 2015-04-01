@@ -79,67 +79,6 @@ BOARD_SEPOLICY_DIRS += \
     device/intel/cherrytrail-common/sepolicy/sensorhub \
     device/intel/cherrytrail-common/sepolicy/telephony
 
-BOARD_SEPOLICY_UNION += \
-    adbd.te \
-    atproxy.te \
-    bcu_cpufreqrel.te \
-    bluetooth.te \
-    cg2k.te \
-    coreu.te \
-    cws_manu.te \
-    device.te \
-    drmserver.te \
-    dumpstate.te \
-    efiprop.te \
-    fg_algo_cos.te \
-    fg_algo_iface.te \
-    file_contexts \
-    file.te \
-    genfs_contexts \
-    gpsd.te \
-    hdcpd.te \
-    hostapd.te \
-    init_shell.te \
-    init.te \
-    intel_prop.te \
-    kernel.te \
-    keymaster.te \
-    keystore.te \
-    mediaserver.te \
-    mmgr.te \
-    msync.te \
-    mts.te \
-    netd.te \
-    nfc.te \
-    nvm_server.te \
-    platform_app.te \
-    power_hal_helper.te \
-    property_contexts \
-    property.te \
-    pstore-clean.te \
-    radio.te \
-    recovery.te \
-    rild.te \
-    sensorhubd.te \
-    service_contexts \
-    service_manager.te \
-    service.te \
-    shell.te \
-    silentlake.te \
-    surfaceflinger.te \
-    system_app.te \
-    system_server.te \
-    te_macros \
-    thermal_lite.te \
-    thermal.te \
-    ueventd.te \
-    untrusted_app.te \
-    userfastboot.te \
-    vdc.te \
-    vold.te \
-    wlan_prov.te \
-    wpa.te
-
 # Wifi
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_rtl
