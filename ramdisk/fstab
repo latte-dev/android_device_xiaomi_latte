@@ -10,7 +10,7 @@
 
 /dev/block/by-name/android_system       /system         ext4    ro                                                           wait
 /dev/block/by-name/android_cache        /cache          ext4    noatime,nosuid,nodev,errors=panic                            wait,check
-/dev/block/by-name/android_data         /data           ext4    noatime,nosuid,nodev,discard,noauto_da_alloc,errors=panic    wait,check,encryptable=/dev/block/by-name/android_metadata
+/dev/block/by-name/android_data         /data           ext4    noatime,nosuid,nodev,discard,noauto_da_alloc,errors=panic    wait,check,formattable,encryptable=/dev/block/by-name/android_metadata
 /dev/block/by-name/android_boot         /boot           emmc    defaults                                                     defaults
 /dev/block/by-name/android_recovery     /recovery       emmc    defaults                                                     defaults
 /dev/block/by-name/android_misc         /misc           emmc    defaults                                                     defaults
