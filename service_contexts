@@ -6,3 +6,4 @@ media.widi.uibc                           u:object_r:system_app_service:s0
 thermal_daemon                            u:object_r:thermal_service:s0
 aaservice                                 u:object_r:system_server_service:s0
 awareservice                              u:object_r:system_server_service:s0
+com.intel.camera2.camerahal               u:object_r:mediaserver_service:s0
