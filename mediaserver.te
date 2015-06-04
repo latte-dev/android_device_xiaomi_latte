@@ -6,6 +6,8 @@ binder_call(mediaserver, coreu)
 allow mediaserver hdcpd:unix_stream_socket connectto;
 allow mediaserver hdcpd_data_file:sock_file write;
 allow mediaserver hdcpd_data_file:dir { search };
+allow mediaserver graphics_device:chr_file { read write ioctl open };
+allow mediaserver graphics_device:dir search;
 
 # access to /data/hdcp/.sdk_socket, but needs to be more elegant.
 allow mediaserver system_data_file:sock_file write;
