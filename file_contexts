@@ -90,6 +90,9 @@
 # DRM
 /data/IntelCPHS.log         u:object_r:drm_data_file:s0
 
+# Firmware Update
+/system/bin/FWUpdateR200    u:object_r:firmware_update_exec:s0
+
 # HDCP
 /system/bin/hdcpd           u:object_r:hdcpd_exec:s0
 /data/hdcp(/.*)?            u:object_r:hdcpd_data_file:s0

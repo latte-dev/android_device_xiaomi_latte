@@ -22,6 +22,9 @@ type thermal_socket, file_type;
 type sysfs_thermal_management, fs_type, sysfs_type;
 type itux_data_file, file_type, data_file_type;
 
+# Firmware Update
+type firmware_update_exec, exec_type, file_type;
+
 # hdcp
 type hdcpd_data_file, file_type, data_file_type;
 

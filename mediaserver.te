@@ -12,6 +12,10 @@ allow mediaserver graphics_device:dir search;
 # access to /data/hdcp/.sdk_socket, but needs to be more elegant.
 allow mediaserver system_data_file:sock_file write;
 
+# firmware update
+allow mediaserver firmware_update_exec:file rx_file_perms;
+allow mediaserver shell_exec:file rx_file_perms;
+
 # fix camera
 allow mediaserver surfaceflinger_tmpfs:file { read write };
 
