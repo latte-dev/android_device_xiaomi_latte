@@ -20,4 +20,3 @@ allow system_app self:netlink_kobject_uevent_socket { read create setopt bind };
 
 allow system_app powerctl_prop:property_service set;
 allow system_app cam_flash_thrtl_prop:property_service set;
-allow system_app system_app_data_file:file x_file_perms;
