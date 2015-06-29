@@ -1,0 +1,10 @@
+#sensors
+iio.              u:object_r:sensor_prop:s0
+
+#camera
+
+camera.           u:object_r:camera_prop:s0
+
+# GPS
+spid.gps.         u:object_r:gps_prop:s0
+ctl.gpsd          u:object_r:gps_prop:s0

@@ -1,0 +1,1 @@
+allow netd init:tcp_socket { read write setopt getopt };

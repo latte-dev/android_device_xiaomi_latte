@@ -1,0 +1,1 @@
+allow adbd graphics_device:chr_file { read open };

@@ -1,0 +1,8 @@
+# Sensors
+type sensor_prop, property_type;
+
+# Camera
+type camera_prop, property_type;
+
+# GPS
+type gps_prop, property_type;

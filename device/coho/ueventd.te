@@ -1,0 +1,2 @@
+allow ueventd debugfs:file { read getattr };
+allow ueventd sysfs_powercap:file { write open };

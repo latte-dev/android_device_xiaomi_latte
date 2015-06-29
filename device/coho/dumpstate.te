@@ -1,0 +1,2 @@
+allow dumpstate pstore-clean_data_file:dir search;
+allow dumpstate system_file:filesystem getattr;

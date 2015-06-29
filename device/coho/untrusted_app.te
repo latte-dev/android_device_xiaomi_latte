@@ -1,0 +1,2 @@
+allow untrusted_app proc_sysrq:file getattr;
+allow untrusted_app system_file:filesystem getattr;

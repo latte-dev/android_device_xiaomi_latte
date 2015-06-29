@@ -1,0 +1,17 @@
+# wifail domain
+type wifail, domain;
+type wifail_exec, exec_type, file_type;
+init_daemon_domain(wifail);
+
+# execs
+allow wifail wifail_exec:file execute_no_trans;
+
+allow wifail self:capability { setuid net_raw setgid net_admin };
+allow wifail self:netlink_socket { write getattr setopt read bind create };
+allow wifail self:udp_socket { create ioctl };
+allow wifail wpa:unix_dgram_socket sendto;
+allow wifail wpa_socket:dir { write remove_name search add_name };
+allow wifail wpa_socket:sock_file { write getattr unlink create setattr };
+
+allow wifail wifi_data_file:dir rw_dir_perms;
+allow wifail wifi_data_file:file create_file_perms;
