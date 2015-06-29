@@ -1,0 +1,1 @@
+allow wpa init:unix_dgram_socket { read write };

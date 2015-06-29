@@ -1,0 +1,19 @@
+# Rules for hardware/intel/power/helper
+type power_hal_helper, domain;
+type power_hal_helper_exec, exec_type, file_type;
+init_daemon_domain(power_hal_helper)
+
+# allow to search through /proc/<pid>;
+# only allow those that we are interested in;
+allow power_hal_helper mediaserver:dir search;
+allow power_hal_helper mediaserver:file { open read };
+
+# no need to complain about denied access
+# as it will clutter the log when probing
+# all /proc/<pid> where it cannot search/open/read
+dontaudit power_hal_helper domain:dir search;
+
+# allow to set property ctl.power_hal.*
+allow power_hal_helper property_socket:sock_file rw_file_perms;
+allow power_hal_helper init:unix_stream_socket connectto;
+allow power_hal_helper system_power_hal_prop:property_service set;

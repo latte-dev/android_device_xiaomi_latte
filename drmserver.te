@@ -1,0 +1,6 @@
+# not sure about this one, it tries to access "/".
+allow drmserver unlabeled:dir search;
+
+# access to /data/IntelCPHS.log
+allow drmserver system_data_file:dir { write add_name };
+allow drmserver system_data_file:file { create open append };

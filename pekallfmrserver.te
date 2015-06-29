@@ -1,0 +1,12 @@
+# Rules for pekallfmrserver
+type pekallfmrserver, domain;
+type pekallfmrserver_exec, exec_type, file_type;
+
+init_daemon_domain(pekallfmrserver)
+
+allow pekallfmrserver servicemanager:binder { transfer call };
+allow pekallfmrserver radio_service:service_manager add;
+allow pekallfmrserver radio_service:service_manager add;
+allow pekallfmrserver radio_device:chr_file rw_file_perms;
+allow pekallfmrserver untrusted_app:binder call;
+

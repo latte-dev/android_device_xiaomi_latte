@@ -1,0 +1,8 @@
+# Rules for set_storage (set symlink on /dev/block/by-name)
+type set_storage, domain;
+allow set_storage block_device:dir { write add_name };
+allow set_storage block_device:lnk_file create;
+allow init set_storage:process { siginh rlimitinh transition };
+allow set_storage rootfs:file entrypoint;
+allow set_storage block_device:blk_file { getattr setattr };
+allow set_storage self:capability { fowner chown fsetid };

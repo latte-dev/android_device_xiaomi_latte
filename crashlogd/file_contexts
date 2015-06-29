@@ -1,0 +1,5 @@
+# Crashlogd executable
+/system/bin/crashlogd u:object_r:crashlogd_exec:s0
+
+# Dumpstate dropbox script
+/system/bin/dumpstate_dropbox.sh u:object_r:dumpstate_dropbox_exec:s0

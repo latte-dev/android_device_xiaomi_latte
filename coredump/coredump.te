@@ -1,0 +1,6 @@
+type cored_file, file_type;
+
+userdebug_or_eng(`
+  allow domain cored_file:file { create read write open };
+  allow domain cored_file:dir { add_name write search };
+')

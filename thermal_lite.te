@@ -1,0 +1,6 @@
+type thermal_lite, domain;
+# File is in rootfs; label set in rc
+
+allow thermal_lite sysfs_thermal_management:file { open read };
+allow thermal_lite sysfs_thermal_management:dir { open read search };
+allow thermal_lite powerctl_prop:property_service set;

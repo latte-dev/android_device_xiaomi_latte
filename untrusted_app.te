@@ -1,0 +1,2 @@
+#allow screenshot capture
+allow untrusted_app surfaceflinger_tmpfs:file { read write };

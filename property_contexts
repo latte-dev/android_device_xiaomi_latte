@@ -1,0 +1,3 @@
+# property for power HAL
+sys.power_hal.          u:object_r:system_power_hal_prop:s0
+camera.flash.throttling_levels      u:object_r:cam_flash_thrtl_prop:s0

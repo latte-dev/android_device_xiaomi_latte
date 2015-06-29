@@ -1,0 +1,11 @@
+domain_trans(init, rootfs, userfastboot)
+# for console in userfastboot
+userdebug_or_eng(`
+  domain_trans(init, rootfs, shell)
+')
+
+domain_trans(init, rootfs, efiprop)
+domain_trans(init, rootfs, thermal_lite)
+
+# allow to write mediaserver pid to cgroup for mediaserver
+allow init mediaserver:process { setsched };

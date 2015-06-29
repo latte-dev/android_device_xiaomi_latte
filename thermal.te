@@ -1,0 +1,20 @@
+# Rules for external/thermal-daemon
+type thermal, domain;
+type thermal_exec, exec_type, file_type;
+init_daemon_domain(thermal);
+
+binder_use(thermal)
+binder_service(thermal)
+
+allow thermal thermal_service:service_manager add;
+
+# Data directory
+allow thermal thermal_data_file:dir create_dir_perms;
+allow thermal thermal_data_file:file create_file_perms;
+
+allow thermal thermal_device:chr_file rw_file_perms;
+allow thermal self:netlink_kobject_uevent_socket create_socket_perms;
+
+allow thermal sysfs_devices_system_cpu:file rw_file_perms;
+allow thermal sysfs_powercap:{ file lnk_file } { rw_file_perms };
+allow thermal sysfs_powercap:dir { read open search};
