@@ -17,3 +17,16 @@ dontaudit power_hal_helper domain:dir search;
 allow power_hal_helper property_socket:sock_file rw_file_perms;
 allow power_hal_helper init:unix_stream_socket connectto;
 allow power_hal_helper system_power_hal_prop:property_service set;
+
+# allow to read and open the command for usermode helper
+# proc PID labels are labeled with context of process
+# we only grant this on native priveleged domains to prevent
+# an injection path to a priveleged process from appdomain.
+allow power_hal_helper { domain -appdomain } :file { read open };
+
+# ??? launch shell scripts as usermodehelpers
+allow power_hal_helper shell:file r_file_perms;
+
+userdebug_or_eng(`
+  allow power_hal_helper su:file r_file_perms;
+')

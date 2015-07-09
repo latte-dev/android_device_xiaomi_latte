@@ -1,2 +1,4 @@
 type system_power_hal_prop, property_type;
 type cam_flash_thrtl_prop, property_type;
+type system_gralloc_version_prop, property_type;
+type ctl_logconfig_prop, property_type;

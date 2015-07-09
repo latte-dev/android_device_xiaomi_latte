@@ -4,3 +4,7 @@ allow drmserver unlabeled:dir search;
 # access to /data/IntelCPHS.log
 allow drmserver system_data_file:dir { write add_name };
 allow drmserver system_data_file:file { create open append };
+
+# set property sys.ggralloc.version
+unix_socket_connect(drmserver, property, init)
+allow drmserver system_gralloc_version_prop:property_service set;

@@ -9,3 +9,5 @@ domain_trans(init, rootfs, thermal_lite)
 
 # allow to write mediaserver pid to cgroup for mediaserver
 allow init mediaserver:process { setsched };
+
+allow init self:capability sys_module;

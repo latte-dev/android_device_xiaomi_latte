@@ -1,0 +1,21 @@
+type lbsd, domain;
+type lbsd_exec, file_type, exec_type;
+
+init_daemon_domain(lbsd)
+
+# lbsd double execs, once for a shell script (domain trans)
+# and one for the executable from the script.
+allow lbsd lbsd_exec:file execute_no_trans;
+allow lbsd shell_exec:file read;
+
+allow lbsd gps_device:chr_file rw_file_perms;
+
+#
+# Copies configuration files from system into
+# data
+#
+allow lbsd gnss_data_file:dir rw_dir_perms;
+allow lbsd gnss_data_file:file create_file_perms;
+
+# run toolbox commands
+allow lbsd system_file:file execute_no_trans;

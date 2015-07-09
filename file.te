@@ -19,6 +19,7 @@ type binfmt_misc, fs_type;
 # thermal
 type thermal_data_file, file_type, data_file_type;
 type thermal_socket, file_type;
+type sysfs_thermal_file, fs_type, sysfs_type;
 type sysfs_thermal_management, fs_type, sysfs_type;
 type itux_data_file, file_type, data_file_type;
 

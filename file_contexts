@@ -51,6 +51,8 @@
 /dev/ttyS2                  u:object_r:gps_device:s0
 /dev/ttyHSU1                u:object_r:gps_device:s0
 /sys/devices/pci0000:00/8086228A:01/power/control u:object_r:gps_sysfs_file:s0
+/sys/devices/virtual/thermal/thermal_zone[0-9]/trip_point_[0-9]_temp u:object_r:sysfs_thermal_file:s0
+/sys/devices/virtual/thermal/cooling_device[0-9]/cur_state u:object_r:sysfs_thermal_file:s0
 
 # COOMS
 /dev/ttyS1                  u:object_r:hci_attach_dev:s0

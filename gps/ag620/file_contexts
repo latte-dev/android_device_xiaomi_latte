@@ -1,0 +1,1 @@
+/system/bin/lbsd.sh u:object_r:lbsd_exec:s0

@@ -3,8 +3,18 @@ allow system_app log_file:dir create_dir_perms;
 allow system_app log_file:file create_file_perms;
 allow system_app log_file:filesystem getattr;
 
+allow system_app {
+	sysfs_devices_system_cpu
+	sysfs_thermal_file
+}:file rw_file_perms;
+
+
 # XXX: Possible removal for M
 dontaudit system_app debugfs:file read;
+
+
+# setprop ctl.logconfig
+allow system_app ctl_logconfig_prop:property_service set;
 
 # ITUX app needs to access thermal data files and sysfs
 allow system_app itux_data_file:dir create_dir_perms;

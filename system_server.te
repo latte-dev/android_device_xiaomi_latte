@@ -14,3 +14,6 @@ allow system_server configfs:dir create_dir_perms;
 
 # bluetooth
 allow system_server bluetooth_service:service_manager add;
+
+# setprop sys.ggralloc.version
+allow surfaceflinger system_gralloc_version_prop:property_service set;
