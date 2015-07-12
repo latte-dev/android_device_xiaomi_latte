@@ -1,0 +1,2 @@
+allow vdc log_file:dir r_dir_perms;
+allow vdc log_file:file r_file_perms;

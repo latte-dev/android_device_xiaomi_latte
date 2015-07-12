@@ -8,3 +8,6 @@ allow drmserver system_data_file:file { create open append };
 # set property sys.ggralloc.version
 unix_socket_connect(drmserver, property, init)
 allow drmserver system_gralloc_version_prop:property_service set;
+
+# search the graphics directory when probing for drm chr file
+allow drmserver graphics_device:dir search;

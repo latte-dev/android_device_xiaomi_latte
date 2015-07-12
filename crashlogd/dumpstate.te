@@ -1,0 +1,4 @@
+userdebug_or_eng(`
+  # allow it send sigkill to crashlogd
+  allow dumpstate crashlogd:process signal;
+')
