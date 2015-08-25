@@ -6,6 +6,7 @@ userdebug_or_eng(`
 
 domain_trans(init, rootfs, efiprop)
 domain_trans(init, rootfs, thermal_lite)
+domain_trans(init, rootfs, dhcp)
 
 # allow to write mediaserver pid to cgroup for mediaserver
 allow init mediaserver:process { setsched };
