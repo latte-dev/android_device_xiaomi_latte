@@ -758,3 +758,6 @@ on init
     symlink /system/vendor/firmware /lib/firmware
 
 # ------------------ END MIX-IN DEFINITIONS ------------------
+
+on init
+    export LD_SHIM_LIBS /system/lib/libparameter.so|libshim_audio.so:/system/lib/libpower-subsystem.so|libshim_audio.so:/system/lib/libremoteparameter-subsystem.so|libshim_audio.so:/system/lib/libtinyalsa_custom-subsystem.so|libshim_audio.so:/system/lib/hw/sensors.gmin.so|libshim_sensors.so

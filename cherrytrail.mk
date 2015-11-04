@@ -32,6 +32,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_res_images
 
+# Compatibility
+PRODUCT_PACKAGES += \
+    libshim_audio \
+    libshim_sensors
+
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=8m \
