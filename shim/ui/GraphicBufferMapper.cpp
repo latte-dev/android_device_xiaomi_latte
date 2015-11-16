@@ -31,7 +31,7 @@
 #include <utils/Log.h>
 #include <utils/Trace.h>
 
-#include <ui/GraphicBufferMapper.h>
+#include "ui/GraphicBufferMapper.h"
 #include <ui/Rect.h>
 
 #include <hardware/gralloc.h>
@@ -78,7 +78,7 @@ status_t GraphicBufferMapper::unregisterBuffer(buffer_handle_t handle)
 }
 
 status_t GraphicBufferMapper::lock(buffer_handle_t handle,
-        uint32_t usage, const Rect& bounds, void** vaddr)
+        int usage, const Rect& bounds, void** vaddr)
 {
     ATRACE_CALL();
     status_t err;
@@ -92,7 +92,7 @@ status_t GraphicBufferMapper::lock(buffer_handle_t handle,
 }
 
 status_t GraphicBufferMapper::lockYCbCr(buffer_handle_t handle,
-        uint32_t usage, const Rect& bounds, android_ycbcr *ycbcr)
+        int usage, const Rect& bounds, android_ycbcr *ycbcr)
 {
     ATRACE_CALL();
     status_t err;
@@ -121,7 +121,7 @@ status_t GraphicBufferMapper::unlock(buffer_handle_t handle)
 }
 
 status_t GraphicBufferMapper::lockAsync(buffer_handle_t handle,
-        uint32_t usage, const Rect& bounds, void** vaddr, int fenceFd)
+        int usage, const Rect& bounds, void** vaddr, int fenceFd)
 {
     ATRACE_CALL();
     status_t err;
@@ -145,7 +145,7 @@ status_t GraphicBufferMapper::lockAsync(buffer_handle_t handle,
 }
 
 status_t GraphicBufferMapper::lockAsyncYCbCr(buffer_handle_t handle,
-        uint32_t usage, const Rect& bounds, android_ycbcr *ycbcr, int fenceFd)
+        int usage, const Rect& bounds, android_ycbcr *ycbcr, int fenceFd)
 {
     ATRACE_CALL();
     status_t err;

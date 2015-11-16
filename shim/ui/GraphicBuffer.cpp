@@ -23,9 +23,9 @@
 #include <utils/Errors.h>
 #include <utils/Log.h>
 
-#include <ui/GraphicBuffer.h>
-#include <ui/GraphicBufferAllocator.h>
-#include <ui/GraphicBufferMapper.h>
+#include "ui/GraphicBuffer.h"
+#include "ui/GraphicBufferAllocator.h"
+#include "ui/GraphicBufferMapper.h"
 #include <ui/PixelFormat.h>
 
 namespace android {

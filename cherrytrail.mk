@@ -35,6 +35,7 @@ PRODUCT_PACKAGES += \
 # Compatibility
 PRODUCT_PACKAGES += \
     libshim_audio \
+    libshim_camera \
     libshim_sensors
 
 # Dalvik

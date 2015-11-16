@@ -24,7 +24,7 @@
 #include <utils/String8.h>
 #include <utils/Trace.h>
 
-#include <ui/GraphicBufferAllocator.h>
+#include "ui/GraphicBufferAllocator.h"
 
 namespace android {
 // ---------------------------------------------------------------------------
@@ -66,11 +66,11 @@ void GraphicBufferAllocator::dump(String8& result) const
         if (rec.size) {
             snprintf(buffer, SIZE, "%10p: %7.2f KiB | %4u (%4u) x %4u | %8X | 0x%08x\n",
                     list.keyAt(i), rec.size/1024.0f,
-                    rec.width, rec.stride, rec.height, rec.format, rec.usage);
+                    rec.w, rec.s, rec.h, rec.format, rec.usage);
         } else {
             snprintf(buffer, SIZE, "%10p: unknown     | %4u (%4u) x %4u | %8X | 0x%08x\n",
                     list.keyAt(i),
-                    rec.width, rec.stride, rec.height, rec.format, rec.usage);
+                    rec.w, rec.s, rec.h, rec.format, rec.usage);
         }
         result.append(buffer);
         total += rec.size;
@@ -91,8 +91,8 @@ void GraphicBufferAllocator::dumpToSystemLog()
 }
 
 status_t GraphicBufferAllocator::alloc(uint32_t width, uint32_t height,
-        PixelFormat format, uint32_t usage, buffer_handle_t* handle,
-        uint32_t* stride)
+        PixelFormat format, int usage, buffer_handle_t* handle,
+        int32_t * stride)
 {
     ATRACE_CALL();
 
@@ -121,9 +121,9 @@ status_t GraphicBufferAllocator::alloc(uint32_t width, uint32_t height,
         KeyedVector<buffer_handle_t, alloc_rec_t>& list(sAllocList);
         uint32_t bpp = bytesPerPixel(format);
         alloc_rec_t rec;
-        rec.width = width;
-        rec.height = height;
-        rec.stride = *stride;
+        rec.w = width;
+        rec.h = height;
+        rec.s = *stride;
         rec.format = format;
         rec.usage = usage;
         rec.size = static_cast<size_t>(height * (*stride) * bpp);
