@@ -28,6 +28,7 @@
 #include <unistd.h>
 #include <utils/String8.h>
 #include <cutils/klog.h>
+#include <cutils/properties.h>
 
 #include <healthd.h>
 
@@ -36,6 +37,9 @@
 #define POWER_SUPPLY_SYSFS_PATH "/sys/class/" POWER_SUPPLY_SUBSYSTEM
 #define PERIODIC_CHORES_INTERVAL_FAST (60 * 1)
 #define PERIODIC_CHORES_INTERVAL_FAST_INITIAL 1
+
+#define SHUTDOWN_PROP "init.shutdown_to_charging"
+static bool charger_is_connected = false;
 
 static struct healthd_config *ghc;
 
@@ -153,6 +157,14 @@ int healthd_board_battery_update(struct android::BatteryProperties *props)
            props->chargerWirelessOnline) && (props->batteryLevel == 0))
         ghc->periodic_chores_interval_fast =
                                      PERIODIC_CHORES_INTERVAL_FAST;
+
+    bool new_is_connected = props->chargerAcOnline | props->chargerUsbOnline |
+            props->chargerWirelessOnline | props->chargerDockAcOnline;
+    if (new_is_connected != charger_is_connected) {
+        charger_is_connected = new_is_connected;
+        property_set(SHUTDOWN_PROP, charger_is_connected ? "1" : "0");
+    }
+
     return 0;
 }
 

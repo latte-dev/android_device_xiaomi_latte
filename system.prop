@@ -1,6 +1,3 @@
-# Charger
-sys.powerctl.no.shutdown=1
-
 # Display
 ro.hwui.texture_cache_size=24.0f
 ro.hwui.text_large_cache_width=2048
