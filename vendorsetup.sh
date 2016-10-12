@@ -1,0 +1,1 @@
+add_lunch_combo omni_cht_cr_mrd_w-userdebug

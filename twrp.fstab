@@ -1,0 +1,10 @@
+/system        ext4  /dev/block/by-name/android_system
+/system_image  emmc  /dev/block/by-name/android_system         flags=flashimg=1
+/data          ext4  /dev/block/by-name/android_data           flags=encryptable=/dev/block/by-name/android_metadata
+/cache         ext4  /dev/block/by-name/android_cache
+/boot          emmc  /dev/block/by-name/android_boot
+/recovery      emmc  /dev/block/by-name/android_recovery       flags=backup=1
+/misc          emmc  /dev/block/by-name/android_misc
+
+/external_sd   auto  /dev/block/mmcblk1p1  /dev/block/mmcblk1  flags=display="Micro SDcard";storage;wipeingui;removable
+/usb_otg       auto  /dev/block/sda1       /dev/block/sda      flags=display="USB-OTG";storage;wipeingui;removable
