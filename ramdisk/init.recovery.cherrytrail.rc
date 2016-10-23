@@ -1,0 +1,28 @@
+on init
+    # Android creates by-name disk links with the disk controller
+    # in the generated path, so that the names pulled out of the GPT
+    # can be associated with the correct disk. Create a shortcut to
+    # /dev/block/by-name so that we can use the same fstabs everywhere.
+    mkdir /dev/block 0755 root root
+    symlink /dev/block/platform/pci0000:00/80860F14:00/by-name /dev/block/by-name
+
+on fs
+    mkdir /dev/usb-ffs 0770 shell shell
+    mkdir /dev/usb-ffs/adb 0770 shell shell
+    mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=2000
+
+on post-fs-data
+    start thermal_lite ROS
+
+on boot
+    start watchdogd
+
+service thermal_lite /sbin/thermal_lite
+    oneshot
+    seclabel u:r:thermal_lite:s0
+
+service watchdogd /sbin/watchdogd
+    user root
+    class core
+    oneshot
+    seclabel u:r:watchdogd:s0

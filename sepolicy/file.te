@@ -1,0 +1,6 @@
+# Silentlake
+type silentlake_data_file, file_type, data_file_type;
+type silentlake_socket, file_type;
+
+# ITUX
+type sysfs_thermal, fs_type, sysfs_type;

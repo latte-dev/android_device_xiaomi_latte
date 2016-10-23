@@ -1,0 +1,15 @@
+# Rules for fg_algo_iface
+type fg_algo_iface, domain;
+type fg_algo_iface_exec, exec_type, file_type;
+init_daemon_domain(fg_algo_iface)
+
+# Data directory
+allow fg_algo_iface fg_algo_iface_data_file:dir create_dir_perms;
+allow fg_algo_iface fg_algo_iface_data_file:file create_file_perms;
+
+# To access uevent
+allow fg_algo_iface self:netlink_kobject_uevent_socket create_socket_perms;
+
+# Access to sysfs nodes of fuel gauge drivers
+allow fg_algo_iface fg_algo_iface_sysfs_rw_nodes:dir rw_dir_perms;
+allow fg_algo_iface fg_algo_iface_sysfs_rw_nodes:{ file lnk_file } rw_file_perms;

@@ -1,0 +1,4 @@
+userdebug_or_eng(`
+  allow netd mts:tcp_socket rw_socket_perms;
+  allow netd mts:fd use;
+')

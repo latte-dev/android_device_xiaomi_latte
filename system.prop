@@ -1,0 +1,14 @@
+# Charger
+sys.powerctl.no.shutdown=1
+
+# Display
+ro.hwui.texture_cache_size=24.0f
+ro.hwui.text_large_cache_width=2048
+ro.hwui.text_large_cache_height=512
+ro.opengles.version=196609
+
+# DRM
+drm.service.enabled=true
+
+# Storage
+persist.sys.isUsbOtgEnabled=true

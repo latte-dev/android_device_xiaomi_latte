@@ -1,0 +1,20 @@
+# Rules for system/bin/sensorhubd
+type sensorhubd, domain;
+type sensorhubd_exec, exec_type, file_type;
+init_daemon_domain(sensorhubd);
+
+# sensorhubd socket permission
+unix_socket_connect(sensorhubd, sensorhubd, sensorhubd);
+allow sensorhubd sensorhubd_socket:sock_file rw_file_perms;
+
+# sensorhubd permission for exec
+allow sensorhubd shell_exec:file x_file_perms;
+allow sensorhubd system_file:file x_file_perms;
+
+# sensorhubd permission for sysfs node
+allow sensorhubd sysfs_hwmon_control:file w_file_perms;
+allow sensorhubd sensorhubd_device:chr_file rw_file_perms;
+allow sensorhubd i2c_device:chr_file rw_file_perms;
+allow sensorhubd sysfs_gpio_value:file w_file_perms;
+allow sensorhubd sysfs:{ file lnk_file} rw_file_perms;
+allow sensorhubd sysfs:dir r_dir_perms;

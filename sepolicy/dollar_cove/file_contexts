@@ -1,0 +1,4 @@
+# Fuel Gauge userspace helper
+/data/fg_algo_iface(/.*)?                         u:object_r:fg_algo_iface_data_file:s0
+/sys/devices/virtual/misc/intel_fg_iface(/.*)?    u:object_r:fg_algo_iface_sysfs_rw_nodes:s0
+/system/vendor/bin/fg_algo_iface                  u:object_r:fg_algo_iface_exec:s0
