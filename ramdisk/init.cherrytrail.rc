@@ -428,6 +428,14 @@ on property:sys.usb.config=rndis,adb
     wait /sys/class/net/rndis0/queues/rx-0/rps_cpus 1
     write /sys/class/net/rndis0/queues/rx-0/rps_cpus F
 
+on property:sys.usb.config=charging
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 8087
+    write /sys/class/android_usb/android0/idProduct 09ef
+    write /sys/class/android_usb/android0/functions ${sys.usb.config}
+    write /sys/class/android_usb/android0/enable 1
+    setprop sys.usb.state ${sys.usb.config}
+
 on fs
     mkdir /dev/usb-ffs 0770 shell shell
     mkdir /dev/usb-ffs/adb 0770 shell shell
