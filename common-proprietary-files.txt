@@ -1,6 +1,111 @@
+# Audio
+etc/tuning/audio/layout_topology.xml
+etc/tuning/audio/layout_types.xml
+etc/tuning/audio/layout_ui.xml
+etc/route_criteria.conf
+lib/hw/audio.codec_offload.cherrytrail.so
+lib/hw/audio.hdmi.gmin.so
+lib/hw/audio.primary.gmin.so
+lib/hw/audio.r_submix.cherrytrail.so
+lib/audio.routemanager.so
+lib/libaudioresample.so
+lib/libevent-listener.so
+lib/libinterface-provider.so
+lib/libinterface-provider-lib.so
+lib/libmodem-audio-collection.so
+lib/libparameter.so
+lib/libproperty.so
+lib/libremote-processor.so
+lib/libtinyalsa.so
+lib/libtinycompress.so
+lib/soundfx/liblpepreprocessing.so
+
 # Audio firmware
 etc/firmware/dfw_sst.bin
 etc/firmware/fw_sst_22a8.bin
+
+# Audio parameter framework
+etc/parameter-framework/RouteParameterFramework.xml
+etc/parameter-framework/Structure/Audio/CMESubsystem.xml
+etc/parameter-framework/Structure/Audio/ConfigurationSubsystem.xml
+etc/parameter-framework/Structure/Audio/IMCSubsystem.xml
+etc/parameter-framework/Structure/Audio/intel/AcousticEchoCanceler_V1_6.xml
+etc/parameter-framework/Structure/Audio/intel/AmbientNoiseAdapter_V2_5.xml
+etc/parameter-framework/Structure/Audio/intel/AutomaticGainControlAudio_V1_0.xml
+etc/parameter-framework/Structure/Audio/intel/AutomaticGainControlVoice_V1_3.xml
+etc/parameter-framework/Structure/Audio/intel/BandWidthExtender_V1_0.xml
+etc/parameter-framework/Structure/Audio/intel/BeamformingAudio_V1.0.xml
+etc/parameter-framework/Structure/Audio/intel/BeamformingVoice_V1.1.xml
+etc/parameter-framework/Structure/Audio/intel/ComfortNoiseInjector_V1_1.xml
+etc/parameter-framework/Structure/Audio/intel/ComfortNoiseInjector_V1_2.xml
+etc/parameter-framework/Structure/Audio/intel/CommonAlgoTypes.xml
+etc/parameter-framework/Structure/Audio/intel/Dcr.xml
+etc/parameter-framework/Structure/Audio/intel/DualMicrophoneNoiseReduction_V1_5.xml
+etc/parameter-framework/Structure/Audio/intel/DynamicRangeProcessor_V1_4.xml
+etc/parameter-framework/Structure/Audio/intel/EchoDelayLine_V1_1.xml
+etc/parameter-framework/Structure/Audio/intel/FbaFir_V1_1.xml
+etc/parameter-framework/Structure/Audio/intel/FbaIir_V1_1.xml
+etc/parameter-framework/Structure/Audio/intel/Gain.xml
+etc/parameter-framework/Structure/Audio/intel/GainLossControl_V1_0.xml
+etc/parameter-framework/Structure/Audio/intel/HfSns2.xml
+etc/parameter-framework/Structure/Audio/intel/Lpro.xml
+etc/parameter-framework/Structure/Audio/intel/Mdrc.xml
+etc/parameter-framework/Structure/Audio/intel/MediaAlgos_Gen3_5.xml
+etc/parameter-framework/Structure/Audio/intel/ModuleVoiceProcessingLock_V1_0.xml
+etc/parameter-framework/Structure/Audio/intel/MultibandDynamicRangeProcessor_V1_0.xml
+etc/parameter-framework/Structure/Audio/intel/NoiseReduction_V1_1.xml
+etc/parameter-framework/Structure/Audio/intel/NonLinearFilter_V1_0.xml
+etc/parameter-framework/Structure/Audio/intel/ReferenceLine_V1_1.xml
+etc/parameter-framework/Structure/Audio/intel/SbaEqualizers.xml
+etc/parameter-framework/Structure/Audio/intel/SbaFir.xml
+etc/parameter-framework/Structure/Audio/intel/SbaIir.xml
+etc/parameter-framework/Structure/Audio/intel/SlowVoice_V1_0.xml
+etc/parameter-framework/Structure/Audio/intel/SpectralEchoReduction_V2_5.xml
+etc/parameter-framework/Structure/Audio/intel/ToneGenerator_V2_4.xml
+etc/parameter-framework/Structure/Audio/intel/TrafficNoiseReduction_V1_0.xml
+etc/parameter-framework/Structure/Audio/intel/VoiceAlgos_Gen3_5.xml
+etc/parameter-framework/Structure/Audio/intel/VoiceVolume.xml
+etc/parameter-framework/Structure/Audio/intel/WindNoiseReductionAudio_V1_0.xml
+etc/parameter-framework/Structure/Audio/intel/WindNoiseReductionVoice_V1_0.xml
+etc/parameter-framework/Structure/Audio/PowerSubsystem.xml
+etc/parameter-framework/Structure/Audio/PropertySubsystem.xml
+etc/parameter-framework/Structure/Route/DebugFsSubsystem.xml
+etc/parameter-framework/Structure/Route/RouteClass.xml
+etc/parameter-framework/Structure/Route/RouteSubsystem-CommonCriteria.xml
+etc/parameter-framework/Structure/Route/RouteSubsystem-RoutesTypes.xml
+lib/libfs-subsystem.so
+lib/libimc-subsystem.so
+lib/libpower-subsystem.so
+lib/libproperty-subsystem.so
+lib/libremoteparameter-subsystem.so
+lib/libroute-subsystem.so
+lib/libtinyalsa_custom-subsystem.so
+lib/libtinyalsa-subsystem.so
+
+# Bluetooth
+etc/firmware/bt/rtl8723b_config
+
+# Camera
+etc/firmware/shisp_2401a0_v21.bin
+etc/camera_profiles.xml
+lib/libcilkrts.so
+lib/libiacp.so
+lib/libia_aiq.so
+lib/libia_cmc_parser.so
+lib/libia_dvs_2.so
+lib/libia_emd_decoder.so
+lib/libia_exc.so
+lib/libia_face.so
+lib/libia_isp_2_2.so
+lib/libia_log.so
+lib/libia_mkn.so
+lib/libia_nvm.so
+lib/libimf.so
+lib/libintlc.so
+lib/libirng.so
+lib/libsvml.so
+lib/libva.so
+lib/libva-android.so
 
 # Charger
 lib/libfg.so
@@ -305,6 +410,14 @@ etc/thermal_sensor_config.xml
 etc/thermal_throttle_config.xml
 vendor/bin/power_hal_helper
 vendor/lib/hw/power.gmin.so
+
+# Sensors
+bin/sensorhubd
+lib/libakmd09911.so
+lib/libaware_client.so
+lib/libcontextarbitor.so
+lib/libgesture.so
+lib/libsensorhub.so
 
 # Silent lake
 bin/sl_si_service
