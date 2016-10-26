@@ -301,9 +301,6 @@ lib/libwrs_omxil_core_pvwrapped.so
 
 # Power
 bin/bcu_cpufreqrel
-bin/thermal-daemon
-etc/thermal-daemon/thermal-conf.xml
-etc/thermal-daemon/thermal-cpu-cdev-order.xml
 etc/thermal_sensor_config.xml
 etc/thermal_throttle_config.xml
 vendor/bin/power_hal_helper
