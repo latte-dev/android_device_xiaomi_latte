@@ -261,6 +261,16 @@ lib/libthermalJNI.so
 etc/video_isv_profile.xml
 lib/libisv_omx_core.so
 
+# Media SDK
+etc/mfx_omxil_core.conf
+lib/libgabi++-mfx.so
+lib/libmfx_omx_components_hw.so
+lib/libmfx_omx_components_sw.so
+lib/libmfx_omx_core.so
+lib/libmfxhw32.so
+lib/libmfxsw32.so
+lib/libstlport-mfx.so
+
 # Media utils
 lib/libI420colorconvert.so
 
