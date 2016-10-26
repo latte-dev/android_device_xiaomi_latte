@@ -65,6 +65,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     lights.gmin
 
+# Media utils
+PRODUCT_PACKAGES += \
+    libI420colorconvert
+
 # Pstore
 PRODUCT_PACKAGES += \
     pstore-clean
