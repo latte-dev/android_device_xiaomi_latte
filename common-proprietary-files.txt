@@ -312,10 +312,6 @@ etc/thermal_throttle_config.xml
 vendor/bin/power_hal_helper
 vendor/lib/hw/power.gmin.so
 
-# Pstore
-bin/pstore-clean
-vendor/etc/pstore-clean.conf
-
 # Silent lake
 bin/sl_si_service
 lib/libproxyta.so

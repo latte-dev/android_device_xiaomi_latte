@@ -65,6 +65,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     lights.gmin
 
+# Pstore
+PRODUCT_PACKAGES += \
+    pstore-clean
+
 # Wifi
 PRODUCT_PACKAGES += \
     hostapd \
