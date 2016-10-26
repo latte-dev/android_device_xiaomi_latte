@@ -66,6 +66,10 @@ PRODUCT_PACKAGES += \
     lights.gmin
 
 # Wifi
+PRODUCT_PACKAGES += \
+    hostapd \
+    wpa_supplicant
+
 ADDITIONAL_DEFAULT_PROPERTIES += \
     wifi.interface=wlan0
 
