@@ -1,0 +1,1 @@
+allow system_server fuse:dir { search read write };

@@ -1,0 +1,1 @@
+allow coreu sysfs_thermal_management:file { read write open };
