@@ -36,6 +36,6 @@
 ##############################################################
 # Source: device/intel/mixins/groups/swap/zram/fstab
 ##############################################################
-/dev/block/zram0                        none             swap    defaults                                   zramsize=104857600
+/dev/block/zram0                        none             swap    defaults                                   zramsize=268435456
 
 # ------------------ END MIX-IN DEFINITIONS ------------------
