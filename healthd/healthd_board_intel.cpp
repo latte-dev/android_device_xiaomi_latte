@@ -139,6 +139,9 @@ void healthd_board_init(struct healthd_config *config)
      ghc = config;
 }
 
+void healthd_board_mode_charger_draw_battery(struct android::BatteryProperties *)
+{
+}
 
 int healthd_board_battery_update(struct android::BatteryProperties *props)
 {
@@ -151,4 +154,16 @@ int healthd_board_battery_update(struct android::BatteryProperties *props)
         ghc->periodic_chores_interval_fast =
                                      PERIODIC_CHORES_INTERVAL_FAST;
     return 0;
+}
+
+void healthd_board_mode_charger_battery_update(struct android::BatteryProperties *)
+{
+}
+
+void healthd_board_mode_charger_set_backlight(bool)
+{
+}
+
+void healthd_board_mode_charger_init()
+{
 }
