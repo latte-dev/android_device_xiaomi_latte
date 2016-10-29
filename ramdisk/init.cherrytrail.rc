@@ -503,25 +503,6 @@ service thermal_lite /sbin/thermal_lite
     seclabel u:r:thermal_lite:s0
 
 ##############################################################
-# Source: device/intel/mixins/groups/thermal/ituxd/init.rc
-##############################################################
-service thermal-daemon /system/bin/thermal-daemon
-    user system
-    group system
-    class main
-    oneshot
-    socket power_hal dgram 660 system system
-
-on boot
-    chown system system /sys/devices/system/cpu/intel_pstate/max_perf_pct
-    chown system system /sys/devices/system/cpu/intel_pstate/min_perf_pct
-    chown system system /sys/devices/system/cpu/intel_pstate/no_turbo
-
-on post-fs-data
-    # daemon running directory
-    mkdir /data/thermal-daemon 0755 system system
-
-##############################################################
 # Source: device/intel/mixins/groups/gps/cg2k/init.rc
 ##############################################################
 on post-fs-data
