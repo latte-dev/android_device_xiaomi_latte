@@ -1,2 +1,0 @@
-allow efiprop amtl_prop:property_service set;
-allow efiprop mmgr_prop:property_service set;

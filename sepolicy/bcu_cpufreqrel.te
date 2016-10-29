@@ -1,3 +1,0 @@
-type bcu_cpufreqrel, domain;
-type bcu_cpufreqrel_exec, exec_type, file_type;
-init_daemon_domain(bcu_cpufreqrel);

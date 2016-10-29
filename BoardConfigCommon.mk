@@ -31,6 +31,7 @@ TARGET_CPU_ABI_LIST_32_BIT := x86,armeabi-v7a,armeabi
 
 # Kernel
 BOARD_KERNEL_CMDLINE := loglevel=5 androidboot.hardware=cherrytrail firmware_class.path=/system/etc/firmware i915.fastboot=1 vga=current i915.modeset=1 drm.vblankoffdelay=1 console=ttyS0,115200n8 bootboost=1 pm_suspend_debug=1 pstore.backend=ramoops
+BOARD_KERNEL_CMDLINE += androidboot.selinux=disabled
 
 # Binder
 TARGET_USES_64_BIT_BINDER := true
@@ -69,15 +70,6 @@ TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/ramdisk/fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
-
-# SELinux
-BOARD_SEPOLICY_DIRS += \
-    device/intel/sepolicy \
-    device/intel/cherrytrail-common/sepolicy \
-    device/intel/cherrytrail-common/sepolicy/dollar_cove \
-    device/intel/cherrytrail-common/sepolicy/intel_prop \
-    device/intel/cherrytrail-common/sepolicy/sensorhub \
-    device/intel/cherrytrail-common/sepolicy/telephony
 
 # Wifi
 BOARD_HOSTAPD_DRIVER := NL80211

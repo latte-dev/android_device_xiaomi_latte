@@ -1,3 +1,0 @@
-allow servicemanager atproxy:file r_file_perms;
-allow servicemanager atproxy:dir r_file_perms;
-allow servicemanager atproxy:process getattr;

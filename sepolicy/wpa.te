@@ -1,2 +1,0 @@
-allow wpa config_file:dir search;
-allow wpa wifi_data_file:sock_file { create setattr };

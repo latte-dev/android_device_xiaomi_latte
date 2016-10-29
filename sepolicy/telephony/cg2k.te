@@ -1,2 +1,0 @@
-#telephony specific permissions for cg2k
-unix_socket_connect(cg2k, mmgr, mmgr)

@@ -1,2 +1,0 @@
-allow mediaserver asec_apk_file:dir { write add_name };
-allow mediaserver asec_apk_file:file { write create open };

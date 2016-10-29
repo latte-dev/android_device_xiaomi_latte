@@ -1,3 +1,0 @@
-type fg_algo_cos, domain;
-type fg_algo_cos_exec, exec_type, file_type;
-init_daemon_domain(fg_algo_cos);
