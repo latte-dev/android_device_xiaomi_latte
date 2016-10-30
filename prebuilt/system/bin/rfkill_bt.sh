@@ -1,3 +1,5 @@
+#!/system/bin/sh
+
 for rfkill in /sys/class/rfkill/rfkill[0-9]
 do
 	type=`cat $rfkill/type`

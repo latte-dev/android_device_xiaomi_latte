@@ -83,7 +83,12 @@ lib/libtinyalsa_custom-subsystem.so
 lib/libtinyalsa-subsystem.so
 
 # Bluetooth
+app/Bluetooth/Bluetooth.apk
 etc/firmware/bt/rtl8723b_config
+etc/firmware/bt/rtl8723b_fw
+lib/hw/bluetooth.default.so
+lib/libbluetooth_jni.so
+lib/libbt-vendor.so
 
 # Camera
 etc/firmware/shisp_2401a0_v21.bin

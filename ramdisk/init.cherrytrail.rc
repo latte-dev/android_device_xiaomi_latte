@@ -174,7 +174,7 @@ on boot
     insmod /system/lib/modules/rfkill-gpio.ko
     start rfkill-init
 
-service rfkill-init /system/bin/sh /system/bin/rfkill-init.sh bluetooth
+service rfkill-init /system/bin/rfkill-init.sh gps
     disabled
     group system
     oneshot
@@ -184,12 +184,11 @@ service rfkill-init /system/bin/sh /system/bin/rfkill-init.sh bluetooth
 ########################################################
 #  BLUETOOTH CONFIGURATION - REALTEK SPECIFIC
 ########################################################
-
 on boot
+    insmod /system/lib/modules/bt_lpm.ko
     insmod /system/lib/modules/iptable_raw.ko
     insmod /system/lib/modules/ip6table_raw.ko
     insmod /system/lib/modules/6lowpan_iphc.ko
-    insmod /system/lib/modules/bt_lpm.ko
     start rfkill_bt
 
 on post-fs
@@ -202,18 +201,19 @@ on early-boot
     chmod 0644 /config/bt/bd_addr.conf
     setprop ro.bt.bdaddr_path "/config/bt/bd_addr.conf"
 
-service rfkill_bt /system/bin/sh /rfkill_bt.sh
+service rfkill_bt /system/bin/sh /system/bin/rfkill_bt.sh
+    seclabel u:r:rfkill:s0
     class core
     user root
     oneshot
 
-service dhcpcd_bt-pan /system/bin/logwrapper /system/bin/dhcpcd -ABKL
+service dhcpcd_bt-pan /system/bin/dhcpcd -ABKL
     class main
     group bluetooth wifi system dhcp
     disabled
     oneshot
 
-service iprenew_bt-pan /system/bin/logwrapper /system/bin/dhcpcd -n
+service iprenew_bt-pan /system/bin/dhcpcd -n
     group bluetooth system dhcp
     disabled
     oneshot
@@ -224,7 +224,6 @@ service bd_prov /system/bin/bd_prov
     group system bluetooth
     disabled
     oneshot
-##############################################################
 ##############################################################
 # Source: device/intel/mixins/groups/wlan/rtl8723bs/init.rc
 ##############################################################
