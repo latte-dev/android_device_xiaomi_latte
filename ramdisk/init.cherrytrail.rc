@@ -744,16 +744,6 @@ on post-fs-data
     chmod 0664 /sys/devices/virtual/misc/intel_fg_iface/cyc_cnt
     chmod 0664 /sys/devices/virtual/misc/intel_fg_iface/cc_calib
 
-    mkdir /data/fg_algo_iface 0770 system system
-
-    start fg_algo_iface
-
-service fg_algo_iface /system/vendor/bin/fg_algo_iface
-    user system
-    group system
-    class late_start
-    disabled
-
 ##############################################################
 # Source: device/intel/mixins/groups/pstore/ram_pram/init.rc
 ##############################################################

@@ -113,11 +113,6 @@ lib/libsvml.so
 lib/libva.so
 lib/libva-android.so
 
-# Charger
-lib/libfg.so
-vendor/bin/fg_algo_iface
-vendor/lib/libfg_ti_algo.so
-
 # Display
 lib/hw/memtrack.gmin.so
 vendor/bin/coreu
