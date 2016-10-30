@@ -194,12 +194,10 @@ lib/libhwcwidi.so
 bin/keymaster_meid
 bin/otpserver
 lib/hw/keystore.gmin.so
-lib/ssl/engines/libkeystore.so
 lib/libiha.so
 lib/libmei.so
 lib/libmeimm.so
 lib/libsepipt.so
-lib/libtxei.so
 vendor/lib/mediadrm/libdrmclearkeyplugin.so
 
 # Houdini

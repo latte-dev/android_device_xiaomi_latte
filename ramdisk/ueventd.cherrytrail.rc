@@ -63,20 +63,21 @@
 /sys/devices/pci0000:00/0000:00:02.0/drm/card*/card*/intel_backlight brightness 0644 system system
 
 ##############################################################
-# Source: device/intel/mixins/groups/security/txei/ueventd.rc
-##############################################################
-# Used by HW-backed keystore
-/dev/mei                      0660   system     drmrpc
-
-# Used by WideVine
-/dev/meimm                    0660   system     drmrpc
-##############################################################
 # Source: device/intel/mixins/groups/power/true/ueventd.rc
 ##############################################################
 # For I2C devices with 'enable' sysfs node
 /sys/devices/platform/*/i2c-*/i2c-* power_HAL_suspend 0644 system system
 /sys/bus/i2c/devices/i2c* power_HAL_suspend 0644 system system
 
+##############################################################
+# Source: device/intel/mixins/groups/security/txei/ueventd.rc
+##############################################################
+# Used by HW-backed keystore
+/dev/mei                      0660   system     drmrpc
+/dev/mei0                     0660   system     drmrpc
+
+# Used by WideVine
+/dev/meimm                    0660   system     drmrpc
 ##############################################################
 # Source: device/intel/mixins/groups/telephony/default/ueventd.rc
 ##############################################################

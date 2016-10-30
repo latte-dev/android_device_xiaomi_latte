@@ -567,10 +567,14 @@ on post-fs-data
 ##############################################################
 on boot
     write /sys/devices/pci0000:00/0000:00:1a.0/power/control auto
+on init
+    symlink /dev/mei0 /dev/mei
 
 on charger
-	write /sys/devices/pci0000:00/0000:00:1a.0/power/control auto
-
+    write /sys/devices/pci0000:00/0000:00:1a.0/power/control auto
+##############################################################
+# Source: device/intel/mixins/groups/libiha/true/init.rc
+##############################################################
 service otpserver /system/bin/otpserver
     class main
     user drmrpc
