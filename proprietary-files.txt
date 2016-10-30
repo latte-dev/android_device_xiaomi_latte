@@ -423,8 +423,8 @@ vendor/lib/libva_videoencoder.so
 
 # Power
 bin/bcu_cpufreqrel
+lib/hw/power.gmin.so
 vendor/bin/power_hal_helper
-vendor/lib/hw/power.gmin.so
 
 # Pstore
 vendor/bin/pstore-clean
