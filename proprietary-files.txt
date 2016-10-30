@@ -423,6 +423,10 @@ bin/bcu_cpufreqrel
 vendor/bin/power_hal_helper
 vendor/lib/hw/power.gmin.so
 
+# Pstore
+vendor/bin/pstore-clean
+vendor/etc/pstore-clean.conf
+
 # Sensors
 bin/sensorhubd
 lib/libakmd09911.so

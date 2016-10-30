@@ -39,17 +39,9 @@ on fs
     # as androidboot.hardware). Mount all the filesystems as specified
     # in the fstab.
     mount_all /fstab
-    mkdir /dev/pstore 0755 root system
-    mount pstore pstore /dev/pstore
 
 on post-fs
     restorecon /dev/block/by-name/android_persistent
-
-service pstore-clean /system/bin/pstore-clean
-    user root
-    group system
-    class late_start
-    oneshot
 
 service watchdogd /sbin/watchdogd
     user root
@@ -728,6 +720,21 @@ service fg_algo_iface /system/vendor/bin/fg_algo_iface
     class late_start
     disabled
 
+##############################################################
+# Source: device/intel/mixins/groups/pstore/ram_pram/init.rc
+##############################################################
+on fs
+    mkdir /dev/pstore 0755 root system
+    mount pstore pstore /dev/pstore
+
+on post-fs-data
+    mkdir /data/dontpanic 0750 root log
+
+service pstore-clean /system/vendor/bin/pstore-clean
+    user root
+    group system
+    class late_start
+    oneshot
 ##############################################################
 # Source: device/intel/mixins/groups/intel_prop/true/init.rc
 ##############################################################

@@ -75,10 +75,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libI420colorconvert
 
-# Pstore
-PRODUCT_PACKAGES += \
-    pstore-clean
-
 # Thermal daemon
 PRODUCT_PACKAGES += \
     thermal-daemon
