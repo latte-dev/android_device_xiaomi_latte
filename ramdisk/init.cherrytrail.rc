@@ -449,9 +449,6 @@ service charger /charger
     class charger
     seclabel u:r:healthd:s0
 
-service thermal_lite /sbin/thermal_lite
-    class charger
-    seclabel u:r:thermal_lite:s0
 ##############################################################
 # Source: device/intel/mixins/groups/charger/dollar_cove_ti/init.rc
 ##############################################################
@@ -472,7 +469,7 @@ on init
     symlink /dev/block/platform/pci0000:00/80860F14:00/by-name /dev/block/by-name
 
 ##############################################################
-# Source: device/intel/mixins/groups/thermal/ituxd/init.rc.1
+# Source: device/intel/mixins/groups/thermal/itux/init.rc
 ##############################################################
 on post-fs
     setprop persist.service.thermal 1
@@ -482,20 +479,29 @@ on post-fs
     setprop persist.thermal.shutdown.tone 1
     setprop persist.thermal.display.msg 1
     setprop persist.thermal.display.vibra 1
+    setprop sys.powerctl.criticalshutdown 0
 
-    # Permissions to control GPU freq capping from ITUX
-    chown system system /sys/class/drm/card0/gt_RP0_freq_mhz
-    chown system system /sys/class/drm/card0/gt_RP1_freq_mhz
-    chown system system /sys/class/drm/card0/gt_RPn_freq_mhz
-    chown system system /sys/class/drm/card0/gt_cur_freq_mhz
-    chown system system /sys/class/drm/card0/gt_max_freq_mhz
-    chown system system /sys/class/drm/card0/gt_min_freq_mhz
-    chmod 0664 /sys/class/drm/card0/gt_RP0_freq_mhz
-    chmod 0664 /sys/class/drm/card0/gt_RP1_freq_mhz
-    chmod 0664 /sys/class/drm/card0/gt_RPn_freq_mhz
-    chmod 0664 /sys/class/drm/card0/gt_cur_freq_mhz
-    chmod 0664 /sys/class/drm/card0/gt_max_freq_mhz
-    chmod 0664 /sys/class/drm/card0/gt_min_freq_mhz
+    # Permissions for Thermal Management
+    chown system system /sys/class/mali/pm/max_freq_level
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/thermal_scaling_max_freq
+    chown system system /sys/devices/system/cpu/cpu1/cpufreq/thermal_scaling_max_freq
+    chown system system /sys/devices/system/cpu/cpu2/cpufreq/thermal_scaling_max_freq
+    chown system system /sys/devices/system/cpu/cpu3/cpufreq/thermal_scaling_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/thermal_scaling_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpu1/cpufreq/thermal_scaling_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpu2/cpufreq/thermal_scaling_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpu3/cpufreq/thermal_scaling_max_freq
+    chmod 0664 /sys/class/mali/pm/max_freq_level
+
+on boot
+    chown system system /sys/class/powercap/intel-rapl:0/enabled
+    chown system system /sys/class/powercap/intel-rapl:0/constraint_0_power_limit_uw
+    restorecon_recursive /sys/class/powercap
+
+service thermal_lite /sbin/thermal_lite
+    class charger
+    seclabel u:r:thermal_lite:s0
+
 ##############################################################
 # Source: device/intel/mixins/groups/thermal/ituxd/init.rc
 ##############################################################
@@ -510,9 +516,6 @@ on boot
     chown system system /sys/devices/system/cpu/intel_pstate/max_perf_pct
     chown system system /sys/devices/system/cpu/intel_pstate/min_perf_pct
     chown system system /sys/devices/system/cpu/intel_pstate/no_turbo
-    chown system system /sys/class/powercap/intel-rapl:0/enabled
-    chown system system /sys/class/powercap/intel-rapl:0/constraint_0_power_limit_uw
-    restorecon_recursive /sys/class/powercap
 
 on post-fs-data
     # daemon running directory

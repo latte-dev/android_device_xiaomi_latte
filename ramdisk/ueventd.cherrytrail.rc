@@ -41,12 +41,13 @@
 ##############################################################
 /dev/block/platform/pci0000:00/80860F14:00/by-name/android_persistent   0660 system system
 ##############################################################
-# Source: device/intel/mixins/groups/thermal/ituxd/ueventd.rc
+# Source: device/intel/mixins/groups/thermal/itux/ueventd.rc
 ##############################################################
-# thermal daemon runs as system user and it depends on these nodes
+# itux runs as system user and it depends on these nodes
 /sys/devices/virtual/thermal/cooling_device*    cur_state            0644 system system
 /sys/devices/virtual/thermal/thermal_zone*      trip_point_0_temp    0644 system system
 /sys/devices/virtual/thermal/thermal_zone*      trip_point_1_temp    0644 system system
+/sys/devices/virtual/thermal/thermal_zone*      policy		     0644 system system
 /dev/acpi_thermal_rel                                                0600 system system
 ##############################################################
 # Source: device/intel/mixins/groups/gps/cg2k/ueventd.rc

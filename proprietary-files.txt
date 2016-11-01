@@ -367,11 +367,11 @@ etc/permissions/com.intel.security.service.sepmanager.xml
 lib/libihamanagerjni.so
 lib/libsecurityclient.so
 
-# ituxd
+# itux
 etc/thermal_sensor_config.xml
 etc/thermal_throttle_config.xml
-lib/libthermalJNI.so
--priv-app/ituxd/ituxd.apk
+-priv-app/itux/itux.apk
+vendor/lib/libthermalJNI.so
 
 # Media isv
 etc/video_isv_profile.xml
