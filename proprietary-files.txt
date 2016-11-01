@@ -367,6 +367,7 @@ lib/libthermalJNI.so
 
 # Media isv
 etc/video_isv_profile.xml
+lib/libisv.so
 lib/libisv_omx_core.so
 
 # Media SDK
@@ -377,7 +378,6 @@ lib/libmfx_omx_components_sw.so
 lib/libmfx_omx_core.so
 lib/libmfxhw32.so
 lib/libmfxsw32.so
-lib/libstlport-mfx.so
 
 # OMX
 lib/libmdp_omx_core.so
@@ -385,27 +385,25 @@ lib/libstagefrighthw.so
 lib/libstagefright_hdcp.so
 lib/libstagefright_soft_aacdec_mdp.so
 lib/libstagefright_soft_aacenc_mdp.so
-lib/libstagefright_soft_alacdec.so
 lib/libstagefright_soft_amrdec_mdp.so
 lib/libstagefright_soft_amrenc_mdp.so
 lib/libstagefright_soft_mp3dec_mdp.so
 lib/libstagefright_soft_vorbisdec_mdp.so
-lib/libstagefright_soft_wmadec_mdp.so
 
 # OMX IL
 etc/wrs_omxil_components.list
-lib/libintelmetadatabuffer.so
 lib/libmixvbp.so
 lib/libmixvbp_mpeg4.so
-lib/libOMXVideoDecoderH263.so
-lib/libOMXVideoDecoderMPEG4.so
-lib/libOMXVideoEncoderH263.so
-lib/libOMXVideoEncoderMPEG4.so
 lib/libva-tpi.so
-lib/libva_videodecoder.so
-lib/libva_videoencoder.so
 lib/libwrs_omxil_common.so
 lib/libwrs_omxil_core_pvwrapped.so
+vendor/lib/libintelmetadatabuffer.so
+vendor/lib/libOMXVideoDecoderH263.so
+vendor/lib/libOMXVideoDecoderMPEG4.so
+vendor/lib/libOMXVideoEncoderH263.so
+vendor/lib/libOMXVideoEncoderMPEG4.so
+vendor/lib/libva_videodecoder.so
+vendor/lib/libva_videoencoder.so
 
 # Power
 bin/bcu_cpufreqrel
