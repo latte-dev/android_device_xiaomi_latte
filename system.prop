@@ -9,6 +9,3 @@ ro.opengles.version=196609
 
 # DRM
 drm.service.enabled=true
-
-# Storage
-persist.sys.isUsbOtgEnabled=true
