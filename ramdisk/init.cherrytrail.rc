@@ -732,12 +732,9 @@ service fg_algo_iface /system/vendor/bin/fg_algo_iface
 ##############################################################
 # Source: device/intel/mixins/groups/intel_prop/true/init.rc
 ##############################################################
-on boot
-    start intel_prop
-
-service intel_prop /sbin/intel_prop
+service intel_prop /system/vendor/bin/intel_prop
+    class core
     oneshot
-    seclabel u:r:intel_prop:s0
 ##############################################################
 # Source: device/intel/mixins/groups/debug-kernel/default/init.rc
 ##############################################################

@@ -353,6 +353,10 @@ lib/arm/libwilhelm.so
 lib/arm/libz.so
 lib/arm/linker
 
+# Intel prop
+vendor/bin/intel_prop
+vendor/etc/intel_prop.cfg
+
 # Intel security service
 etc/permissions/com.intel.security.service.sepmanager.xml
 -framework/com.intel.security.service.sepmanager.jar
