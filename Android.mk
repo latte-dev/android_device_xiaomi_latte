@@ -26,4 +26,12 @@ $(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr/include)
 $(shell mkdir -p $(TARGET_OUT)/app/Bluetooth/lib/x86; \
     ln -sf /system/lib/libbluetooth_jni.so \
     $(TARGET_OUT)/app/Bluetooth/lib/x86/libbluetooth_jni.so)
+
+# Houdini
+$(shell ln -sf /vendor/bin/houdini \
+    $(TARGET_OUT)/bin/houdini; \
+    ln -sf /vendor/lib/arm \
+    $(TARGET_OUT)/lib/arm; \
+    ln -sf /vendor/lib/libhoudini.so \
+    $(TARGET_OUT)/lib/libhoudini.so)
 endif
