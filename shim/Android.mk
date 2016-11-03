@@ -16,7 +16,8 @@ LOCAL_SRC_FILES := \
     gui/SensorManager.cpp \
     ui/GraphicBufferAllocator.cpp \
     ui/GraphicBuffer.cpp \
-    ui/GraphicBufferMapper.cpp
+    ui/GraphicBufferMapper.cpp \
+    shim_fence.cpp
 
 LOCAL_SHARED_LIBRARIES := liblog libcutils libhardware libui libgui libbinder libutils libsync
 LOCAL_MODULE := libshim_camera
