@@ -108,6 +108,7 @@ lib/libia_nvm.so
 lib/libimf.so
 lib/libintlc.so
 lib/libirng.so
+lib/libstlport-mfx.so
 lib/libsvml.so
 lib/libva.so
 lib/libva-android.so
