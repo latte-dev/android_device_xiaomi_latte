@@ -71,10 +71,6 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 PRODUCT_PACKAGES += \
     lights.gmin
 
-# Media utils
-PRODUCT_PACKAGES += \
-    libI420colorconvert
-
 # Thermal daemon
 PRODUCT_PACKAGES += \
     thermal-daemon

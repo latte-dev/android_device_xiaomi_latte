@@ -392,6 +392,9 @@ lib/libmfx_omx_core.so
 lib/libmfxhw32.so
 lib/libmfxsw32.so
 
+# Media utils
+vendor/lib/libI420colorconvert.so
+
 # OMX
 lib/libmdp_omx_core.so
 lib/libstagefrighthw.so
