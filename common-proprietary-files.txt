@@ -359,6 +359,8 @@ lib/libihamanagerjni.so
 lib/libsecurityclient.so
 
 # ituxd
+etc/thermal_sensor_config.xml
+etc/thermal_throttle_config.xml
 lib/libthermalJNI.so
 -priv-app/ituxd/ituxd.apk
 
@@ -406,8 +408,6 @@ lib/libwrs_omxil_core_pvwrapped.so
 
 # Power
 bin/bcu_cpufreqrel
-etc/thermal_sensor_config.xml
-etc/thermal_throttle_config.xml
 vendor/bin/power_hal_helper
 vendor/lib/hw/power.gmin.so
 
