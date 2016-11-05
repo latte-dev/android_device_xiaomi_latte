@@ -42,6 +42,7 @@ BOARD_HAVE_BLUETOOTH_RTK := true
 BLUETOOTH_HCI_USE_RTK_H5 := true
 
 # Charger
+BOARD_CHARGER_SHOW_PERCENTAGE := true
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.intel
 
 # Graphics
