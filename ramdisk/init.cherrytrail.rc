@@ -430,6 +430,25 @@ on post-fs-data
     chown system system /sys/class/android_usb/android0/f_rndis/ethaddr
     chmod 0660 /sys/class/android_usb/android0/f_rndis/ethaddr
 ##############################################################
+# Source: device/intel/mixins/groups/midi/true/init.rc
+##############################################################
+on property:sys.usb.config=midi
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 8087
+    write /sys/class/android_usb/android0/idProduct 0a67
+    write /sys/class/android_usb/android0/functions ${sys.usb.config}
+    write /sys/class/android_usb/android0/enable 1
+    setprop sys.usb.state ${sys.usb.config}
+
+on property:sys.usb.config=midi,adb
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 8087
+    write /sys/class/android_usb/android0/idProduct 0a65
+    write /sys/class/android_usb/android0/functions ${sys.usb.config}
+    write /sys/class/android_usb/android0/enable 1
+    start adbd
+    setprop sys.usb.state ${sys.usb.config}
+##############################################################
 # Source: device/intel/mixins/groups/touch/atmel1000/init.rc
 ##############################################################
 on post-fs
