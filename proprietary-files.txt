@@ -433,15 +433,6 @@ lib/libcontextarbitor.so
 lib/libgesture.so
 lib/libsensorhub.so
 
-# Silent lake
-bin/sl_si_service
-lib/libproxyta.so
-lib/libsgx_urts.so
-lib/libsl.so
-lib/libsl_pm_interface.so
-lib/libusl.so
-vendor/intel/silent_lake/UUID.db
-
 # Widevine
 lib/liboemcrypto.so
 lib/libsecmem.so

@@ -685,28 +685,6 @@ service bcu_cpufreqrel /system/bin/bcu_cpufreqrel
     oneshot
     disabled
 ##############################################################
-# Source: device/intel/mixins/groups/silentlake/true/init.rc
-##############################################################
-on boot
-    #Insert silentlake vidt
-    insmod /system/lib/modules/vidt_driver.ko
-
-on post-fs-data
-    #setup silentlake vidt and start service
-    chown system system /dev/vidt
-    chmod 0660 /dev/vidt
-    mkdir /data/silent_lake
-    chown system system /data/silent_lake
-    chmod 0777 /data/silent_lake
-    start sl_si_service
-
-service sl_si_service /system/bin/sl_si_service d=1
-    user system
-    group system
-    socket silentlake stream 666 system system
-    disabled
-    oneshot
-##############################################################
 # Source: device/intel/mixins/groups/sensor-hubs/ish/init.rc
 ##############################################################
 service sensorhubd /system/bin/sensorhubd
