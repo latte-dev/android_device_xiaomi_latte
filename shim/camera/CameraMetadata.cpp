@@ -20,7 +20,7 @@
 #include <utils/Log.h>
 #include <utils/Errors.h>
 
-#include <camera/CameraMetadata.h>
+#include "camera/CameraMetadata.h"
 #include <binder/Parcel.h>
 
 namespace android {

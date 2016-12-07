@@ -13,13 +13,17 @@ include $(BUILD_SHARED_LIBRARY)
 # Camera
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := \
+    camera/CameraMetadata.cpp \
     gui/SensorManager.cpp \
     ui/GraphicBufferAllocator.cpp \
     ui/GraphicBuffer.cpp \
     ui/GraphicBufferMapper.cpp \
     shim_fence.cpp
 
-LOCAL_SHARED_LIBRARIES := liblog libcutils libhardware libui libgui libbinder libutils libsync
+LOCAL_C_INCLUDES += \
+    system/media/camera/include
+
+LOCAL_SHARED_LIBRARIES := liblog libcutils libhardware libui libgui libbinder libutils libsync libcamera_metadata
 LOCAL_MODULE := libshim_camera
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 include $(BUILD_SHARED_LIBRARY)
