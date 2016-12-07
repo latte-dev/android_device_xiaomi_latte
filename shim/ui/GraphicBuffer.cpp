@@ -18,6 +18,7 @@
 
 #include <stdlib.h>
 #include <stdint.h>
+#include <string>
 #include <sys/types.h>
 
 #include <utils/Errors.h>
@@ -53,7 +54,7 @@ GraphicBuffer::GraphicBuffer()
     handle = NULL;
 }
 
-GraphicBuffer::GraphicBuffer(uint32_t w, uint32_t h,
+/*GraphicBuffer::GraphicBuffer(uint32_t w, uint32_t h,
         PixelFormat reqFormat, uint32_t reqUsage)
     : BASE(), mOwner(ownData), mBufferMapper(GraphicBufferMapper::get()),
       mInitCheck(NO_ERROR), mId(getUniqueId())
@@ -65,7 +66,7 @@ GraphicBuffer::GraphicBuffer(uint32_t w, uint32_t h,
     usage  = 0;
     handle = NULL;
     mInitCheck = initSize(w, h, reqFormat, reqUsage);
-}
+}*/
 
 #ifdef QCOM_BSP_LEGACY
 GraphicBuffer::GraphicBuffer(uint32_t w, uint32_t h,
@@ -410,6 +411,17 @@ status_t GraphicBuffer::unflatten(
     count -= numFds;
 
     return NO_ERROR;
+}
+
+extern "C" void _ZN7android13GraphicBufferC1EjjijNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE(
+    uint32_t inWidth, uint32_t inHeight, int inFormat, uint32_t inUsage,
+    std::string requestorName);
+
+extern "C" void _ZN7android13GraphicBufferC1Ejjij(
+    uint32_t inWidth, uint32_t inHeight, int inFormat, uint32_t inUsage) {
+  std::string requestorName = "<Unknown>";
+  _ZN7android13GraphicBufferC1EjjijNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE(
+      inWidth, inHeight, inFormat, inUsage, requestorName);
 }
 
 // ---------------------------------------------------------------------------
