@@ -56,7 +56,7 @@ class CameraMetadata {
      * thread-safety, it simply prevents the camera_metadata_t pointer returned
      * here from being accidentally invalidated by CameraMetadata operations.
      */
-    const camera_metadata_t* getAndLock() const;
+    const camera_metadata_t* getAndLock();
 
     /**
      * Unlock the CameraMetadata for use again. After this unlock, the pointer
