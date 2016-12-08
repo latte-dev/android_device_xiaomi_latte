@@ -42,11 +42,9 @@ include $(BUILD_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
-    ui/GraphicBufferAllocator.cpp \
-    ui/GraphicBuffer.cpp \
-    ui/GraphicBufferMapper.cpp 
+    graphicbuffer.cpp
 
-LOCAL_SHARED_LIBRARIES := liblog libcutils libhardware libui libgui libbinder libutils libsync
+LOCAL_SHARED_LIBRARIES := libui
 LOCAL_MODULE := libshim_hwc
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 
