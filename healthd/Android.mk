@@ -6,6 +6,6 @@ LOCAL_MODULE := libhealthd.intel
 LOCAL_C_INCLUDES := \
     system/core/healthd \
     bootable/recovery
-#LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_TAGS := optional
 include $(BUILD_STATIC_LIBRARY)
 

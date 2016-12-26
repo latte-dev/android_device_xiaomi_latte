@@ -16,7 +16,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter chuwi_vi10plus cube_iwork8ultimate,$(TARGET_DEVICE)),)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 # Hack for prebuilt kernel
@@ -36,4 +35,3 @@ $(shell mkdir -p $(TARGET_OUT)/bin; \
     $(TARGET_OUT)/lib/arm; \
     ln -sf /vendor/lib/libhoudini.so \
     $(TARGET_OUT)/lib/libhoudini.so)
-endif
