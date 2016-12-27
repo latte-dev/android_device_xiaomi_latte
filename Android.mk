@@ -27,11 +27,3 @@ $(shell mkdir -p $(TARGET_OUT)/app/Bluetooth/lib/x86; \
     $(TARGET_OUT)/app/Bluetooth/lib/x86/libbluetooth_jni.so)
 
 # Houdini
-$(shell mkdir -p $(TARGET_OUT)/bin; \
-    mkdir -p $(TARGET_OUT)/lib; \
-    ln -sf /vendor/bin/houdini \
-    $(TARGET_OUT)/bin/houdini; \
-    ln -sf /vendor/lib/arm \
-    $(TARGET_OUT)/lib/arm; \
-    ln -sf /vendor/lib/libhoudini.so \
-    $(TARGET_OUT)/lib/libhoudini.so)
