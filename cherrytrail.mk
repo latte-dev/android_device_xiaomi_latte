@@ -79,6 +79,10 @@ PRODUCT_PACKAGES += \
 ADDITIONAL_DEFAULT_PROPERTIES += \
     wifi.interface=wlan0
 
+# Modules location
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.modules.location=/system/lib/modules
+
 # Ramdisk
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,device/intel/cherrytrail-common/ramdisk,root)
