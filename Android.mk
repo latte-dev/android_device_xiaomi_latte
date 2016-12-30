@@ -21,9 +21,3 @@ include $(call all-makefiles-under,$(LOCAL_PATH))
 # Hack for prebuilt kernel
 $(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr/include)
 
-# Hack for prebuilt bluetooth
-$(shell mkdir -p $(TARGET_OUT)/app/Bluetooth/lib/x86; \
-    ln -sf /system/lib/libbluetooth_jni.so \
-    $(TARGET_OUT)/app/Bluetooth/lib/x86/libbluetooth_jni.so)
-
-# Houdini
