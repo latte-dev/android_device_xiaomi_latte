@@ -21,7 +21,7 @@ TARGET_NO_BOOTLOADER := true
 
 TARGET_BOARD_PLATFORM := gmin
 TARGET_BOARD_PLATFORM_GPU := intel_gen8
-TARGET_BOOTLOADER_BOARD_NAME := cherrytrail
+TARGET_BOOTLOADER_BOARD_NAME := latte
 
 TARGET_ARCH := x86
 TARGET_ARCH_VARIANT := silvermont
@@ -30,7 +30,7 @@ TARGET_CPU_ABI_LIST := x86,armeabi-v7a,armeabi
 TARGET_CPU_ABI_LIST_32_BIT := x86,armeabi-v7a,armeabi
 
 # Kernel
-BOARD_KERNEL_CMDLINE := loglevel=5 androidboot.hardware=cherrytrail firmware_class.path=/system/etc/firmware i915.fastboot=1 vga=current i915.modeset=1 drm.vblankoffdelay=1 console=ttyS0,115200n8 bootboost=1 pm_suspend_debug=1 pstore.backend=ramoops
+BOARD_KERNEL_CMDLINE := loglevel=7 androidboot.hardware=latte firmware_class.path=/system/etc/firmware i915.fastboot=1 vga=current i915.modeset=1 drm.vblankoffdelay=1 bootboost=1 pm_suspend_debug=1 pstore.backend=ramoops
 
 # Binder
 TARGET_USES_64_BIT_BINDER := true
@@ -38,8 +38,7 @@ TARGET_USES_64_BIT_BINDER := true
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_RTK := true
-BLUETOOTH_HCI_USE_RTK_H5 := true
+BOARD_HAVE_BLUETOOTH_BCM := true
 
 # Charger
 BOARD_CHARGER_SHOW_PERCENTAGE := true
@@ -142,9 +141,13 @@ BOARD_SEPOLICY_UNION += \
     wpa.te
 
 # Wifi
-BOARD_HOSTAPD_DRIVER := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_rtl
-BOARD_WLAN_DEVICE := rtl
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+BOARD_HOSTAPD_PRIVATE_LIB      := lib_driver_cmd_bcmdhd
+BOARD_HOSTAPD_DRIVER           := NL80211
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_rtl
-WPA_SUPPLICANT_VERSION := VER_2_1_DEVEL
+BOARD_WLAN_DEVICE := bcmdhd
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/bcmdhd_pcie/parameters/firmware_path"
+WIFI_DRIVER_FW_PATH_STA := "/vendor/firmware/brcm/fw_bcmdhd_4356a2_pcie.bin"
+WIFI_DRIVER_FW_PATH_AP := "/vendor/firmware/brcm/fw_bcmdhd_4356a2_pcie_apsta.bin"
+WIFI_DRIVER_FW_PATH_P2P := "/vendor/firmware/brcm/fw_bcmdhd_4356a2_pcie.bin"

@@ -77,10 +77,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     thermal-daemon
 
-PRODUCT_COPY_FILES += \
-    external/thermal_daemon/data/thermal-conf.xml:system/etc/thermal-daemon/thermal-conf.xml \
-    external/thermal_daemon/data/thermal-cpu-cdev-order.xml:system/etc/thermal-daemon/thermal-cpu-cdev-order.xml
-
 # Wifi
 PRODUCT_PACKAGES += \
     hostapd \
@@ -92,10 +88,6 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 # Ramdisk
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,device/intel/cherrytrail-common/ramdisk,root)
-
-# Prebuilt
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/intel/cherrytrail-common/prebuilt/system,system)
 
 # Media codecs
 PRODUCT_COPY_FILES += \
