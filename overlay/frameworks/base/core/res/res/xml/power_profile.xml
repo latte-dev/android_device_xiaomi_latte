@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <device name="Android">
-    <item name="none">50</item>
-    <item name="screen.on">2300</item>
-    <item name="bluetooth.active">70</item>
-    <item name="bluetooth.on">60</item>
-    <item name="screen.full">322</item>
-    <item name="wifi.on">120</item>
-    <item name="wifi.active">145</item>
-    <item name="wifi.scan">155</item>
-    <item name="dsp.audio">268</item>
-    <item name="dsp.video">3072</item>
+    <item name="none">70</item>
+    <item name="screen.on">200</item>
+    <item name="screen.full">500</item>
+    <item name="bluetooth.active">10</item>
+    <item name="bluetooth.on">10</item>
+    <item name="wifi.on">30</item>
+    <item name="wifi.active">100</item>
+    <item name="wifi.scan">30</item>
+    <item name="dsp.audio">50</item>
+    <item name="dsp.video">200</item>
+    <item name="gps.on">10</item>
     <item name="radio.active">0</item>
     <item name="radio.scanning">0</item>
-    <item name="gps.on">1000</item>
     <array name="radio.on">
         <value>0</value>
         <value>0</value>
@@ -36,28 +36,37 @@
         <value>1680000</value>
         <value>1760000</value>
         <value>1840000</value>
+        <value>1920000</value>
+        <value>2000000</value>
+        <value>2080000</value>
+        <value>2160000</value>
+        <value>2240000</value>
     </array>
-    <item name="cpu.idle">26.5</item>
-    <item name="cpu.awake">35</item>
+    <item name="cpu.idle">13</item>
     <array name="cpu.active">
-        <value>484</value>
-        <value>484</value>
-        <value>484</value>
-        <value>484</value>
-        <value>484</value>
-        <value>484</value>
-        <value>692</value>
-        <value>692</value>
-        <value>692</value>
-        <value>692</value>
-        <value>838</value>
-        <value>838</value>
-        <value>838</value>
-        <value>838</value>
-        <value>1021</value>
-        <value>1021</value>
-        <value>1021</value>
-        <value>1021</value>
+        <value>400</value>
+        <value>400</value>
+        <value>400</value>
+        <value>400</value>
+        <value>600</value>
+        <value>600</value>
+        <value>600</value>
+        <value>600</value>
+        <value>800</value>
+        <value>800</value>
+        <value>800</value>
+        <value>800</value>
+        <value>800</value>
+        <value>1000</value>
+        <value>1000</value>
+        <value>1000</value>
+        <value>1000</value>
+        <value>1000</value>
+        <value>1000</value>
+        <value>1000</value>
+        <value>1000</value>
+        <value>1000</value>
+        <value>1000</value>
     </array>
-    <item name="battery.capacity">6500</item>
+    <item name="battery.capacity">6020</item>
 </device>
