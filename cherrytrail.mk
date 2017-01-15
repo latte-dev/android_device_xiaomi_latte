@@ -67,9 +67,6 @@ ADDITIONAL_BUILD_PROPERTIES += \
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.dalvik.vm.native.bridge=libhoudini.so
 
-# Lights
-PRODUCT_PACKAGES += \
-    lights.gmin
 
 # Wifi
 PRODUCT_PACKAGES += \
