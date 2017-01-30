@@ -1,0 +1,3 @@
+add_lunch_combo cm_latte-userdebug
+add_lunch_combo cm_latte-eng
+add_lunch_combo cm_latte-user

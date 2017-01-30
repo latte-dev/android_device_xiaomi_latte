@@ -14,13 +14,14 @@
 # limitations under the License.
 #
 
-DEVICE_PACKAGE_OVERLAYS += device/intel/cherrytrail-common/overlay
+DEVICE_PACKAGE_OVERLAYS += device/xiaomi/latte/overlay
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-$(call inherit-product-if-exists, vendor/intel/cherrytrail-common/cherrytrail-common-vendor.mk)
+$(call inherit-product, vendor/xiaomi/latte/latte-vendor.mk)
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_CHARACTERISTICS := tablet
+PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -82,7 +83,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/intel/cherrytrail-common/ramdisk,root)
+    $(call find-copy-subdir-files,*,device/xiaomi/latte/ramdisk,root)
 
 # Media codecs
 PRODUCT_COPY_FILES += \
