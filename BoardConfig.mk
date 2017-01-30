@@ -1,3 +1,4 @@
+
 #
 # Copyright (C) 2016 The CyanogenMod Project
 #
@@ -14,7 +15,7 @@
 # limitations under the License.
 #
 
-COMMON_PATH := device/intel/cherrytrail-common
+COMMON_PATH := device/xiaomi/latte
 
 # Platform
 TARGET_NO_BOOTLOADER := true
@@ -73,11 +74,11 @@ COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 # SELinux
 BOARD_SEPOLICY_DIRS += \
     device/intel/sepolicy \
-    device/intel/cherrytrail-common/sepolicy \
-    device/intel/cherrytrail-common/sepolicy/dollar_cove \
-    device/intel/cherrytrail-common/sepolicy/intel_prop \
-    device/intel/cherrytrail-common/sepolicy/sensorhub \
-    device/intel/cherrytrail-common/sepolicy/telephony
+    device/xiaomi/latte/sepolicy \
+    device/xiaomi/latte/sepolicy/dollar_cove \
+    device/xiaomi/latte/sepolicy/intel_prop \
+    device/xiaomi/latte/sepolicy/sensorhub \
+    device/xiaomi/latte/sepolicy/telephony
 
 BOARD_SEPOLICY_UNION += \
     adbd.te \
@@ -140,6 +141,24 @@ BOARD_SEPOLICY_UNION += \
     wlan_prov.te \
     wpa.te
 
+
+# OpenMAX Interaction Layer Implementation for Intel VA API
+#BOARD_USES_MRST_OMX := true
+#BOARD_USES_WRS_OMXIL_CORE := true
+#TARGET_HAS_ISV := false
+
+# Video Acceleration API for Video Encoding and Decoding
+#INTEL_VA := true
+#BOARD_USE_LIBVA := true
+#BOARD_USE_LIBVA_INTEL_DRIVER := true
+#USE_INTEL_SECURE_AVC := true
+#BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 1
+
+# Intel Moorestown Mix Library
+#BOARD_USE_LIBMIX := true
+#ENABLE_IMG_GRAPHICS = true
+
+
 # Wifi
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_HOSTAPD_PRIVATE_LIB      := lib_driver_cmd_bcmdhd
@@ -151,3 +170,20 @@ WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/bcmdhd_pcie/parameters/firmware_path"
 WIFI_DRIVER_FW_PATH_STA := "/vendor/firmware/brcm/fw_bcmdhd_4356a2_pcie.bin"
 WIFI_DRIVER_FW_PATH_AP := "/vendor/firmware/brcm/fw_bcmdhd_4356a2_pcie_apsta.bin"
 WIFI_DRIVER_FW_PATH_P2P := "/vendor/firmware/brcm/fw_bcmdhd_4356a2_pcie.bin"
+
+DEVICE_PATH := device/xiaomi/latte
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := latte
+
+# Partition sizes
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 27783069696
+
+# Kernel
+BOARD_KERNEL_IMAGE_NAME := bzImage
+KERNEL_TOOLCHAIN := /opt/poky/1.8/sysroots/x86_64-pokysdk-linux/usr/bin/x86_64-poky-linux
+TARGET_KERNEL_ARCH := x86_64
+TARGET_KERNEL_CONFIG := xiaomi_latte_defconfig
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := x86_64-poky-linux-
+TARGET_KERNEL_SOURCE := kernel/xiaomi/latte
+

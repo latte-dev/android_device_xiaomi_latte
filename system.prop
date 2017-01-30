@@ -2,9 +2,17 @@
 sys.powerctl.no.shutdown=1
 
 # Display
-ro.hwui.texture_cache_size=24.0f
+ro.hwui.texture_cache_size=72
+ro.hwui.layer_cache_size=48
+ro.hwui.r_buffer_cache_size=34
+ro.hwui.path_cache_size=40
+ro.hwui.gradient_cache_size=1
+ro.hwui.drop_shadow_cache_size=6
+ro.hwui.texture_cache_flushrate=0.4
+ro.hwui.text_small_cache_width=1024
+ro.hwui.text_small_cache_height=1024
 ro.hwui.text_large_cache_width=2048
-ro.hwui.text_large_cache_height=512
+ro.hwui.text_large_cache_height=2048
 ro.opengles.version=196609
 
 # DRM
@@ -13,3 +21,18 @@ drm.service.enabled=true
 # Storage
 persist.sys.isUsbOtgEnabled=true
 persist.sys.usb.config=mtp,adb
+
+# Display
+ro.sf.lcd_density=320
+
+# Scheduler
+sys.io.scheduler=bfq
+
+#BT
+ro.btconfig.if=uart
+ro.btconfig.dev=/dev/ttyHSU0
+ro.btconfig.vendor=broadcom
+ro.btconfig.chip=BCM4356
+
+#Wi-Fi
+ro.wlan.mimo=1

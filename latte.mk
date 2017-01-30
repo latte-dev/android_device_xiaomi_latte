@@ -14,10 +14,10 @@
 # limitations under the License.
 #
 
-DEVICE_PACKAGE_OVERLAYS += device/intel/cherrytrail-common/overlay
+DEVICE_PACKAGE_OVERLAYS += device/xiaomi/latte/overlay
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-$(call inherit-product-if-exists, vendor/intel/cherrytrail-common/cherrytrail-common-vendor.mk)
+$(call inherit-product, vendor/xiaomi/latte/latte-vendor.mk)
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_CHARACTERISTICS := tablet
@@ -34,9 +34,9 @@ PRODUCT_PACKAGES += \
 
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapstartsize=8m \
-    dalvik.vm.heapgrowthlimit=100m \
-    dalvik.vm.heapsize=174m \
+    dalvik.vm.heapstartsize=16m \
+    dalvik.vm.heapgrowthlimit=200m \
+    dalvik.vm.heapsize=348m \
     dalvik.vm.heaptargetutilization=0.75 \
     dalvik.vm.heapminfree=512k \
     dalvik.vm.heapmaxfree=8m
@@ -87,7 +87,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/intel/cherrytrail-common/ramdisk,root)
+    $(call find-copy-subdir-files,*,device/xiaomi/latte/ramdisk,root)
 
 # Media codecs
 PRODUCT_COPY_FILES += \
@@ -114,3 +114,39 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
+
+
+# Video Acceleration API for Video Encoding and Decoding
+#PRODUCT_PACKAGES += \
+	libva \
+	libva-android \
+	libva-tpi \
+	libva_videoencoder \
+	libva_videodecoder
+
+
+# OpenMAX Video Encoders/Decoders
+#PRODUCT_PACKAGES += \
+	libOMXVideoDecoderAVC \
+	libOMXVideoDecoderAVCSecure \
+	libOMXVideoDecoderH263 \
+	libOMXVideoDecoderMPEG4 \
+	libOMXVideoDecoderWMV \
+	libOMXVideoEncoderAVC \
+	libOMXVideoEncoderH263 \
+	libOMXVideoEncoderMPEG4
+
+# OpenMAX Interaction Layer Implementation for Intel VA API
+#PRODUCT_PACKAGES += \
+	wrs_omxil_core \
+	libwrs_omxil_core \
+	libwrs_omxil_core_pvwrapped
+
+# StageFright Hardware Decoding
+#PRODUCT_PACKAGES += \
+	libstagefrighthw
+
+# Modules location
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.modules.location=/system/lib/modules
+
