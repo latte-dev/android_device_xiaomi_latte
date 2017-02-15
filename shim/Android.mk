@@ -45,7 +45,7 @@ LOCAL_SRC_FILES := \
     graphicbuffer.cpp
 
 LOCAL_SHARED_LIBRARIES := libui
-LOCAL_MODULE := libshim_hwc
+LOCAL_MODULE := libgbf
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 
 include $(BUILD_SHARED_LIBRARY)

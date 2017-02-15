@@ -51,7 +51,7 @@ PRODUCT_PACKAGES += \
     libshim_audio \
     libshim_camera \
     libshim_sensors \
-    libshim_hwc \
+    libgbf \
     libstlport
 
 # Lights

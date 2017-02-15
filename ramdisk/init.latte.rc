@@ -826,14 +826,6 @@ service smeloop /system/bin/smeloop
     group root
     oneshot
 
-service surfaceflinger /system/bin/surfaceflinger
-    class core
-    user system
-    group graphics drmrpc readproc
-    onrestart restart zygote
-    writepid /dev/stune/foreground/tasks
-    setenv LD_SHIM_LIBS "/system/libbinder.so|libshim_hwc.so:/system/lib/hw/hwcomposer.gmin.so|libshim_hwc.so"
-
 on init
-    export LD_SHIM_LIBS /system/lib/libparameter.so|libshim_audio.so:/system/lib/libpower-subsystem.so|libshim_audio.so:/system/lib/libremoteparameter-subsystem.so|libshim_audio.so:/system/lib/libtinyalsa_custom-subsystem.so|libshim_audio.so:/system/lib/hw/camera.gmin.so|libshim_camera.so:/system/lib/hw/sensors.gmin.so|libshim_sensors.so:/system/lib/hw/hwcomposer.gmin.so|libshim_hwc.so
+    export LD_SHIM_LIBS /system/lib/libparameter.so|libshim_audio.so:/system/lib/libpower-subsystem.so|libshim_audio.so:/system/lib/libremoteparameter-subsystem.so|libshim_audio.so:/system/lib/libtinyalsa_custom-subsystem.so|libshim_audio.so:/system/lib/hw/camera.gmin.so|libshim_camera.so:/system/lib/hw/sensors.gmin.so|libshim_sensors.so
 
