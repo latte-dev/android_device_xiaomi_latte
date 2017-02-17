@@ -10,19 +10,19 @@
 
 /dev/block/by-name/android_system       /system         ext4    ro                                                           wait
 /dev/block/by-name/android_cache        /cache          ext4    noatime,nosuid,nodev,errors=panic                            wait,check
-/dev/block/by-name/android_data         /data           ext4    noatime,nosuid,nodev,discard,noauto_da_alloc,errors=panic    wait,check,formattable,encryptable=/dev/block/by-name/android_metadata
+/dev/block/by-name/android_data         /data           ext4    noatime,nosuid,nodev,discard,noauto_da_alloc,errors=panic    wait,check,encryptable=/dev/block/by-name/android_metadata,reservedsize=128M
 /dev/block/by-name/android_boot         /boot           emmc    defaults                                                     defaults
 /dev/block/by-name/android_recovery     /recovery       emmc    defaults                                                     defaults
 /dev/block/by-name/android_misc         /misc           emmc    defaults                                                     defaults
 /dev/block/by-name/android_bootloader   /bootloader     emmc    defaults                                                     recoveryonly
 /dev/block/by-name/android_bootloader2  /bootloader2    emmc    defaults                                                     recoveryonly
-/dev/block/by-name/android_persistent   /persistent     emmc    defaults                                                     defaults
+/dev/block/by-name/android_persistent   /persist        ext4    noatime,nosuid,nodev,errors=panic          wait,check
 /dev/block/by-name/android_metadata     /metadata       emmc    defaults                                                     defaults
 
 ##############################################################
 # Source: device/intel/mixins/groups/config-partition/enabled/fstab
 ##############################################################
-/dev/block/by-name/android_config       /config         ext4    noatime,nosuid,nodev,errors=panic          wait,check
+/dev/block/by-name/android_config       /config         ext4    noatime,nosuid,nodev,errors=panic         wait,check
 ##############################################################
 # Source: device/intel/mixins/groups/storage/sdcard-mmcblk1-4xUSB-sda-emulated/fstab
 ##############################################################
@@ -30,12 +30,16 @@
 */block/sdb*                            auto             vfat    defaults                                   voldmanaged=usbdisk2:auto
 */block/sdc*                            auto             vfat    defaults                                   voldmanaged=usbdisk3:auto
 */block/sdd*                            auto             vfat    defaults                                   voldmanaged=usbdisk4:auto
-*/block/mmcblk1*                        auto             vfat    defaults                                   voldmanaged=sdcard1:auto,encryptable=userdata
+*/block/mmcblk1*                        auto             vfat    defaults                                   voldmanaged=sdcard1:auto
 /dev/block/mmcblk1p1                    /sdcard          vfat    defaults                                   recoveryonly
 
 ##############################################################
-# Source: device/intel/mixins/groups/swap/zram/fstab
+# Source: device/intel/mixins/groups/factory-partition/enabled/fstab
 ##############################################################
-/dev/block/zram0                        none             swap    defaults                                   zramsize=268435456
-
+/dev/block/by-name/android_factory      /factory        ext4    rw                                         wait
 # ------------------ END MIX-IN DEFINITIONS ------------------
+
+##############################################################
+# zramo swap file system
+##############################################################
+/dev/block/zram0                        none              swap    defaults                                            zramsize=536870912
