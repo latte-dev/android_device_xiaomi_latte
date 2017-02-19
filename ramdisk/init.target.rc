@@ -1,0 +1,8 @@
+on post-fs-data
+    # ambient light sensor
+    chmod 0777 /sys/bus/i2c/devices/i2c-2/2-0048/enable
+    chmod 0777 /sys/bus/i2c/devices/i2c-2/2-0048/delay
+
+    # accelerometer
+    chmod 0777 /sys/bus/i2c/devices/2-0018/enable
+    chmod 0777 /sys/bus/i2c/devices/2-0018/delay
