@@ -22,7 +22,7 @@ on charger
     #Set boot_min_cap for boot to android
     setprop ro.boot.min.cap 3
     #Set backlight to 50, default value is 1
-    write /sys/class/backlight/intel_backlight/brightness 50
+    write /sys/class/backlight/intel_backlight/brightness 30
     write /sys/devices/pci0000:00/0000:00:1a.0/power/control auto
 on init
     symlink /fstab /fstab.latte
