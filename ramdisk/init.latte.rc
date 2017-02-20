@@ -72,7 +72,7 @@ on post-fs
     chown system system /persist/LightSensorData.txt
     chmod 600 /persist/LightSensorData.txt
 
-service pstore-clean /system/bin/pstore-clean
+service pstore-clean /system/vendor/bin/pstore-clean
     user root
     group system
     class late_start
