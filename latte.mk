@@ -84,6 +84,19 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.modules.location=/system/lib/modules
 
+#Dirac
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    persist.audio.dirac.speaker=true
+
+#Else
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.sf.lcd_density=320 \
+    persist.intel.ogl.username=Developer \
+    persist.intel.ogl.debug=/data/ufo.prop \
+    persist.intel.ogl.dumpdebugvars=1 \
+    persist.ims_support=0 \
+    config.disable_cellcoex=true
+
 # Ramdisk
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,device/xiaomi/latte/ramdisk,root)
