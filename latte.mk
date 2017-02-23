@@ -43,6 +43,10 @@ PRODUCT_PACKAGES += \
     libshim_sensors \
     libstlport
 
+# Lights
+PRODUCT_PACKAGES += \
+    lights.gmin
+
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=8m \
