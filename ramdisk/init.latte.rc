@@ -198,17 +198,6 @@ on init
 symlink /sdcard /mnt/sdcard
 symlink /sdcard /storage/sdcard0
 ##############################################################
-# Source: device/intel/mixins/groups/ethernet/dhcp/init.rc
-##############################################################
-service dhcpcd_eth0 /system/bin/dhcpcd -ABDKL eth0
-    class main
-    disabled
-    oneshot
-
-on post-fs
-    start dhcpcd_eth0
-
-##############################################################
 # Source: device/intel/mixins/groups/camera/isp3/init.rc
 ##############################################################
 # The atomisp driver is sensitive to initialization order (it must be
@@ -260,17 +249,6 @@ service rfkill_bt /system/bin/sh /rfkill_bt.sh
     user root
     oneshot
 
-service dhcpcd_bt-pan /system/bin/logwrapper /system/bin/dhcpcd -ABKL
-    class main
-    group bluetooth wifi system dhcp
-    disabled
-    oneshot
-
-service iprenew_bt-pan /system/bin/logwrapper /system/bin/dhcpcd -n
-    group bluetooth system dhcp
-    disabled
-    oneshot
-
 service bd_prov /system/bin/bd_prov
     class core
     user system
@@ -317,28 +295,6 @@ service p2p_supplicant /system/bin/wpa_supplicant \
    -d -g@android:wpa_wlan0
     class main
     socket wpa_wlan0 dgram 660 wifi wifi
-    disabled
-    oneshot
-
-service dhcpcd_wlan0 /system/bin/dhcpcd -aABDKL
-    class main
-    disabled
-    oneshot
-
-service iprenew_wlan0 /system/bin/dhcpcd -n
-    class main
-    disabled
-    oneshot
-
-service dhcpcd_p2p /system/bin/dhcpcd -aABKL
-    class main
-    group wifi system dhcp
-    disabled
-    oneshot
-
-service iprenew_p2p /system/bin/dhcpcd -n
-    class main
-    group wifi system dhcp
     disabled
     oneshot
 
