@@ -36,6 +36,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_res_images
 
+# PowerHAL
+PRODUCT_PACKAGES += \
+    power.gmin \
+    power_hal_helper
+
 # Pstore
 PRODUCT_PACKAGES += \
     pstore-clean
