@@ -123,7 +123,9 @@
 
     <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
          autodetected from the Configuration. -->
-    <bool name="config_showNavigationBar">true</bool>
+    <bool name="config_showNavigationBar">false</bool>
+
+    <bool name="config_unplugTurnsOnScreen">true</bool>
 
     <!--  Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">4</integer>
@@ -251,4 +253,8 @@
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
+<integer name="config_deviceHardwareKeys">83</integer>
+ <bool name="config_deviceHasVariableButtonBrightness">true</bool>
+<integer name="config_buttonBrightnessSettingDefault">153</integer>
+
 </resources>
