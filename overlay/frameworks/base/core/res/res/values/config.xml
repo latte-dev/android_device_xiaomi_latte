@@ -215,28 +215,51 @@
          backlight values for LUX levels between these control points.
 
          Must be overridden in platform specific overlays -->
-    <integer-array name="config_autoBrightnessLevels">
-        <item>35</item>
+  <integer-array name="config_autoBrightnessLevels">
+        <item>20</item>
         <item>100</item>
-        <item>300</item>
-        <item>720</item>
-        <item>2000</item>
+        <item>200</item>
+        <item>500</item>
+        <item>800</item>
+        <item>1000</item>
+        <item>1200</item>
+        <item>1800</item>
+        <item>2500</item>
     </integer-array>
+
 
     <!-- Array of output values for LCD backlight corresponding to the LUX values
          in the config_autoBrightnessLevels array.  This array should have size one greater
          than the size of the config_autoBrightnessLevels array.
          The brightness values must be between 0 and 255 and be non-decreasing.
          This must be overridden in platform specific overlays -->
-    <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>29</item>
+     <integer-array name="config_autoBrightnessLcdBacklightValues">
+        <item>6</item>
+        <item>20</item>
         <item>50</item>
         <item>90</item>
-        <item>130</item>
+        <item>100</item>
+        <item>110</item>
+        <item>140</item>
         <item>180</item>
+        <item>220</item>
         <item>255</item>
     </integer-array>
 
+    <integer-array name="config_autoBrightnessButtonBacklightValues">
+        <item>50</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
+    <integer-array name="config_autoBrightnessKeyboardBacklightValues">
+        <item>60</item>
+        <item>100</item>
+        <item>140</item>
+        <item>200</item>
+        <item>250</item>
+     </integer-array>
     <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
     <bool name="config_automatic_brightness_available">true</bool>
