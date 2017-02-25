@@ -818,6 +818,13 @@ on early-init
 
 # ------------------ END MIX-IN DEFINITIONS ------------------
 
+on late-init
+    write /dev/cpuset/foreground/cpus 0-3
+    write /dev/cpuset/background/cpus 0-3
+    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/top-app/cpus 0-3
+    write /dev/cpuset/foreground/boost/cpus 0-3
+
 service post-boot-init /system/bin/busybox sh /system/etc/init.post_boot.sh
     class late_start
     user root
