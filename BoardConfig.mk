@@ -36,6 +36,9 @@ BOARD_KERNEL_CMDLINE := loglevel=7 androidboot.hardware=latte firmware_class.pat
 # Binder
 TARGET_USES_64_BIT_BINDER := true
 
+# CPUset
+ENABLE_CPUSETS := true
+
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH := true
