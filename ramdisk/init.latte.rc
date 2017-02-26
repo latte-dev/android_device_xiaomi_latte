@@ -818,9 +818,9 @@ on early-init
 
 # ------------------ END MIX-IN DEFINITIONS ------------------
 
-on late-init
+on boot
     write /dev/cpuset/foreground/cpus 0-3
-    write /dev/cpuset/background/cpus 0-3
+    write /dev/cpuset/background/cpus 0
     write /dev/cpuset/system-background/cpus 0-3
     write /dev/cpuset/top-app/cpus 0-3
     write /dev/cpuset/foreground/boost/cpus 0-3
