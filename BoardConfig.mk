@@ -103,6 +103,9 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 27783069696
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
+#Root in lineageOS
+WITH_SU := true
+
 # Kernel
 #BOARD_KERNEL_IMAGE_NAME := bzImage
 #KERNEL_TOOLCHAIN := /opt/poky/1.8/sysroots/x86_64-pokysdk-linux/usr/bin/x86_64-poky-linux
