@@ -76,6 +76,9 @@ BLOCK_BASED_OTA:= false
 # Properties
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 
+# Disable journaling to save space
+BOARD_SYSTEMIMAGE_JOURNAL_SIZE := 0
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/ramdisk/fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
