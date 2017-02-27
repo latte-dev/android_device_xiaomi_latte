@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-COMMON_PATH := device/xiaomi/latte
+DEVICE_PATH := device/xiaomi/latte
 
 # Platform
 TARGET_NO_BOOTLOADER := true
@@ -39,7 +39,7 @@ TARGET_USES_64_BIT_BINDER := true
 ENABLE_CPUSETS := true
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 
@@ -73,14 +73,11 @@ BOARD_FLASH_BLOCK_SIZE := 512
 #OTA
 BLOCK_BASED_OTA:= false
 
-# Properties
-TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
-
 # Disable journaling to save space
 BOARD_SYSTEMIMAGE_JOURNAL_SIZE := 0
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/ramdisk/fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/ramdisk/fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
@@ -96,8 +93,6 @@ WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/bcmdhd_pcie/parameters/firmware_path"
 WIFI_DRIVER_FW_PATH_STA := "/vendor/firmware/brcm/fw_bcmdhd_4356a2_pcie.bin"
 WIFI_DRIVER_FW_PATH_AP := "/vendor/firmware/brcm/fw_bcmdhd_4356a2_pcie_apsta.bin"
 WIFI_DRIVER_FW_PATH_P2P := "/vendor/firmware/brcm/fw_bcmdhd_4356a2_pcie.bin"
-
-DEVICE_PATH := device/xiaomi/latte
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := latte
