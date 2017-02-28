@@ -152,3 +152,8 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     media.stagefright.legacyencoder=true \
     media.stagefright.less-secure=true
 
+# Keystore
+PRODUCT_PACKAGES += \
+    keystore.gmin
+
+
