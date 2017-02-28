@@ -23,7 +23,7 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_CHARACTERISTICS := tablet
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
-#Prebuilt kernel
+# Prebuilt kernel
 TARGET_PREBUILT_KERNEL:= device/xiaomi/latte/zImage
 
 # Audio
@@ -31,6 +31,10 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default
+
+# Camera
+PRODUCT_PACKAGES += \
+    Snap
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -85,7 +89,6 @@ ADDITIONAL_BUILD_PROPERTIES += \
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.dalvik.vm.native.bridge=libhoudini.so
 
-
 # Wifi
 PRODUCT_PACKAGES += \
     hostapd \
@@ -98,11 +101,11 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.modules.location=/system/lib/modules
 
-#Dirac
+# Dirac
 ADDITIONAL_DEFAULT_PROPERTIES += \
     persist.audio.dirac.speaker=true
 
-#Else
+# Intel props
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.sf.lcd_density=320 \
     persist.intel.ogl.username=Developer \
