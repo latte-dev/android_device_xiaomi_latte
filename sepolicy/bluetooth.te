@@ -1,0 +1,11 @@
+allow bluetooth self:socket create_socket_perms;
+allow bluetooth kernel:system module_request;
+allow bluetooth rfkill_device:chr_file rw_file_perms;
+allow bluetooth bluetooth_device:chr_file rw_file_perms;
+allow bluetooth sysfs_bluetooth_writable:file rw_file_perms;
+allow bluetooth config_file:dir search;
+allow bluetooth cws_manu_data_file:dir search;
+allow bluetooth cws_manu_data_file:file r_file_perms;
+
+# search down efs paths for bluetooth_efs_files
+allow bluetooth efs_file:dir search;

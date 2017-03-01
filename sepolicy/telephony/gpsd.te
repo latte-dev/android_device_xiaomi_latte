@@ -1,0 +1,2 @@
+#telephony specific permissions for gpsd
+unix_socket_connect(gpsd, mmgr, mmgr)

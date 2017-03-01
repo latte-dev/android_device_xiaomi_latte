@@ -1,0 +1,5 @@
+#============= hostapd ==============
+allow hostapd kernel:system module_request;
+
+allow hostapd config_file:dir search;
+allow hostapd wifi_data_file:sock_file write;

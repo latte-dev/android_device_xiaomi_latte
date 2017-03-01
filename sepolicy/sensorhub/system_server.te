@@ -1,0 +1,3 @@
+# sensor hub
+unix_socket_connect(system_server, sensorhubd, sensorhubd);
+allow system_server sensorhubd_socket:sock_file rw_file_perms;

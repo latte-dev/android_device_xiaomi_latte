@@ -1,0 +1,3 @@
+# fuel gauge userspace helper
+type fg_algo_iface_data_file, file_type, data_file_type;
+type fg_algo_iface_sysfs_rw_nodes, fs_type, sysfs_type;

@@ -1,0 +1,4 @@
+type atproxy_prop, property_type;
+type amtl_prop, property_type;
+type mmgr_prop, property_type;
+type ril_radio_prop, property_type;

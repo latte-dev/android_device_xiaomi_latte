@@ -1,0 +1,7 @@
+# Additional radio rules
+allow radio log_file:file create_file_perms;
+allow radio log_file:dir rw_dir_perms;
+allow radio radio_data_file:file execute;
+unix_socket_connect(radio, mmgr, mmgr);
+allow radio system_app_data_file:file r_file_perms;
+allow radio ril_radio_prop:property_service set;

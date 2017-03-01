@@ -1,0 +1,9 @@
+# property for power HAL
+sys.power_hal.          u:object_r:system_power_hal_prop:s0
+camera.flash.throttling_levels      u:object_r:cam_flash_thrtl_prop:s0
+
+# gralloc version
+sys.ggralloc.version	u:object_r:system_gralloc_version_prop:s0
+
+# ctl log control
+ctl.logconfig	u:object_r:ctl_logconfig_prop:s0

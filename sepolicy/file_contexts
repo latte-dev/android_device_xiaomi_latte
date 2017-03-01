@@ -1,0 +1,143 @@
+# CPU
+/dev/msr[0-3]               u:object_r:msr_device:s0
+
+# GPU
+/dev/dri/card0              u:object_r:gpu_device:s0
+/dev/dri/controlD64         u:object_r:gpu_device:s0
+/dev/sw_sync                u:object_r:graphics_device:s0
+
+/system/bin/msync           u:object_r:msync_exec:s0
+/system/bin/coreu           u:object_r:coreu_exec:s0
+
+# Camera
+/dev/v4l-subdev.*           u:object_r:camera_device:s0
+/dev/video([0-9])+          u:object_r:camera_device:s0
+/dev/media([0-9])+          u:object_r:camera_device:s0
+
+# Bluetooth
+/dev/ttyHSU0                u:object_r:bluetooth_device:s0
+/config/bt                  u:object_r:bluetooth_data_file:s0
+/sys/devices/pci0000:00/8086228A:00/.*/rfkill/rfkill[0-9]+/state	u:object_r:sysfs_bluetooth_writable:s0
+
+# Audio
+/dev/snd/.*                 u:object_r:audio_device:s0
+
+# Config partition
+/config(/.*)?               u:object_r:config_file:s0
+
+# wlan provisionning
+/config/wifi(/.*)?          u:object_r:wlan_prov_data_file:s0
+/system/bin/wlan_prov       u:object_r:wlan_prov_exec:s0
+
+# CWS Manufacturing
+/config/bluetooth(/.*)?     u:object_r:cws_manu_data_file:s0
+/config/gnss(/.*)?          u:object_r:cws_manu_data_file:s0
+/config/nfc(/.*)?           u:object_r:cws_manu_data_file:s0
+/config/wlan(/.*)?          u:object_r:cws_manu_data_file:s0
+/system/bin/cws_manu        u:object_r:cws_manu_exec:s0
+/dev/block/platform/.*/.*/by-name/wlan_nvm      u:object_r:cws_manu_device:s0
+/dev/block/platform/.*/.*/by-name/bluetooth_nvm u:object_r:cws_manu_device:s0
+/dev/block/platform/.*/.*/by-name/gnss_nvm      u:object_r:cws_manu_device:s0
+/dev/block/platform/.*/.*/by-name/nfc_nvm       u:object_r:cws_manu_device:s0
+
+# NFC
+/data/nfc                   u:object_r:nfc_data_file:s0
+
+# GPS
+/dev/socket/gnss            u:object_r:gnss_socket:s0
+/system/bin/gpsd            u:object_r:gpsd_exec:s0
+/system/bin/gnssStelp       u:object_r:cg2k_exec:s0
+/system/bin/gnssCG2000      u:object_r:cg2k_exec:s0
+/dev/ttyS2                  u:object_r:gps_device:s0
+/dev/ttyHSU1                u:object_r:gps_device:s0
+/sys/devices/pci0000:00/8086228A:01/power/control u:object_r:gps_sysfs_file:s0
+/sys/devices/virtual/thermal/thermal_zone[0-9]/trip_point_[0-9]_temp u:object_r:sysfs_thermal_file:s0
+/sys/devices/virtual/thermal/cooling_device[0-9]/cur_state u:object_r:sysfs_thermal_file:s0
+
+# COOMS
+/dev/ttyS1                  u:object_r:hci_attach_dev:s0
+/dev/rfkill                 u:object_r:rfkill_device:s0
+
+/system/bin/hciattach       u:object_r:hci_attach_exec:s0
+
+# Hardware keystore
+/dev/mei                    u:object_r:tee_device:s0
+/dev/mei0                   u:object_r:tee_device:s0
+/dev/meimm                  u:object_r:tee_device:s0
+/system/bin/keymaster_meid  u:object_r:keymaster_exec:s0
+
+# Persistent Storage
+/dev/pstore                 u:object_r:pstore_dev:s0
+/data/dontpanic(/.*)?       u:object_r:pstore-clean_data_file:s0
+/system/bin/pstore-clean    u:object_r:pstore-clean_exec:s0
+
+# Persistent partition
+/dev/block/platform(/.*)?/.*/by-name/android_persistent  u:object_r:frp_block_device:s0
+
+# Thermal daemon
+/dev/acpi_thermal_rel       u:object_r:thermal_device:s0
+/data/thermal-daemon(/.*)?  u:object_r:thermal_data_file:s0
+/system/bin/thermal-daemon  u:object_r:thermal_exec:s0
+/dev/socket/power_hal       u:object_r:thermal_socket:s0
+
+# thermal management
+/sys/devices/platform/coretemp.0(/.*)? u:object_r:sysfs_thermal_management:s0
+/sys/devices/virtual/thermal(/.*)?     u:object_r:sysfs_thermal_management:s0
+
+# ITUX
+/data/thermal_sensor_config.xml       u:object_r:itux_data_file:s0
+/data/thermal_throttle_config.xml     u:object_r:itux_data_file:s0
+/data/acpi_thermal(/.*)?              u:object_r:itux_data_file:s0
+
+# DRM
+/data/IntelCPHS.log         u:object_r:drm_data_file:s0
+
+# Firmware Update
+/system/bin/FWUpdateR200    u:object_r:firmware_update_exec:s0
+
+# HDCP
+/system/bin/hdcpd           u:object_r:hdcpd_exec:s0
+/data/hdcp(/.*)?            u:object_r:hdcpd_data_file:s0
+
+# Powercap
+/sys/devices/virtual/powercap(/.*)?  u:object_r:sysfs_powercap:s0
+
+# Power HAL helper
+/system/vendor/bin/power_hal_helper    u:object_r:power_hal_helper_exec:s0
+
+# NFC
+/data/nfc(/.*)?             u:object_r:nfc_data_file:s0
+/dev/nfcc                   u:object_r:nfc_device:s0
+
+# i915 videostatus
+/sys/devices/pci0000:00/0000:00:02.0/drm/card0/power/i915_videostatus u:object_r:sysfs_videostatus:s0
+
+# Telemetry
+/data/telemetry(/.*)?       u:object_r:telemetry_data_file:s0
+/data/telemetry.image       u:object_r:telemetry_data_file:s0
+
+# ap[k]_logfs entry point script
+/system/bin/logcat_ep.sh        u:object_r:logsvc_exec:s0
+/system/bin/start_log_srv.sh    u:object_r:logsvc_exec:s0
+
+# Logs
+/data/logs(/.*)?                u:object_r:log_file:s0
+
+# Silentlake
+/dev/vidt                   u:object_r:silentlake_device:s0
+/system/bin/sl_si_service   u:object_r:silentlake_exec:s0
+/data/silent_lake(/.*)?     u:object_r:silentlake_data_file:s0
+/dev/socket/silentlake      u:object_r:silentlake_socket:s0
+
+# thermal management
+/dev/socket/logconfig                  u:object_r:thermal_socket:s0
+/sbin/thermald                         u:object_r:thermal_exec:s0
+
+# ITUX
+/sys/devices/pci.*/.*/drm/card0/gt_.*    u:object_r:sysfs_thermal_management:s0
+
+# bcu_cpufreqrel
+/system/bin/bcu_cpufreqrel      u:object_r:bcu_cpufreqrel_exec:s0
+
+# Fuel Gauge userspace helper
+/sbin/fg_algo_cos                                      u:object_r:fg_algo_cos_exec:s0

@@ -1,0 +1,17 @@
+#rules for mts
+type mts, domain;
+type mts_exec, exec_type, file_type;
+init_daemon_domain(mts)
+unix_socket_connect(mts, mmgr, mmgr)
+unix_socket_connect(mts, fwmarkd, netd)
+
+userdebug_or_eng(`
+  allow mts self:tcp_socket create_stream_socket_perms;
+  allow mts self:udp_socket create_stream_socket_perms;
+  allow mts port:tcp_socket name_bind;
+  allow mts node:tcp_socket node_bind;
+  allow mts tty_device:chr_file rw_file_perms;
+  allow mts usb_device:dir r_dir_perms;
+  allow mts log_file:dir rw_dir_perms;
+  allow mts log_file:file create_file_perms;
+')

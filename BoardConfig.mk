@@ -108,7 +108,11 @@ WITH_SU := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-    device/intel/sepolicy 
+    device/xiaomi/latte/sepolicy \
+    device/xiaomi/latte/sepolicy/dollar_cove \
+    device/xiaomi/latte/sepolicy/intel_prop \
+    device/xiaomi/latte/sepolicy/sensorhub \
+    device/xiaomi/latte/sepolicy/telephony
 
 # Kernel
 BOARD_KERNEL_IMAGE_NAME := bzImage

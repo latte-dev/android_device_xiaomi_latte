@@ -1,0 +1,8 @@
+# Additional rild rules
+unix_socket_connect(rild, mmgr, mmgr)
+file_type_auto_trans(rild, system_data_file, radio_system_data_file)
+
+allow rild config_file:dir w_dir_perms;
+allow rild config_file:file create_file_perms;
+allow rild radio_device:chr_file rw_file_perms;
+allow rild ril_radio_prop:property_service set;
