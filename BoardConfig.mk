@@ -106,6 +106,10 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 #Root in lineageOS
 WITH_SU := true
 
+# SELinux
+BOARD_SEPOLICY_DIRS += \
+    device/intel/sepolicy 
+
 # Kernel
 BOARD_KERNEL_IMAGE_NAME := bzImage
 TARGET_KERNEL_ARCH := x86_64
