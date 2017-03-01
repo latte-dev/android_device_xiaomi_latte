@@ -107,9 +107,9 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 WITH_SU := true
 
 # Kernel
-#BOARD_KERNEL_IMAGE_NAME := bzImage
-#KERNEL_TOOLCHAIN := /opt/poky/1.8/sysroots/x86_64-pokysdk-linux/usr/bin/x86_64-poky-linux
-#TARGET_KERNEL_ARCH := x86_64
-#TARGET_KERNEL_CONFIG := xiaomi_latte_defconfig
-#TARGET_KERNEL_CROSS_COMPILE_PREFIX := x86_64-poky-linux-
-#TARGET_KERNEL_SOURCE := kernel/xiaomi/latte
+BOARD_KERNEL_IMAGE_NAME := bzImage
+TARGET_KERNEL_ARCH := x86_64
+TARGET_KERNEL_SOURCE := kernel/xiaomi/latte
+TARGET_KERNEL_CONFIG := lineageos_latte_defconfig
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := x86_64-linux-android-
+

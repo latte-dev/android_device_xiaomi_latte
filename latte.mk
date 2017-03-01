@@ -23,9 +23,6 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_CHARACTERISTICS := tablet
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
-# Prebuilt kernel
-TARGET_PREBUILT_KERNEL:= device/xiaomi/latte/zImage
-
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
