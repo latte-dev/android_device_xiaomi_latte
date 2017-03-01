@@ -235,6 +235,14 @@ on boot
     insmod ${ro.modules.location}/ip6table_raw.ko
     insmod ${ro.modules.location}/6lowpan_iphc.ko
     insmod ${ro.modules.location}/bcm_bt_lpm.ko
+    insmod ${ro.modules.location}/hid-sensor-hub.ko
+    insmod ${ro.modules.location}/hid-sensor-accel-3d.ko
+    insmod ${ro.modules.location}/hid-sensor-als.ko
+    insmod ${ro.modules.location}/hid-sensor-gyro-3d.ko
+    insmod ${ro.modules.location}/hid-sensor-iio-common.ko
+    insmod ${ro.modules.location}/hid-sensor-incl-3d.ko
+    insmod ${ro.modules.location}/hid-sensor-magn-3d.ko
+    insmod ${ro.modules.location}/hid-sensor-trigger.ko
     start rfkill_bt
 
 on post-fs
