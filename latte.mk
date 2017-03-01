@@ -78,6 +78,10 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.frp.pst=/dev/block/by-name/android_persistent
 
+# Color conversion
+PRODUCT_PACKAGES += \
+    libI420colorconvert
+
 # Houdini
 ADDITIONAL_BUILD_PROPERTIES += \
     ro.dalvik.vm.isa.arm=x86 \
