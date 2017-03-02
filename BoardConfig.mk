@@ -105,6 +105,9 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 27783069696
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
+# Compiler
+ANDROID_JACK_VM_ARGS := -Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4096m
+
 #Root in lineageOS
 WITH_SU := true
 
