@@ -30,7 +30,7 @@
 #include <cutils/klog.h>
 #include <cutils/properties.h>
 
-#include <healthd.h>
+#include "healthd.h"
 #include "minui/minui.h"
 
 
