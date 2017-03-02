@@ -109,12 +109,12 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 WITH_SU := true
 
 # SELinux
-BOARD_SEPOLICY_DIRS += \
-    device/xiaomi/latte/sepolicy \
-    device/xiaomi/latte/sepolicy/dollar_cove \
-    device/xiaomi/latte/sepolicy/intel_prop \
-    device/xiaomi/latte/sepolicy/sensorhub \
-    device/xiaomi/latte/sepolicy/telephony
+#BOARD_SEPOLICY_DIRS += \
+#    device/xiaomi/latte/sepolicy \
+#    device/xiaomi/latte/sepolicy/dollar_cove \
+#    device/xiaomi/latte/sepolicy/intel_prop \
+#    device/xiaomi/latte/sepolicy/sensorhub \
+#    device/xiaomi/latte/sepolicy/telephony
 
 # Kernel
 BOARD_KERNEL_IMAGE_NAME := bzImage
