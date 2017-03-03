@@ -35,6 +35,9 @@ lib/libtinyalsa.so
 lib/libtinycompress.so
 lib/soundfx/liblpepreprocessing.so
 lib/soundfx/libdirac.so
+vendor/etc/audio_effects.conf
+vendor/etc/CsmConfig.xml
+vendor/etc/diracmobile.config
 
 # Audio firmware
 etc/firmware/dfw_sst.bin
