@@ -1,12 +1,27 @@
 # Audio
+bin/nxp_do_cal.sh
+bin/nxp_do_f0.sh
+bin/playback_audio_nxp.sh
+etc/tuning/audio/layout_probes.xml
 etc/tuning/audio/layout_topology.xml
 etc/tuning/audio/layout_types.xml
 etc/tuning/audio/layout_ui.xml
+etc/tuning/fortemedia/layout_probes.xml
+etc/tuning/fortemedia/layout_topology.xml
+etc/tuning/fortemedia/layout_types.xml
+etc/tuning/fortemedia/layout_ui.xml
+etc/tuning/wprd/layout_probes.xml
+etc/tuning/wprd/layout_topology.xml
+etc/tuning/wprd/layout_types.xml
+etc/tuning/wprd/layout_ui.xml
+etc/widi/widi.conf
+etc/silence.wav
 etc/route_criteria.conf
-lib/hw/audio.codec_offload.cherrytrail.so
+lib/hw/audio.codec_offload.latte.so
 lib/hw/audio.hdmi.gmin.so
 lib/hw/audio.primary.gmin.so
-lib/hw/audio.r_submix.cherrytrail.so
+lib/hw/audio.r_submix.latte.so
+lib/hw/aware.primary.latte.so
 lib/audio.routemanager.so
 lib/libaudioresample.so
 lib/libevent-listener.so
@@ -19,16 +34,29 @@ lib/libremote-processor.so
 lib/libtinyalsa.so
 lib/libtinycompress.so
 lib/soundfx/liblpepreprocessing.so
+lib/soundfx/libdirac.so
 
 # Audio firmware
 etc/firmware/dfw_sst.bin
 etc/firmware/fw_sst_22a8.bin
+etc/firmware/dfw_sst.fortemedia.bin
+etc/firmware/fw_sst_22a8.fortemedia.bin
+etc/firmware/dfw_sst.wprd.bin
+etc/firmware/fw_sst_22a8.wprd.bin 
+etc/firmware/tfa98xx.cnt 
 
 # Audio parameter framework
+etc/parameter-framework/AudioParameterFramework.fortemedia.xml
+etc/parameter-framework/AudioParameterFramework.wprd.xml
+etc/parameter-framework/AudioParameterFramework.xml
 etc/parameter-framework/RouteParameterFramework.xml
+etc/parameter-framework/Structure/Audio/AudioClass.fortemedia.xml
+etc/parameter-framework/Structure/Audio/AudioClass.wprd.xml
+etc/parameter-framework/Structure/Audio/AudioClass.xml 
 etc/parameter-framework/Structure/Audio/CMESubsystem.xml
 etc/parameter-framework/Structure/Audio/ConfigurationSubsystem.xml
 etc/parameter-framework/Structure/Audio/IMCSubsystem.xml
+etc/parameter-framework/Structure/Audio/fortemedia/ForteMediaSpeech_V3_1.xml
 etc/parameter-framework/Structure/Audio/intel/AcousticEchoCanceler_V1_6.xml
 etc/parameter-framework/Structure/Audio/intel/AmbientNoiseAdapter_V2_5.xml
 etc/parameter-framework/Structure/Audio/intel/AutomaticGainControlAudio_V1_0.xml
@@ -45,6 +73,7 @@ etc/parameter-framework/Structure/Audio/intel/DynamicRangeProcessor_V1_4.xml
 etc/parameter-framework/Structure/Audio/intel/EchoDelayLine_V1_1.xml
 etc/parameter-framework/Structure/Audio/intel/FbaFir_V1_1.xml
 etc/parameter-framework/Structure/Audio/intel/FbaIir_V1_1.xml
+etc/parameter-framework/Structure/Audio/intel/FmVolumeControl.xml
 etc/parameter-framework/Structure/Audio/intel/Gain.xml
 etc/parameter-framework/Structure/Audio/intel/GainLossControl_V1_0.xml
 etc/parameter-framework/Structure/Audio/intel/HfSns2.xml
@@ -69,10 +98,10 @@ etc/parameter-framework/Structure/Audio/intel/WindNoiseReductionAudio_V1_0.xml
 etc/parameter-framework/Structure/Audio/intel/WindNoiseReductionVoice_V1_0.xml
 etc/parameter-framework/Structure/Audio/PowerSubsystem.xml
 etc/parameter-framework/Structure/Audio/PropertySubsystem.xml
-etc/parameter-framework/Structure/Route/DebugFsSubsystem.xml
-etc/parameter-framework/Structure/Route/RouteClass.xml
-etc/parameter-framework/Structure/Route/RouteSubsystem-CommonCriteria.xml
-etc/parameter-framework/Structure/Route/RouteSubsystem-RoutesTypes.xml
+etc/parameter-framework/Structure/Audio/Realtek5659Subsystem.xml
+etc/parameter-framework/Structure/Audio/SstSubsystem.fortemedia.xml
+etc/parameter-framework/Structure/Audio/SstSubsystem.wprd.xml
+etc/parameter-framework/Structure/Audio/SstSubsystem.xml
 lib/libfs-subsystem.so
 lib/libimc-subsystem.so
 lib/libpower-subsystem.so
@@ -83,16 +112,49 @@ lib/libtinyalsa_custom-subsystem.so
 lib/libtinyalsa-subsystem.so
 
 # Bluetooth
-app/Bluetooth/Bluetooth.apk
-etc/firmware/bt/rtl8723b_config
-etc/firmware/bt/rtl8723b_fw
-lib/hw/bluetooth.default.so
-lib/libbluetooth_jni.so
-lib/libbt-vendor.so
+bin/brcmbt
+bin/brcm_mac
+bin/rfkill-init.sh
+bin/smonsir
+bin/smprosrv
+etc/firmware/bt/BCM4356A2_001.003.015.0084.0268_ORC.hcd
+etc/bluetooth/auto_pair_devlist.conf
+etc/bluetooth/bt_did.conf
+etc/bluetooth/bt_stack.conf
+etc/bluetooth/bt_vendor.conf
+
+#Wi-Fi
+bin/wlan_prov
+etc/firmware/fw_bcmdhd.bin
+etc/firmware/fw_bcmdhd_mfg.bin
+etc/wifi/hostapd.conf
+etc/wifi/wpa_supplicant.conf
+etc/wifi/wpa_supplicant_overlay.conf
+vendor/firmware/brcm/bcm94356wlpagbl.bin
+vendor/firmware/brcm/fw_bcmdhd_4356a2_pcie.bin
+vendor/firmware/brcm/fw_bcmdhd_4356a2_pcie_apsta.bin
+vendor/firmware/brcm/fw_bcmdhd_4356a2_pcie_mfg.bin
+vendor/firmware/brcm/nvram_pcie_4356_a2.cal
 
 # Camera
 etc/firmware/shisp_2401a0_v21.bin
+etc/firmware/shisp_2400b0_v21.bin
 etc/camera_profiles.xml
+etc/camera3_profiles.xml
+etc/init.atomisp.sh
+lib/hw/camera.gmin.so
+lib/libpvl_blink_detection.so
+lib/libpvl_eye_detection.so
+lib/libpvl_face_detection.so
+lib/libpvl_face_recognition.so
+lib/libpvl_face_recognition_with_db.so
+lib/libpvl_jni.so
+lib/libpvl_mouth_detection.so
+lib/libpvl_panorama.so
+lib/libpvl_panorama_jni.so
+lib/libpvl_skin_smoothing.so
+lib/libpvl_skin_smoothing_jni.so
+lib/libpvl_smile_detection.so
 lib/libcilkrts.so
 lib/libiacp.so
 lib/libia_aiq.so
@@ -112,6 +174,56 @@ lib/libstlport-mfx.so
 lib/libsvml.so
 lib/libva.so
 lib/libva-android.so
+vendor/firmware/00imx135-0-0x2-0x1.drvb
+vendor/firmware/00imx135-0-0x4-0.drvb
+vendor/firmware/00imx135-0-0x8-0.drvb
+vendor/firmware/00imx135-0-0x8-0x1.drvb
+vendor/firmware/00imx135-0-0x8-0x2.drvb
+vendor/firmware/00imx135-0-0x8-0x5.drvb
+vendor/firmware/00ov8830-0-0x2-0.drvb
+vendor/firmware/01s5k8aay.drvb
+
+#Atomisp
+etc/atomisp/00gc2235.aiqb
+etc/atomisp/00ov5693.cht_ffd.aiqb
+etc/atomisp/01gc2235.aiqb
+etc/atomisp/00imx134.aiqb
+etc/atomisp/00ov5693.cht_rvp.aiqb
+etc/atomisp/01imx132.aiqb
+etc/atomisp/00imx135-0-0x2-0x1.aiqb
+etc/atomisp/00ov8830-0-0x2-0.aiqb
+etc/atomisp/01imx208.aiqb
+etc/atomisp/00imx135-0-0x4-0.aiqb
+etc/atomisp/00ov8858.cht_hr.aiqb
+etc/atomisp/01mt9m114.aiqb
+etc/atomisp/00imx135-0-0x8-0.aiqb
+etc/atomisp/00ov8858-moorefield.aiqb
+etc/atomisp/01ov2722.aiqb
+etc/atomisp/00imx135-0-0x8-0x1.aiqb
+etc/atomisp/00ov8858-moorefield_factory.aiqb
+etc/atomisp/01ov5693-0x1.aiqb
+etc/atomisp/00imx135-0-0x8-0x2.aiqb
+etc/atomisp/00ov8858.Sf3g_cc_mrd5_p2.aiqb
+etc/atomisp/01ov5693-0x2.aiqb
+etc/atomisp/00imx135-0-0x8-0x5.aiqb
+etc/atomisp/00ov8858.Sf3g_mrd5_p1.aiqb
+etc/atomisp/01ov680.aiqb
+etc/atomisp/00imx175.aiqb
+etc/atomisp/00ov8858.Sf3g_mrd5_p1_v2.aiqb
+etc/atomisp/01ov680_factory.aiqb
+etc/atomisp/00imx214.aiqb
+etc/atomisp/00s5k4h8yx-0x1.aiqb
+etc/atomisp/01ov9724.aiqb
+etc/atomisp/00imx219.aiqb
+etc/atomisp/00s5k4h8yx-0x2.aiqb
+etc/atomisp/01ov9760.aiqb
+etc/atomisp/00m10mo-0-0x8-0.aiqb
+etc/atomisp/00t4ka3-0x1.aiqb
+etc/atomisp/01s5k6b2yx.aiqb
+etc/atomisp/00mt9e013.aiqb
+etc/atomisp/00t4ka3-0x2.aiqb
+etc/atomisp/00ov13850.aiqb
+etc/atomisp/01gc0339.aiqb
 
 # Display
 lib/hw/memtrack.gmin.so
@@ -362,6 +474,7 @@ vendor/bin/intel_prop
 vendor/etc/intel_prop.cfg
 
 # Intel security service
+bin/otpserver
 etc/permissions/com.intel.security.service.sepmanager.xml
 -framework/com.intel.security.service.sepmanager.jar
 lib/libihamanagerjni.so
@@ -400,6 +513,7 @@ lib/libstagefright_soft_amrdec_mdp.so
 lib/libstagefright_soft_amrenc_mdp.so
 lib/libstagefright_soft_mp3dec_mdp.so
 lib/libstagefright_soft_vorbisdec_mdp.so
+lib/libstagefright_soft_wmadec_mdp.so
 
 # OMX IL
 etc/wrs_omxil_components.list
@@ -418,16 +532,17 @@ vendor/lib/libva_videoencoder.so
 
 # Power
 bin/bcu_cpufreqrel
-lib/hw/power.gmin.so
-vendor/bin/power_hal_helper
+#lib/hw/power.gmin.so
+#vendor/bin/power_hal_helper
 
 # Pstore
-vendor/bin/pstore-clean
+#vendor/bin/pstore-clean
 vendor/etc/pstore-clean.conf
 
 # Sensors
 bin/sensorhubd
-lib/libakmd09911.so
+lib/hw/sensors.gmin.so
+#lib/libakmd09911.so
 lib/libaware_client.so
 lib/libcontextarbitor.so
 lib/libgesture.so
@@ -442,3 +557,4 @@ vendor/lib/libdrmdecrypt.so
 vendor/lib/libwvdrm_L1.so
 vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L1.so
+
