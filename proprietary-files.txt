@@ -102,6 +102,11 @@ etc/parameter-framework/Structure/Audio/Realtek5659Subsystem.xml
 etc/parameter-framework/Structure/Audio/SstSubsystem.fortemedia.xml
 etc/parameter-framework/Structure/Audio/SstSubsystem.wprd.xml
 etc/parameter-framework/Structure/Audio/SstSubsystem.xml
+etc/parameter-framework/Structure/Route/DebugFsSubsystem.xml
+etc/parameter-framework/Structure/Route/RouteClass.xml
+etc/parameter-framework/Structure/Route/RouteSubsystem.xml
+etc/parameter-framework/Structure/Route/RouteSubsystem-CommonCriteria.xml
+etc/parameter-framework/Structure/Route/RouteSubsystem-RoutesTypes.xml
 lib/libfs-subsystem.so
 lib/libimc-subsystem.so
 lib/libpower-subsystem.so
