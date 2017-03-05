@@ -13,7 +13,7 @@ Shipped Android Version | 5.1 Lolipop w/ MIUI 7
 Storage | 16GB GB (Android only) 64GB (Windows/Android)
 Battery | 6020 mAh (non-removable)
 Dimensions | 200.4 x 132.6 x 7 mm (7.89 x 5.22 x 0.28 in)
-Display | 1080 x 1920 pixels, 5.2" IPS LCD
+Display | 2048 x 1536 pixels, 7.9" IPS LCD
 Weight  | 322 g
 Rear Camera  | 8 MP (S5K4H8YX/T4KA3)
 Front Camera | 5 MP (OV5693)
