@@ -88,6 +88,14 @@
         <item>lte:655360,1310720,2621440,327680,655360,1310720</item>
     </string-array>
 
+	<!-- Does the notification LED support multiple colors?
+	Used to decide if the user can change the colors -->
+	<bool name="config_multiColorNotificationLed">true</bool>
+
+	<!-- Does the battery LED support multiple colors?
+         Used to decide if the user can change the colors -->
+        <bool name="config_multiColorBatteryLed">true</bool>
+
     <!-- Is the device capable of hot swapping an UICC Card -->
     <bool name="config_hotswapCapable">true</bool>
 
