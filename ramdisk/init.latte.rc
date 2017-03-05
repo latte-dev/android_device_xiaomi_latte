@@ -815,11 +815,26 @@ on early-init
 # ------------------ END MIX-IN DEFINITIONS ------------------
 
 on boot
+    # CPU sets
     write /dev/cpuset/foreground/cpus 0-3
     write /dev/cpuset/background/cpus 0
     write /dev/cpuset/system-background/cpus 0-3
     write /dev/cpuset/top-app/cpus 0-3
     write /dev/cpuset/foreground/boost/cpus 0-3
+
+    # LED lights
+    chown system system /sys/class/leds/red/blink
+    chown system system /sys/class/leds/green/blink
+    chown system system /sys/class/leds/blue/blink
+    chown system system /sys/class/leds/red/brightness
+    chown system system /sys/class/leds/green/brightness
+    chown system system /sys/class/leds/blue/brightness
+    chown system system /sys/class/leds/red/max_brightness
+    chown system system /sys/class/leds/green/max_brightness
+    chown system system /sys/class/leds/blue/max_brightness
+
+    # Button backlight
+    chown system system /sys/class/leds/button-backlight/brightness
 
 service post-boot-init /system/bin/busybox sh /system/etc/init.post_boot.sh
     class late_start
