@@ -151,6 +151,7 @@ etc/camera_profiles.xml
 etc/camera3_profiles.xml
 etc/init.atomisp.sh
 lib/hw/camera.gmin.so
+lib/libCameraEffectJNI.so
 lib/libpvl_blink_detection.so
 lib/libpvl_eye_detection.so
 lib/libpvl_face_detection.so
