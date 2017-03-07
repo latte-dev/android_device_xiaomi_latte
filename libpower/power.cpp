@@ -41,7 +41,10 @@
 #define ENABLE 1
 #define TOUCHBOOST_PULSE_SYSFS "/sys/devices/system/cpu/cpufreq/interactive/touchboostpulse"
 static const char cpufreq_boost_interactive[] = "/sys/devices/system/cpu/cpufreq/interactive/boost";
+
+#ifdef USE_INTEL_PSTATE
 static const char cpufreq_boost_intel_pstate[] = "/sys/devices/system/cpu/intel_pstate/min_perf_pct";
+#endif
 
 /*
  * This parameter is to identify continuous touch/scroll events.
@@ -147,6 +150,7 @@ static void app_launch_boost_interactive(void *hint_data)
     }
 }
 
+#ifdef USE_INTEL_PSTATE
 static void app_launch_boost_intel_pstate(void *hint_data)
 {
     static char old_min_perf_pct[4];
@@ -168,6 +172,7 @@ static void app_launch_boost_intel_pstate(void *hint_data)
         }
     }
 }
+#endif
 
 #endif
 
@@ -197,8 +202,10 @@ static void power_init(__attribute__((unused))struct power_module *module)
 
     if (!sysfs_read(TOUCHBOOST_PULSE_SYSFS, buf, 1))
         interactiveActive = true;
+#ifdef USE_INTEL_PSTATE
     if (!sysfs_read(cpufreq_boost_intel_pstate, buf, 1))
 	intelPStateActive = true;
+#endif
 
     if (itux_or_dptf_enabled()) //we do not need the connection
         return;
