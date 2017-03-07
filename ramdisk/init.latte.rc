@@ -578,9 +578,9 @@ on post-fs
 # Source: device/intel/mixins/groups/charger/true/init.rc
 ##############################################################
 
-service charger /sbin/chargeonlymode
+service charger /charger
     class charger
-    seclabel u:r:chargeonlymode:s0
+    seclabel u:r:healthd:s0
 
 service thermal_lite /thermal_lite
     class charger
@@ -702,7 +702,6 @@ import /init.diag.rc
 ##############################################################
 on boot
    write /sys/devices/pci0000:00/0000:00:1a.0/power/control auto
-
 
 service otpserver /system/bin/otpserver
     class main
