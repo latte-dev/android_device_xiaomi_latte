@@ -249,7 +249,6 @@ on post-fs
     mkdir /config/bt
     chown system bluetooth /config/bt
     chmod 0770 /config/bt
-    start bd_prov
 
 on early-boot
     chmod 0644 /config/bt/bd_addr.conf
@@ -268,13 +267,6 @@ service dhcpcd_bt-pan /system/bin/logwrapper /system/bin/dhcpcd -ABKL
 
 service iprenew_bt-pan /system/bin/logwrapper /system/bin/dhcpcd -n
     group bluetooth system dhcp
-    disabled
-    oneshot
-
-service bd_prov /system/bin/bd_prov
-    class core
-    user system
-    group system bluetooth
     disabled
     oneshot
 
