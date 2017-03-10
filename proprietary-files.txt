@@ -123,8 +123,6 @@ lib/libtinyalsa-subsystem.so
 bin/brcmbt
 bin/brcm_mac
 bin/rfkill-init.sh
-bin/smonsir
-bin/smprosrv
 etc/firmware/bt/BCM4356A2_001.003.015.0084.0268_ORC.hcd
 etc/bluetooth/auto_pair_devlist.conf
 etc/bluetooth/bt_did.conf
