@@ -83,6 +83,7 @@ BOARD_SEPOLICY_DIRS += \
 BOARD_SEPOLICY_UNION += \
     adbd.te \
     atproxy.te \
+    atomisp-init.te \
     bcu_cpufreqrel.te \
     bluetooth.te \
     cg2k.te \
@@ -113,6 +114,7 @@ BOARD_SEPOLICY_UNION += \
     netd.te \
     nfc.te \
     nvm_server.te \
+    otpserver.te \
     platform_app.te \
     power_hal_helper.te \
     property_contexts \
@@ -121,6 +123,7 @@ BOARD_SEPOLICY_UNION += \
     radio.te \
     recovery.te \
     rild.te \
+    rfkill_bt.te \
     sensorhubd.te \
     service_contexts \
     service_manager.te \
