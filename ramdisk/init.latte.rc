@@ -270,11 +270,6 @@ service iprenew_bt-pan /system/bin/logwrapper /system/bin/dhcpcd -n
     disabled
     oneshot
 
-on property:persist.sys.matsir.enable=1
-    setprop sys.sysmat.service.control start
-    start smonsir
-    start smprosrv
-
 ##############################################################
 # Source: device/intel/mixins/groups/wlan/bcm4356/init.rc
 ##############################################################
@@ -820,12 +815,6 @@ service post-boot-init /system/bin/busybox sh /system/etc/init.post_boot.sh
     user root
     oneshot
 
-#add for display features
-service eyecare /system/bin/eyecare
-    user root
-    oneshot
-    disabled
-
 on property:persist.sys.display_prefer=*
     start eyecare
 
@@ -840,23 +829,6 @@ on property:persist.sys.display_ce=10
 
 on property:persist.sys.display_ce=11
     write /sys/class/graphics/fb0/dispparam 0x10
-
-service smonsir /system/bin/smonsir
-    user root
-    group root
-    oneshot
-    disabled
-
-service smprosrv /system/bin/smprosrv
-    user root
-    group root
-    oneshot
-    disabled
-
-on property:persist.sys.matsir.enable=1
-    setprop sys.sysmat.service.control start
-    start smonsir
-    start smprosrv
 
 on init
     export LD_SHIM_LIBS /system/lib/libparameter.so|libshim_audio.so:/system/lib/libpower-subsystem.so|libshim_audio.so:/system/lib/libremoteparameter-subsystem.so|libshim_audio.so:/system/lib/libtinyalsa_custom-subsystem.so|libshim_audio.so:/system/lib/hw/camera.gmin.so|libshim_camera.so:/system/lib/hw/sensors.gmin.so|libshim_sensors.so
