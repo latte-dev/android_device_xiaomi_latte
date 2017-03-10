@@ -605,26 +605,6 @@ service rfkill-init /system/bin/sh /system/bin/rfkill-init.sh  bluetooth
     group system
     oneshot
 ##############################################################
-# Source: device/intel/mixins/groups/debug-charging/true/init.rc
-##############################################################
-import /init.debug-charging.rc
-##############################################################
-# Source: device/intel/mixins/groups/debug-logs/true/init.rc
-##############################################################
-import /init.logs.rc
-##############################################################
-# Source: device/intel/mixins/groups/debug-crashlogd/true/init.rc
-##############################################################
-import /init.crashlogd.rc
-##############################################################
-# Source: device/intel/mixins/groups/debug-coredump/true/init.rc
-##############################################################
-import /init.coredump.rc
-##############################################################
-# Source: device/intel/mixins/groups/debug-mpm/true/init.rc
-##############################################################
-import /init.diag.rc
-##############################################################
 # Source: device/intel/mixins/groups/power/true/init.rc
 ##############################################################
 on post-fs
