@@ -812,12 +812,6 @@ service post-boot-init /system/bin/busybox sh /system/etc/init.post_boot.sh
     user root
     oneshot
 
-on property:persist.sys.display_prefer=*
-    start eyecare
-
-on property:persist.sys.display_eyecare=*
-    start eyecare
-
 on property:persist.sys.display_ce=0
     write /sys/class/graphics/fb0/dispparam 0xF0
 
