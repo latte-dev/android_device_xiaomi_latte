@@ -1,4 +1,5 @@
-# Copyright (C) 2014 The Android Open Source Project
+# Copyright (C) 2011 The Android Open Source Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,49 +13,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+ifeq ($(INTEL_POWER_HAL_INTERACTIVE_GOV),true)
+
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-#include external/stlport/libstlport.mk
-LOCAL_C_INCLUDES += $(LOCAL_PATH) \
-                    external/thermal_daemon/src \
-                    external/libxml2/include \
-                    external/icu/icu4c/source/common \
-                    system/core/include/ \
-                    hardware/include \
-                    system/native/include
-
 LOCAL_MODULE := power.$(TARGET_BOARD_PLATFORM)
-LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
 
-# main libpower source
-LOCAL_SRC_FILES := power.cpp
+# Touchboost freq for Z8500 (gmin platform)
+LOCAL_CFLAGS += -DINTEL_TOUCHBOOST_FREQ=\"2240000\"
 
-# for all devices under /sys/power/power_HAL_suspend
-LOCAL_SRC_FILES += DevicePowerMonitor.cpp \
-                   DevicePowerMonitorInfo.cpp \
-                   CGroupCpusetController.cpp
-
-LOCAL_SHARED_LIBRARIES := liblog libcutils libutils libdl libicuuc libicui18n libbinder
-
+LOCAL_SRC_FILES := power.c
+LOCAL_SHARED_LIBRARIES := liblog
 LOCAL_MODULE_TAGS := optional
-
-
-ifeq ($(APP_LAUNCH_BOOST), true)
-   LOCAL_CFLAGS += -DAPP_LAUNCH_BOOST
-endif
-ifneq ($(TARGET_BUILD_VARIANT),user)
-    LOCAL_CFLAGS += -DPOWERHAL_DEBUG
-endif
-
-ifeq ($(THERMAL_DAEMON_SUPPORT), true)
-    LOCAL_SRC_FILES += thd_binder_client.cpp
-    LOCAL_CFLAGS += -DTHERMAL_DAEMON_SUPPORT
-endif
-
-LOCAL_MODULE_OWNER := intel
 
 include $(BUILD_SHARED_LIBRARY)
 
-include $(call first-makefiles-under,$(LOCAL_PATH))
+endif
+

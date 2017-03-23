@@ -40,7 +40,6 @@ PRODUCT_PACKAGES += \
 # PowerHAL
 PRODUCT_PACKAGES += \
     power.gmin \
-    power_hal_helper \
     libhealthd.intel
 
 # Pstore
