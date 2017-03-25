@@ -30,8 +30,7 @@ PRODUCT_PACKAGES += \
 
 # Charger
 PRODUCT_PACKAGES += \
-    charger_res_images \
-    libhealthd.intel
+    charger_res_images 
 
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
