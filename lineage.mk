@@ -19,5 +19,5 @@ PRODUCT_RELEASE_NAME := Xiaomi Mipad 2
 
 # Set build fingerprint / ID / Product Name ect.
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="latte-user 5.1 LMY47I 7.3.2 release-keys" \
-    BUILD_FINGERPRINT="Xiaomi/latte/latte:5.1/LMY47I/7.3.2:user/release-keys"
+    PRIVATE_BUILD_DESC="latte-user 5.1 LMY47I V8.2.2.0.LACCNDL release-keys" \
+    BUILD_FINGERPRINT="Xiaomi/latte/latte:5.1/LMY47I/V8.2.2.0.LACCNDL:user/release-keys"
