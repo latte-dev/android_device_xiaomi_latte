@@ -36,3 +36,6 @@ ro.btconfig.chip=BCM4356
 
 #Wi-Fi
 ro.wlan.mimo=1
+
+#Virtual keys
+qemu.hw.mainkeys=0
