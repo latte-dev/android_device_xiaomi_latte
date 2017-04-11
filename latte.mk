@@ -22,9 +22,6 @@ $(call inherit-product, vendor/xiaomi/latte/latte-vendor.mk)
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_CHARACTERISTICS := tablet
 
-#Prebuilt kernel
-TARGET_PREBUILT_KERNEL:= device/xiaomi/latte/zImage
-
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
