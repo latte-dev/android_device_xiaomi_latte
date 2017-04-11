@@ -1,6 +1,6 @@
-Copyright 2017 - The LineageOS Project
+Copyright 2017 - The Cyanogenmod (LineageOS) Project
 
-Android 6.x Device configuration for Xiaomi Mi Pad 2
+Android 5.1.x Device configuration for Xiaomi Mi Pad 2
 =====================================
 
 Basic   | Spec Sheet
