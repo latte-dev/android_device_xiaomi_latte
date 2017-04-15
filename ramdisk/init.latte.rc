@@ -1,5 +1,3 @@
-import init.target.rc
-
 on post-fs-data
     mkdir /data/kpanic 0770 system system
     mkdir /data/kpanic/pstore 0770 system system
