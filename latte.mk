@@ -160,11 +160,22 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 ADDITIONAL_DEFAULT_PROPERTIES += \
     persist.audio.dirac.speaker=true
 
-#Else
+#Intel prop
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.sf.lcd_density=320 \
     persist.intel.ogl.username=Developer \
     persist.intel.ogl.debug=/data/ufo.prop \
     persist.intel.ogl.dumpdebugvars=1 \
     persist.ims_support=0 \
-    config.disable_cellcoex=true
+    config.disable_cellcoex=true \
+    persist.coreu.dpst.disabled=1 
+
+#Other stuff
+ADDITIONAL_DEFAULT_PROPERTIES += \
+   persist.sys.telephony.off=1 \
+   persist.sys.strictmode.disable=true \
+   telephony.tcs.sw_folder=generic_nomodem \
+   ro.swconf.info=generic_nomodem \
+   
+   
+   
