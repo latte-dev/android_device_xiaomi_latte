@@ -91,7 +91,7 @@
 /system/bin/pstore-clean    u:object_r:pstore-clean_exec:s0
 
 # Persistent partition
-/dev/block/platform(/.*)?/.*/by-name/android_persistent  u:object_r:frp_block_device:s0
+/dev/block/platform/pci0000:00/80860F14:00/by-name/android_persistent  u:object_r:frp_block_device:s0
 
 # Thermal daemon
 /dev/acpi_thermal_rel       u:object_r:thermal_device:s0
@@ -138,6 +138,7 @@
 # ap[k]_logfs entry point script
 /system/bin/logcat_ep.sh        u:object_r:logsvc_exec:s0
 /system/bin/start_log_srv.sh    u:object_r:logsvc_exec:s0
+/system/bin/pre_aplog_srv.sh    u:object_r:logsvc_exec:s0
 
 # Logs
 /data/logs(/.*)?                u:object_r:log_file:s0
@@ -169,6 +170,9 @@
 /dev/ish                        u:object_r:sensorhubd_device:s0
 /sys/class/gpio/gpio59/value    u:object_r:sysfs_gpio_value:s0
 /sys/class/gpio/gpio95/value    u:object_r:sysfs_gpio_value:s0
+
+# otpserver
+/system/bin/otpserver           u:object_r:otpserver_exec:s0
 
 # mmgr
 /dev/socket/mmgr                u:object_r:mmgr_socket:s0
@@ -220,3 +224,9 @@
 /system/bin/atproxy_usbreset    u:object_r:atproxy_exec:s0
 /dev/socket/atproxy-status      u:object_r:atproxy_socket:s0
 /dev/ttyGS0                     u:object_r:atproxy_device:s0
+
+# tfa_cold_boot
+/system/bin/playback_audio_nxp.sh        u:object_r:tfa_cold_boot_exec:s0
+
+#atomisp-init
+/system/etc/init.atomisp.sh        u:object_r:atomisp-init_exec:s0

@@ -1,0 +1,4 @@
+type tfa_cold_boot, domain;
+type tfa_cold_boot_exec, exec_type, file_type;
+
+init_daemon_domain(tfa_cold_boot)

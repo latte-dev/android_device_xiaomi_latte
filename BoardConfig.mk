@@ -138,6 +138,7 @@ system_server.te \
 te_macros \
 thermal_lite.te \
 thermal.te \
+tfa_cold_boot.te \
 ueventd.te \
 untrusted_app.te \
 userfastboot.te \
