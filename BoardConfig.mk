@@ -73,12 +73,11 @@ COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-    device/intel/sepolicy \
-    device/xiaomi/latte/sepolicy \
-    device/xiaomi/latte/sepolicy/dollar_cove \
-    device/xiaomi/latte/sepolicy/intel_prop \
-    device/xiaomi/latte/sepolicy/sensorhub \
-    device/xiaomi/latte/sepolicy/telephony
+    $(COMMON_PATH)/sepolicy \
+    $(COMMON_PATH)/sepolicy/dollar_cove \
+    $(COMMON_PATH)/sepolicy/intel_prop \
+    $(COMMON_PATH)/sepolicy/sensorhub \
+    $(COMMON_PATH)/epolicy/telephony
 
 BOARD_SEPOLICY_UNION += \
     adbd.te \
