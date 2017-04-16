@@ -73,22 +73,79 @@ COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-    $(COMMON_PATH)/sepolicy \
-    $(COMMON_PATH)/sepolicy/atomisp \
-    $(COMMON_PATH)/sepolicy/bluetooth \
-    $(COMMON_PATH)/sepolicy/color_config \
-    $(COMMON_PATH)/sepolicy/coredump \
-    $(COMMON_PATH)/sepolicy/crashlogd \
-    $(COMMON_PATH)/sepolicy/debug-logs \
-    $(COMMON_PATH)/sepolicy/device \
-    $(COMMON_PATH)/sepolicy/dollar_cove \
-    $(COMMON_PATH)/sepolicy/gps \
-    $(COMMON_PATH)/sepolicy/graphics \
-    $(COMMON_PATH)/sepolicy/intel_prop \
-    $(COMMON_PATH)/sepolicy/media \
-    $(COMMON_PATH)/sepolicy/sensorhub \
-    $(COMMON_PATH)/sepolicy/set_storage \
-    $(COMMON_PATH)/sepolicy/telephony 
+    $(COMMON_PATH)/sepolicy 
+
+BOARD_SEPOLICY_UNION += \
+adbd.te \
+atomisp-init.te \
+atproxy.te \
+bcu_cpufreqrel.te \
+bluetooth.te \
+cg2k.te \
+color_config.te \
+coredump.te \
+coreu.te \
+crashlogd.te \
+cws_manu.te \
+device.te \
+drmserver.te \
+dumpstate_dropbox.te \
+dumpstate.te \
+efiprop.te \
+fg_algo_cos.te \
+fg_algo_iface.te \
+file_contexts \
+file.te \
+genfs_contexts \
+gpsd.te \
+hdcpd.te \
+hostapd.te \
+init_shell.te \
+init.te \
+intel_prop.te \
+kernel.te \
+keymaster.te \
+keystore.te \
+logsvc.te \
+mediaserver.te \
+mmgr.te \
+msync.te \
+mts.te \
+netd.te \
+nfc.te \
+nvm_server.te \
+otpserver.te \
+platform_app.te \
+power_hal_helper.te \
+property_contexts \
+property.te \
+pstore-clean.te \
+radio.te \
+recovery.te \
+rfkill_bt.te \
+rild.te \
+sensorhubd.te \
+service_contexts \
+service_manager.te \
+servicemanager.te \
+service.te \
+set_storage.te \
+shell.te \
+silentlake.te \
+surfaceflinger.te \
+system_app.te \
+system_server.te \
+te_macros \
+thermal_lite.te \
+thermal.te \
+ueventd.te \
+untrusted_app.te \
+userfastboot.te \
+vdc.te \
+vold.te \
+wlan_prov.te \
+wpa.te
+
 
 
 # OpenMAX Interaction Layer Implementation for Intel VA API

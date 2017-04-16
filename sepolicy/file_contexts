@@ -141,3 +141,82 @@
 
 # Logs
 /data/logs(/.*)?                u:object_r:log_file:s0
+
+# colorConfig_app service
+/system/bin/igfxSettings                    u:object_r:color_config_exec:s0
+/system/vendor/gfx/ufo_byt/bin/igfxSettings u:object_r:color_config_exec:s0
+
+# Coredump path
+/data/core(/.*)?                u:object_r:cored_file:s0
+
+# Crashlogd executable
+/system/bin/crashlogd u:object_r:crashlogd_exec:s0
+
+# Dumpstate dropbox script
+/system/bin/dumpstate_dropbox.sh u:object_r:dumpstate_dropbox_exec:s0
+
+# Fuel Gauge userspace helper
+/data/fg_algo_iface(/.*)?                         u:object_r:fg_algo_iface_data_file:s0
+/sys/devices/virtual/misc/intel_fg_iface(/.*)?    u:object_r:fg_algo_iface_sysfs_rw_nodes:s0
+/system/vendor/bin/fg_algo_iface                  u:object_r:fg_algo_iface_exec:s0
+
+# sensorhubd
+/system/bin/sensorhubd          u:object_r:sensorhubd_exec:s0
+/dev/sensor-collection          u:object_r:sensorhubd_device:s0
+/dev/socket/sensorhubd          u:object_r:sensorhubd_socket:s0
+/sys/devices/platform/80860F41:04/i2c-5/5-0040/control  u:object_r:sysfs_hwmon_control:s0
+/dev/i2c(/.*)?                  u:object_r:i2c_device:s0
+/dev/ish                        u:object_r:sensorhubd_device:s0
+/sys/class/gpio/gpio59/value    u:object_r:sysfs_gpio_value:s0
+/sys/class/gpio/gpio95/value    u:object_r:sysfs_gpio_value:s0
+
+# mmgr
+/dev/socket/mmgr                u:object_r:mmgr_socket:s0
+/system/bin/mmgr                u:object_r:mmgr_exec:s0
+/system/bin/mts                 u:object_r:mts_exec:s0
+/sys/devices/pci0000:00/0000:00:14.0/hsic_enable                         u:object_r:sysfs_hsic_enable:s0
+/sys/devices/pci0000:00/0000:00:14.0/L2_autosuspend_enable               u:object_r:sysfs_autosuspend_enable:s0
+/sys/devices/pci0000:00/0000:00:14.0/power/control                       u:object_r:sysfs_ssic_enable:s0
+/sys/devices/pci0000:00/0000:00:14.0/usb2/2-5/power/control              u:object_r:sysfs_ssic_enable:s0
+/sys/devices/pci0000:00/0000:00:14.0/usb2/2-5/power/autosuspend_delay_ms u:object_r:sysfs_ssic_enable:s0
+/sys/devices/pci0000:00/0000:00:14.0/usb2/2-5/power/wakeup               u:object_r:sysfs_ssic_enable:s0
+/sys/devices/pci0000:00/0000:00:14.0/usb2/2-0:1.0/port5/usb3_lpm         u:object_r:sysfs_ssic_enable:s0
+/sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/power/control              u:object_r:sysfs_hsic_enable:s0
+/sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/power/usb2_hardware_lpm    u:object_r:sysfs_hsic_enable:s0
+/dev/block/platform/pci0000:00/80860F14:00/by-name/android_config        u:object_r:tmpfs_block_device:s0
+/dev/block/platform/pci0000:00/80860F14:00/by-name/android_factory       u:object_r:tmpfs_block_device:s0
+/dev/block/platform/pci0000:00/80860F14:00/by-name/modem1_cal            u:object_r:tmpfs_block_device:s0
+/dev/block/platform/pci0000:00/80860F14:00/by-name/modem2_cal            u:object_r:tmpfs_block_device:s0
+/dev/mdm_ctrl0                  u:object_r:tty_device:s0
+/dev/mdm_ctrl1                  u:object_r:tty_device:s0
+/dev/ttyACM0                    u:object_r:tty_device:s0
+/dev/ttyACM1                    u:object_r:tty_device:s0
+/dev/gsmtty7                    u:object_r:radio_device:s0
+/dev/gsmtty11                   u:object_r:radio_device:s0
+/dev/gsmtty15                   u:object_r:radio_device:s0
+/dev/gsmtty18                   u:object_r:radio_device:s0
+/dev/gsmtty19                   u:object_r:mmgr_radio_device:s0
+/data/modem(/.*)?               u:object_r:modem_fw_data_file:s0
+
+# nvm_server
+/system/bin/nvm_server          u:object_r:nvm_server_exec:s0
+/dev/socket/nvm-ctl             u:object_r:nvm_ctl_socket:s0
+
+# rild
+/sys/kernel/modem_nvram/dump    u:object_r:radio_device:s0
+/dev/gsmtty2                    u:object_r:radio_device:s0
+/dev/gsmtty12                   u:object_r:radio_device:s0
+/dev/gsmtty(.*)?               u:object_r:radio_device:s0
+
+# factory files
+/factory(/.*)?                  u:object_r:factory_file:s0
+
+#mediaserver
+/dev/gsmtty13                   u:object_r:modem_audio_tty_device:s0
+/dev/gsmtty20                   u:object_r:modem_audio_tty_device:s0
+
+#at-proxy
+/system/bin/proxy               u:object_r:atproxy_exec:s0
+/system/bin/atproxy_usbreset    u:object_r:atproxy_exec:s0
+/dev/socket/atproxy-status      u:object_r:atproxy_socket:s0
+/dev/ttyGS0                     u:object_r:atproxy_device:s0

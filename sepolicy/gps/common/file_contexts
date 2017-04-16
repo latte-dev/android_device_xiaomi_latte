@@ -1,8 +1,0 @@
-# consistent with the DAC perms on this socket
-/dev/socket/lbsd	u:object_r:gps_socket:s0
-
-# lbsd is a two part beast, the shell script and
-# the native executable the shell script runs
-/system/bin/lbsd(.sh)*	u:object_r:lbsd_exec:s0
-
-/data/gnss(/.*)?	u:object_r:gnss_data_file:s0

@@ -58,3 +58,39 @@ type logsvc_exec, exec_type, file_type;
 
 # configfs
 type configfs, fs_type;
+
+# fuel gauge userspace helper
+type fg_algo_iface_data_file, file_type, data_file_type;
+type fg_algo_iface_sysfs_rw_nodes, fs_type, sysfs_type;
+
+# sensorhubd files
+type sensorhubd_socket, file_type;
+type sysfs_hwmon_control, fs_type, sysfs_type;
+type sysfs_gpio_value, fs_type, sysfs_type;
+
+# Additional file rules
+type ecryptfs, fs_type;
+
+# mmgr files
+type mmgr_socket, file_type;
+type sysfs_hsic_enable, fs_type, sysfs_type;
+type sysfs_ssic_enable, fs_type, sysfs_type;
+type tmpfs_block_device, dev_type;
+type mmgr_radio_device, dev_type;
+type modem_fw_data_file, file_type, data_file_type;
+
+# nvm
+type nvm_ctl_socket, file_type;
+
+# factory files
+type factory_file, file_type;
+
+# ueventd
+type sysfs_autosuspend_enable, fs_type, sysfs_type;
+
+# rild
+type radio_system_data_file, file_type, data_file_type;
+
+#at-proxy
+type atproxy_socket, file_type;
+type atproxy_device, dev_type;

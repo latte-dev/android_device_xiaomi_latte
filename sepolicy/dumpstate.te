@@ -4,3 +4,8 @@ allow dumpstate system_file:filesystem getattr;
 # read crash log files
 allow dumpstate log_file:file r_file_perms;
 
+userdebug_or_eng(`
+  # allow it send sigkill to crashlogd
+  allow dumpstate crashlogd:process signal;
+')
+

@@ -1,4 +1,0 @@
-#
-# nvm fs parition files
-#
-/nvm_fs_partition/bluetooth(/.*)?    u:object_r:bluetooth_efs_file:s0

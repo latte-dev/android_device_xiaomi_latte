@@ -15,3 +15,6 @@ allow cg2k gps_device:chr_file rw_file_perms;
 allow cg2k gps_sysfs_file:file rw_file_perms;
 allow cg2k radio_device:chr_file rw_file_perms;
 wakelock_use(cg2k)
+
+#telephony specific permissions for cg2k
+unix_socket_connect(cg2k, mmgr, mmgr)

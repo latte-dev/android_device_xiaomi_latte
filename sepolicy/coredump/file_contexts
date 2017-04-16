@@ -1,2 +1,0 @@
-# Coredump path
-/data/core(/.*)?                u:object_r:cored_file:s0

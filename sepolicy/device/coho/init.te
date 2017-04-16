@@ -1,5 +1,0 @@
-# COHO specific
-allow init msync_service:service_manager add;
-
-# COHO specific
-allow init coreu_service:service_manager add;

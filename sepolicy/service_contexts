@@ -8,3 +8,7 @@ aaservice                                 u:object_r:system_server_service:s0
 awareservice                              u:object_r:system_server_service:s0
 com.intel.camera2.camerahal               u:object_r:mediaserver_service:s0
 debugger_manager                          u:object_r:system_server_service:s0
+media.ipu.acc                             u:object_r:mediaserver_service:s0
+oemtelephony        u:object_r:radio_service:s0
+proxy-tunneling     u:object_r:radio_service:s0
+ptproxy_usbreset    u:object_r:radio_service:s0

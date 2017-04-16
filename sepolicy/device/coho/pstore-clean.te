@@ -1,9 +1,0 @@
-# Rules for vendor/intel/pstore-clean
-allow pstore-clean self:capability { dac_override sys_admin };
-
-# Copied from KK
-allow pstore-clean cache_file:dir { add_name search write create };
-allow pstore-clean cache_file:file { create open write };
-
-allow pstore-clean self:capability dac_read_search;
-allow pstore-clean self:capability dac_override;

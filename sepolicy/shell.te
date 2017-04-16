@@ -5,3 +5,8 @@ allow shell surfaceflinger_tmpfs:file { read write };
 userdebug_or_eng(`
   allow shell rootfs:file execute_no_trans;
 ')
+
+userdebug_or_eng(`
+#telephony specific system props for shell
+  allow shell atproxy_prop:property_service set;
+')

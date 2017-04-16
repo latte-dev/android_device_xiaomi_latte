@@ -1,2 +1,0 @@
-allow gpsd default_prop:property_service set;
-allow gpsd init:unix_stream_socket connectto;

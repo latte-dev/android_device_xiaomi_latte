@@ -1,9 +1,0 @@
-# sensorhubd
-/system/bin/sensorhubd          u:object_r:sensorhubd_exec:s0
-/dev/sensor-collection          u:object_r:sensorhubd_device:s0
-/dev/socket/sensorhubd          u:object_r:sensorhubd_socket:s0
-/sys/devices/platform/80860F41:04/i2c-5/5-0040/control  u:object_r:sysfs_hwmon_control:s0
-/dev/i2c(/.*)?                  u:object_r:i2c_device:s0
-/dev/ish                        u:object_r:sensorhubd_device:s0
-/sys/class/gpio/gpio59/value    u:object_r:sysfs_gpio_value:s0
-/sys/class/gpio/gpio95/value    u:object_r:sysfs_gpio_value:s0

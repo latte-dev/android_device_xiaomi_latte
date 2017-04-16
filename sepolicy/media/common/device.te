@@ -1,2 +1,0 @@
-type mvpipe_device, dev_type;
-type vpu_device, dev_type;

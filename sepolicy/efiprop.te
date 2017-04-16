@@ -5,3 +5,5 @@ allow efiprop efivarfs:file { open getattr read };
 allow efiprop property_socket:sock_file rw_file_perms;
 allow efiprop init:unix_stream_socket connectto;
 allow efiprop default_prop:property_service set;
+allow efiprop amtl_prop:property_service set;
+allow efiprop mmgr_prop:property_service set;

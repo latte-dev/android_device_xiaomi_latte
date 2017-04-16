@@ -1,4 +1,0 @@
-allow wpa shell_exec:file { read entrypoint };
-allow wpa wifail:unix_dgram_socket sendto;
-allow wpa wpa_exec:file execute_no_trans;
-allow wpa wpa_exec:lnk_file read;

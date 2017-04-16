@@ -8,3 +8,6 @@ allow gpsd keystore:keystore_key { saw };
 use_keystore(gpsd)
 binder_use(gpsd)
 wakelock_use(gpsd)
+
+#telephony specific permissions for gpsd
+unix_socket_connect(gpsd, mmgr, mmgr)

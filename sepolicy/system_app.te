@@ -29,3 +29,11 @@ allow system_app self:netlink_kobject_uevent_socket { read create setopt bind };
 
 allow system_app powerctl_prop:property_service set;
 allow system_app cam_flash_thrtl_prop:property_service set;
+
+# telephony specific rules
+allow system_app tty_device:chr_file rw_file_perms;
+allow system_app amtl_prop:property_service set;
+allow system_app atproxy_prop:property_service set;
+userdebug_or_eng(`
+  allow system_app system_app_data_file:file x_file_perms;
+')

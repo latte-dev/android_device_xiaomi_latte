@@ -30,3 +30,7 @@ allow power_hal_helper shell:file r_file_perms;
 userdebug_or_eng(`
   allow power_hal_helper su:file r_file_perms;
 ')
+
+#Rules for allowing power_hal to access atproxy
+
+allow power_hal_helper atproxy:file r_file_perms;

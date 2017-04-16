@@ -1,3 +1,0 @@
-/dev/mali	u:object_r:gpu_device:s0
-
-/sys/devices/virtual/mali/pm/max_freq_level u:object_r:sysfs_graphics_writable:s0
