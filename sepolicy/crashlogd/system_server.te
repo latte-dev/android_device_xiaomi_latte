@@ -1,0 +1,3 @@
+userdebug_or_eng(`
+  binder_call(system_server, crashlogd);
+')

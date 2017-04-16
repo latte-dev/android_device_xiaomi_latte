@@ -1,0 +1,8 @@
+#
+# Access to the lbsd gps socket
+#
+unix_socket_connect(system_server, gps, lbsd)
+
+# allow location service access to gps information
+allow system_server gnss_data_file:dir r_dir_perms;
+allow system_server gnss_data_file:file ra_file_perms;

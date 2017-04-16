@@ -1,0 +1,32 @@
+# Rules for bootable/userfastboot
+type userfastboot, domain;
+userfastboot_only(
+allow userfastboot rootfs:file execute_no_trans;
+
+allow userfastboot block_device:blk_file { write read getattr open ioctl };
+allow userfastboot device:chr_file { write create open };
+allow userfastboot device:dir { write remove_name add_name };
+allow userfastboot efivarfs:file write;
+allow userfastboot frp_block_device:blk_file { write read open ioctl getattr };
+allow userfastboot loop_device:blk_file { read ioctl open };
+allow userfastboot rootfs:dir mounton;
+allow userfastboot self:capability mknod;
+
+allow userfastboot tmpfs:dir { write remove_name add_name };
+allow userfastboot tmpfs:file { write create unlink open };
+allow userfastboot vfat:filesystem { mount unmount };
+allow userfastboot vfat:file create_file_perms;
+allow userfastboot vfat:dir create_dir_perms;
+
+allow userfastboot self:udp_socket create_socket_perms;
+allow userfastboot self:tcp_socket create_stream_socket_perms;
+allow userfastboot port:tcp_socket name_bind;
+allow userfastboot node:tcp_socket node_bind;
+
+allow userfastboot kernel:system syslog_read;
+
+# Give fastboot unlimited powers to do its job
+# This process needs almost all sensitive permissions out there (for eg rw rootfs)
+# so having it confined brings nothing in terms of security
+unconfined_domain(userfastboot);
+)

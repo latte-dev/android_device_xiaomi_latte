@@ -1,0 +1,2 @@
+#allow platform applications to capture a screen shot
+allow platform_app surfaceflinger_tmpfs:file { read write };

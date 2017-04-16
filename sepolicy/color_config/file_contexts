@@ -1,0 +1,3 @@
+# colorConfig_app service
+/system/bin/igfxSettings                    u:object_r:color_config_exec:s0
+/system/vendor/gfx/ufo_byt/bin/igfxSettings u:object_r:color_config_exec:s0

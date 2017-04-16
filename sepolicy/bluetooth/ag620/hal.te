@@ -1,0 +1,4 @@
+# hal script for ag620 mkdir's /nvm_fs_partition/bluetooth
+# we don't do automatic so we can sepcify the named hint
+file_type_trans(hal, efs_file, bluetooth_efs_file)
+type_transition hal efs_file:dir bluetooth_efs_file "bluetooth";

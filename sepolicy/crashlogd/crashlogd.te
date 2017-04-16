@@ -1,0 +1,35 @@
+userdebug_or_eng(`
+  # Rules for crashlogd
+  type crashlogd, domain;
+  type crashlogd_exec, exec_type, file_type;
+  init_daemon_domain(crashlogd)
+  permissive crashlogd;
+
+  #For silence only
+  dontaudit crashlogd self:capability_class_set *;
+  dontaudit crashlogd kernel:security *;
+  dontaudit crashlogd kernel:system *;
+  dontaudit crashlogd self:memprotect *;
+  dontaudit crashlogd domain:process *;
+  dontaudit crashlogd domain:fd *;
+  dontaudit crashlogd domain:dir r_dir_perms;
+  dontaudit crashlogd domain:lnk_file r_file_perms;
+  dontaudit crashlogd domain:{ fifo_file file } rw_file_perms;
+  dontaudit crashlogd domain:socket_class_set *;
+  dontaudit crashlogd domain:ipc_class_set *;
+  dontaudit crashlogd domain:key *;
+  dontaudit crashlogd fs_type:filesystem *;
+  dontaudit crashlogd fs_type:dir_file_class_set *;
+  dontaudit crashlogd dev_type:dir_file_class_set *;
+  dontaudit crashlogd file_type:dir_file_class_set *;
+  dontaudit crashlogd node_type:node *;
+  dontaudit crashlogd node_type:{ tcp_socket udp_socket } node_bind;
+  dontaudit crashlogd netif_type:netif *;
+  dontaudit crashlogd port_type:socket_class_set name_bind;
+  dontaudit crashlogd port_type:{ tcp_socket dccp_socket } name_connect;
+  dontaudit crashlogd domain:peer recv;
+  dontaudit crashlogd domain:binder *;
+  dontaudit crashlogd property_type:property_service set;
+
+  binder_use(crashlogd);
+')

@@ -1,0 +1,11 @@
+allow ueventd sysfs_powercap:file { write open };
+allow ueventd sysfs_thermal_management:file rw_file_perms;
+allow ueventd system_data_file:dir r_dir_perms;
+allow ueventd system_data_file:file r_file_perms;
+
+# for CWS manufacturing tool
+allow ueventd cws_manu_data_file:dir search;
+allow ueventd cws_manu_data_file:file { read getattr open };
+
+allow ueventd config_file:dir search;
+allow ueventd config_file:file { read getattr open };

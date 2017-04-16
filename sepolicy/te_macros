@@ -1,0 +1,7 @@
+#####################################
+# Userfastboot only
+# SELinux rules which apply only to userfastboot mode
+#
+define(`userfastboot_only', ifelse(target_userfastboot, `true', $1, ))
+
+define(`notuserfastboot', ifelse(target_userfastboot, `true', -userfastboot, ))

@@ -1,6 +1,60 @@
+
 # Silentlake
 type silentlake_data_file, file_type, data_file_type;
 type silentlake_socket, file_type;
 
 # ITUX
 type sysfs_thermal, fs_type, sysfs_type;
+
+# pstore-clean
+type pstore-clean_data_file, file_type, data_file_type;
+
+# efivarfs - Used by userfastboot and efiprop
+type efivarfs, fs_type;
+
+# CWS manufacturing data in /config/
+type cws_manu_data_file, file_type, data_file_type;
+
+# Wifi MAC address in /config/wifi/
+type wlan_prov_data_file, file_type, data_file_type;
+
+# Config data files in /config/
+type config_file, file_type, data_file_type;
+
+# binfmt_misc - Used by houdini
+type binfmt_misc, fs_type;
+
+# thermal
+type thermal_data_file, file_type, data_file_type;
+type thermal_socket, file_type;
+type sysfs_thermal_file, fs_type, sysfs_type;
+type sysfs_thermal_management, fs_type, sysfs_type;
+type itux_data_file, file_type, data_file_type;
+
+# Firmware Update
+type firmware_update_exec, exec_type, file_type;
+
+# hdcp
+type hdcpd_data_file, file_type, data_file_type;
+
+#Powercap
+type sysfs_powercap, fs_type, sysfs_type;
+
+#gps
+type gnss_socket, file_type;
+type gps_sysfs_file, fs_type, sysfs_type;
+
+# i915 videostatus
+type sysfs_videostatus, fs_type, sysfs_type;
+
+# Telemetry
+type telemetry_data_file, file_type, data_file_type;
+
+#rootfs missing labels
+type log_file, file_type;
+
+# for log services
+type logsvc_exec, exec_type, file_type;
+
+# configfs
+type configfs, fs_type;

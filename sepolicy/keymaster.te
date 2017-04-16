@@ -1,0 +1,13 @@
+type keymaster, domain;
+type keymaster_exec, exec_type, file_type;
+
+# keymaster_meid daemon
+init_daemon_domain(keymaster)
+
+# rules for keymaster
+# set ability to manipulate wake_lock
+wakelock_use(keymaster)
+# allow to drop privileges from root to keystore
+allow keymaster self:capability setuid;
+
+allow keymaster tee_device:chr_file rw_file_perms;

@@ -25,3 +25,5 @@ allow untrusted_app ppp_exec:file getattr;
 allow untrusted_app pstore-clean_exec:file getattr;
 allow untrusted_app racoon_exec:file getattr;
 allow untrusted_app sysfs_thermal_management:file { read getattr open };
+#allow screenshot capture
+allow untrusted_app surfaceflinger_tmpfs:file { read write };

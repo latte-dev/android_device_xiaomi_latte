@@ -1,0 +1,10 @@
+android.hardware.intel.msync              u:object_r:msync_service:s0
+android.hardware.intel.coreu              u:object_r:coreu_service:s0
+hwc.info                                  u:object_r:surfaceflinger_service:s0
+hwc.widi                                  u:object_r:surfaceflinger_service:s0
+media.widi.uibc                           u:object_r:system_app_service:s0
+thermal_daemon                            u:object_r:thermal_service:s0
+aaservice                                 u:object_r:system_server_service:s0
+awareservice                              u:object_r:system_server_service:s0
+com.intel.camera2.camerahal               u:object_r:mediaserver_service:s0
+debugger_manager                          u:object_r:system_server_service:s0

@@ -1,0 +1,6 @@
+allow dumpstate pstore-clean_data_file:dir search;
+allow dumpstate system_file:filesystem getattr;
+
+# read crash log files
+allow dumpstate log_file:file r_file_perms;
+
