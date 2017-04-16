@@ -2,6 +2,3 @@
 allow vold config_file:dir { read getattr open ioctl };
 
 allow vold kernel:system module_request;
-# Vold uses our keymaster HAL which connects to keystore_meid service (keymaster
-# domain); allow this connection.
-allow vold keymaster:unix_stream_socket { connectto rw_socket_perms };

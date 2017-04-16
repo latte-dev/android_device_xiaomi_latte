@@ -1,9 +1,5 @@
 # telephony specific rules
-unix_socket_connect(system_app, mmgr, mmgr)
-
 allow system_app tty_device:chr_file rw_file_perms;
-allow system_app mmgr_radio_device:chr_file rw_file_perms;
-allow system_app mmgr_prop:property_service set;
 allow system_app amtl_prop:property_service set;
 allow system_app atproxy_prop:property_service set;
 userdebug_or_eng(`

@@ -1,5 +1,4 @@
 userdebug_or_eng(`
 #telephony specific system props for shell
   allow shell atproxy_prop:property_service set;
-  allow shell atproxy_exec:file rx_file_perms;
 ')

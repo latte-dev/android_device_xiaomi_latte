@@ -20,7 +20,6 @@ allow system_app ctl_logconfig_prop:property_service set;
 allow system_app itux_data_file:dir create_dir_perms;
 allow system_app itux_data_file:file create_file_perms;
 
-allow system_app thermal_device:chr_file rw_file_perms;
 allow system_app sysfs_devices_system_cpu:file rw_file_perms;
 allow system_app sysfs_powercap:{ file lnk_file } rw_file_perms;
 allow system_app sysfs_powercap:dir {read open search };
