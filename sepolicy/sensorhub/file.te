@@ -1,0 +1,4 @@
+# sensorhubd files
+type sensorhubd_socket, file_type;
+type sysfs_hwmon_control, fs_type, sysfs_type;
+type sysfs_gpio_value, fs_type, sysfs_type;

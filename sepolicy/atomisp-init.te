@@ -1,4 +1,0 @@
-type atomisp-init, domain;
-type atomisp-init_exec, exec_type, file_type;
-
-init_daemon_domain(atomisp-init)

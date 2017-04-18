@@ -1,6 +1,0 @@
-allow nfc surfaceflinger_tmpfs:file { read write };
-allow nfc nfc_data_file:file rw_file_perms;
-allow nfc config_file:dir search;
-allow nfc cws_manu_data_file:dir search;
-allow nfc cws_manu_data_file:file { read getattr open };
-allow nfc log_file:file write;

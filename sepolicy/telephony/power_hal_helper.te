@@ -1,0 +1,3 @@
+#Rules for allowing power_hal to access atproxy
+
+allow power_hal_helper atproxy:file r_file_perms;

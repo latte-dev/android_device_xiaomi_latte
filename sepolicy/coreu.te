@@ -1,26 +1,2 @@
-# Rules for vendor/intel/ufo
-type coreu, domain;
-type coreu_exec, exec_type, file_type;
-init_daemon_domain(coreu);
-
-binder_use(coreu)
-binder_call(coreu, surfaceflinger)
-binder_call(coreu, msync)
-allow coreu coreu_tmpfs:file { lock create open };
-allow coreu debugfs:file read;
-allow coreu gpu_device:chr_file rw_file_perms;
-allow coreu msr_device:chr_file rw_file_perms;
-allow coreu self:capability { setuid sys_nice ipc_lock setgid };
-# Use binder_call macro here instead?
-allow coreu servicemanager:binder { transfer call };
-allow coreu sysfs:file write;
-allow coreu system_data_file:dir { write add_name };
-allow coreu system_data_file:file { create write lock open };
-allow coreu tmpfs:dir { write add_name };
-allow coreu self:capability dac_override;
-allow coreu self:capability sys_admin;
-
-allow coreu coreu_service:service_manager add;
-
-allow coreu self:netlink_kobject_uevent_socket create_socket_perms;
+allow coreu self:capability sys_rawio;
 allow coreu sysfs_thermal_management:file { read write open };

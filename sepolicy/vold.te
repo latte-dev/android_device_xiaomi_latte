@@ -1,4 +1,1 @@
-
 allow vold config_file:dir { read getattr open ioctl };
-
-allow vold kernel:system module_request;

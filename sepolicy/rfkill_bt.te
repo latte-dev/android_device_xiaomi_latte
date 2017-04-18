@@ -1,4 +1,0 @@
-type rfkill_bt, domain;
-type rfkill_bt_exec, exec_type, file_type;
-
-init_daemon_domain(rfkill_bt)

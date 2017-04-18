@@ -1,8 +1,0 @@
-type system_power_hal_prop, property_type;
-type cam_flash_thrtl_prop, property_type;
-type system_gralloc_version_prop, property_type;
-type ctl_logconfig_prop, property_type;
-type atproxy_prop, property_type;
-type amtl_prop, property_type;
-type mmgr_prop, property_type;
-type ril_radio_prop, property_type;

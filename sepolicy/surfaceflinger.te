@@ -1,4 +1,0 @@
-binder_call(surfaceflinger, coreu)
-allow surfaceflinger sysfs_videostatus:file { getattr open write };
-
-allow surfaceflinger device:dir r_dir_perms;

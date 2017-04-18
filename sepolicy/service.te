@@ -1,3 +1,0 @@
-type msync_service,            service_manager_type;
-type coreu_service,            service_manager_type;
-type thermal_service,          service_manager_type;

@@ -1,3 +1,0 @@
-genfscon efivarfs       /   u:object_r:efivarfs:s0
-genfscon binfmt_misc    /   u:object_r:binfmt_misc:s0
-genfscon configfs       /   u:object_r:configfs:s0

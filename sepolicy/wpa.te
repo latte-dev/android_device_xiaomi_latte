@@ -1,5 +1,2 @@
-
 allow wpa config_file:dir search;
 allow wpa wifi_data_file:sock_file { create setattr };
-
-allow wpa init:unix_dgram_socket { read write };

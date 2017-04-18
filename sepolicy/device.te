@@ -1,10 +1,1 @@
 type silentlake_device, dev_type;
-type pstore_dev, dev_type;
-type msr_device, dev_type;
-type rfkill_device, dev_type;
-type thermal_device, dev_type;
-type cws_manu_device, dev_type;
-type bluetooth_device, dev_type;
-type sensorhubd_device, dev_type;
-type i2c_device, dev_type;
-type modem_audio_tty_device, dev_type;
