@@ -1,0 +1,88 @@
+.\" thermald (8) manual page
+.\"
+.\" This is free documentation; you can redistribute it and/or
+.\" modify it under the terms of the GNU General Public License as
+.\" published by the Free Software Foundation; either version 2 of
+.\" the License, or (at your option) any later version.
+.\"
+.\" The GNU General Public License's references to "object code"
+.\" and "executables" are to be interpreted as the output of any
+.\" document formatting or typesetting system, including
+.\" intermediate and printed output.
+.\"
+.\" This manual is distributed in the hope that it will be useful,
+.\" but WITHOUT ANY WARRANTY; without even the implied warranty of
+.\" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+.\" GNU General Public License for more details.
+.\"
+.\" You should have received a copy of the GNU General Public Licence along
+.\" with this manual; if not, write to the Free Software Foundation, Inc.,
+.\" 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+.\"
+.\" Copyright (C) 2012 Intel Corporation. All rights reserved.
+.\"
+.TH thermald "8" "8 May 2013"
+
+.SH NAME
+thermald \- start Linux thermal daemon
+.SH SYNOPSIS
+.B thermald
+.RI " [ " OPTIONS " ]
+
+.SH DESCRIPTION
+.B thermald
+is a Linux daemon used to prevent the overheating of platforms. This daemon monitors
+temperature and applies compensation using available cooling methods.
+
+By default, it monitors CPU temperature using available CPU digital temperature sensors and maintains CPU temperature under control, before HW takes aggressive correction action.
+
+.TP
+Thermal daemon looks for thermal sensors and thermal cooling drivers in the Linux thermal sysfs (/sys/class/thermal) and builds a
+list of sensors and cooling drivers. Each of the thermal sensors can optionally be binded to a cooling drivers by the in kernel
+drivers. In this case the Linux kernel thermal core can directly take actions based on the temperature trip points, for each sensor
+and associated cooling device. For example a trip temperature X in a sensor can be associates a cooling driver Y. So when
+the sensor temperature = X, the cooling driver "Y" is activated.
+
+Thermal daemon allows to change this relationship or add new one via a thermal configuration file (thermal-conf.xml). This
+file is automatically created and used, if the platform has ACPI thermal relationship table. If not this needs to be
+manually configured.
+
+When there is a sensor, which has no associate cooling device, via configuration file or thermal relationship table, then
+this sensor is tested for relationship with CPU load dynamically upto maximum 3 times. If there is no relationship, then
+it is added to a black list of unbinded sensors and not tried again.
+
+
+.TP
+Optionally thermal daemon can act as an exclusive thermal controller by using thermal sysfs and acting as a user space governor.
+In this case kernel thermal core is not active and decision is taken by thermal daemon only.
+
+.SH OPTIONS
+.TP
+.B \-h, \-\-help
+Show help options.
+.TP
+.B \-\-version
+Print thermald version and exit.
+.TP
+.B \-\-no-daemon
+Don't become a daemon: Default is daemon mode.
+.TP
+.B \-\-loglevel=info
+log severity: info level and up.
+.TP
+.B \-\-loglevel=debug
+log severity: debug level and up: Max logging.
+.TP
+.B \-\-poll-interval
+Poll interval in seconds: Poll for zone temperature changes.
+To disable polling, set to zero. Polling can only be disabled, if available temperature sensors can notify temperature change asynchronously.
+.TP
+.B \-\-dbus-enable
+Enable Dbus.
+.TP
+.B \-\-exclusive-control
+Act as exclusive thermal controller. This will use user-space
+governor for thermal sysfs and take over control.
+
+.SH SEE ALSO
+thermal-conf.xml(5)

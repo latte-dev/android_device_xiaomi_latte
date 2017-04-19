@@ -1,0 +1,111 @@
+/*
+ * thermald.h: Thermal Daemon common header file
+ *
+ * Copyright (C) 2012 Intel Corporation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version
+ * 2 or later as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+ * 02110-1301, USA.
+ *
+ *
+ * Author Name <Srinivas.Pandruvada@linux.intel.com>
+ *
+ */
+#ifndef THD_THERMALD_H
+#define THD_THERMALD_H
+
+#include <stdio.h>
+#include <getopt.h>
+#include <locale.h>
+#include <errno.h>
+#include <stdlib.h>
+#include <signal.h>
+#include <pthread.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <string.h>
+#include <signal.h>
+
+#ifdef ANDROID
+
+#define LOG_NDEBUG 1
+#undef LOG_TAG
+#define LOG_TAG "THERMALD"
+#include <utils/Log.h>
+#include <cutils/log.h>
+#include <cutils/properties.h>
+#include "thd_binder_server.h"
+
+#define thd_log_fatal	ALOGE
+#define thd_log_error	ALOGE
+#define thd_log_warn	ALOGW
+#define thd_log_info	ALOGD
+#define thd_log_debug 	ALOGV
+
+#else
+
+#include "config.h"
+
+#define LOCKF_SUPPORT
+#ifdef GLIBC_SUPPORT
+#include <glib.h>
+#include <dbus/dbus.h>
+#include <dbus/dbus-glib-lowlevel.h>
+#include <dbus/dbus-glib.h>
+#include <glib/gi18n.h>
+#include <gmodule.h>
+
+// Log macros
+#define thd_log_fatal		g_error		// Print error and terminate
+#define thd_log_error		g_critical
+#define thd_log_warn		g_warning
+#define thd_log_debug		g_debug
+#define thd_log_info(...)	g_log(NULL, G_LOG_LEVEL_INFO, __VA_ARGS__)
+#else
+static int dummy_printf(const char *__restrict __format, ...) {
+	return 0;
+}
+#define thd_log_fatal		printf
+#define thd_log_error		printf
+#define thd_log_warn		printf
+#define thd_log_debug		dummy_printf
+#define thd_log_info		printf
+#endif
+#endif
+// Common return value defines
+#define THD_SUCCESS			0
+#define THD_ERROR			-1
+#define THD_FATAL_ERROR		-2
+
+// Dbus related
+/* Well-known name for this service. */
+#define THD_SERVICE_NAME        	"org.freedesktop.thermald"
+#define THD_SERVICE_OBJECT_PATH 	"/org/freedesktop/thermald"
+#define THD_SERVICE_INTERFACE		"org.freedesktop.thermald"
+
+typedef enum {
+	NONE, THERMALD, ITUX, ITUXD,
+} engine_mode_t;
+extern engine_mode_t engine_mode;
+
+class cthd_engine;
+class cthd_engine_therm_sysfs;
+extern cthd_engine *thd_engine;
+extern int thd_poll_interval;
+extern void get_zones_from_ituxd(int numZones, std::vector<thermal_api::ThermalZone> thermal_zones);
+extern void throttle_cdev(char * cdevname, int cdev_val);
+extern void power_save_cdev(bool on, int percentage);
+
+#endif
