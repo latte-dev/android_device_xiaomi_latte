@@ -293,30 +293,6 @@ service iprenew_bt-pan /system/bin/logwrapper /system/bin/dhcpcd -n
     disabled
     oneshot
 
-service bd_prov /system/bin/bd_prov
-    class core
-    user system
-    group system bluetooth
-    disabled
-    oneshot
-
-service smonsir /system/bin/smonsir
-    user root
-    group root
-    oneshot
-    disabled
-
-service smprosrv /system/bin/smprosrv
-    user root
-    group root
-    oneshot
-    disabled
-
-on property:persist.sys.matsir.enable=1
-    setprop sys.sysmat.service.control start
-    start smonsir
-    start smprosrv
-
 ##############################################################
 # Source: device/intel/mixins/groups/wlan/bcm4356/init.rc
 ##############################################################
@@ -465,7 +441,6 @@ on property:system.audio.sst.speech=fortemedia
 on boot
     write /sys/devices/pci0000\:00/0000\:00\:14.0/power/control auto
 
-
 ##############################################################
 # Source: device/intel/mixins/groups/usb-gadget/g_android/init.rc
 ##############################################################
@@ -561,9 +536,6 @@ service tfa_cold_boot /system/bin/sh /system/bin/playback_audio_nxp.sh /etc/sile
     group system
     disabled
     oneshot
-
-service bugreport_daemon /system/xbin/bugreport_daemon
-    class late_start
 
 on property:service.bootanim.exit=0
     start tfa_cold_boot
@@ -679,26 +651,7 @@ service rfkill-init /system/bin/sh /system/bin/rfkill-init.sh  bluetooth
     disabled
     group system
     oneshot
-##############################################################
-# Source: device/intel/mixins/groups/debug-charging/true/init.rc
-##############################################################
-import /init.debug-charging.rc
-##############################################################
-# Source: device/intel/mixins/groups/debug-logs/true/init.rc
-##############################################################
-import /init.logs.rc
-##############################################################
-# Source: device/intel/mixins/groups/debug-crashlogd/true/init.rc
-##############################################################
-import /init.crashlogd.rc
-##############################################################
-# Source: device/intel/mixins/groups/debug-coredump/true/init.rc
-##############################################################
-import /init.coredump.rc
-##############################################################
-# Source: device/intel/mixins/groups/debug-mpm/true/init.rc
-##############################################################
-import /init.diag.rc
+
 ##############################################################
 # Source: device/intel/mixins/groups/security/txei/init.rc
 ##############################################################
@@ -765,6 +718,8 @@ on property:init.svc.media=running
     start power_hal_helper
 
 # Touch boost based performance enhancements
+on post-fs
+
 chown system system /sys/devices/system/cpu/cpufreq/interactive/touchboostpulse
 chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/touchboostpulse
 chown system system /sys/devices/system/cpu/cpufreq/interactive/touchboost_freq
@@ -888,48 +843,3 @@ service post-boot-init /system/bin/busybox sh /system/etc/init.post_boot.sh
     class late_start
     user root
     oneshot
-
-#add for display features
-service eyecare /system/bin/eyecare
-    user root
-    oneshot
-    disabled
-
-on property:persist.sys.display_prefer=*
-    start eyecare
-
-on property:persist.sys.display_eyecare=*
-    start eyecare
-
-on property:persist.sys.display_ce=0
-    write /sys/class/graphics/fb0/dispparam 0xF0
-
-on property:persist.sys.display_ce=10
-    write /sys/class/graphics/fb0/dispparam 0xF0
-
-on property:persist.sys.display_ce=11
-    write /sys/class/graphics/fb0/dispparam 0x10
-
-service smonsir /system/bin/smonsir
-    user root
-    group root
-    oneshot
-    disabled
-
-service smprosrv /system/bin/smprosrv
-    user root
-    group root
-    oneshot
-    disabled
-
-on property:persist.sys.matsir.enable=1
-    setprop sys.sysmat.service.control start
-    start smonsir
-    start smprosrv
-
-service smeloop /system/bin/smeloop
-    class late_start
-    user root
-    group root
-    oneshot
-
