@@ -836,6 +836,9 @@ on boot
     # Button backlight
     chown system system /sys/class/leds/button-backlight/brightness
 
+    # PowerHAL
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/touchboostpulse
+
 service post-boot-init /system/bin/busybox sh /system/etc/init.post_boot.sh
     class late_start
     user root
