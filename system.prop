@@ -18,10 +18,6 @@ ro.opengles.version=196609
 # DRM
 drm.service.enabled=true
 
-# Storage
-persist.sys.isUsbOtgEnabled=true
-persist.sys.usb.config=mtp,adb
-
 # Display
 ro.sf.lcd_density=320
 
