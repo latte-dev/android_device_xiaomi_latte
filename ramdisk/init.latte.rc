@@ -72,11 +72,12 @@ on post-fs
     chown system system /persist/LightSensorData.txt
     chmod 600 /persist/LightSensorData.txt
 
-service pstore-clean /system/vendor/bin/pstore-clean
-    user root
-    group system
-    class late_start
-    oneshot
+#service pstore-clean /system/vendor/bin/pstore-clean
+#    user root
+#    group system
+#    class late_start
+#    oneshot
+
 
 service watchdogd /sbin/watchdogd
     user root
