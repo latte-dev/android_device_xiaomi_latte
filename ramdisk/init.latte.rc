@@ -78,6 +78,7 @@ service pstore-clean /system/bin/pstore-clean
     user root
     group system
     class late_start
+    oneshot
 
 service watchdogd /sbin/watchdogd
     user root
