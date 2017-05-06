@@ -69,10 +69,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 ADDITIONAL_DEFAULT_PROPERTIES += \
-    intel.hwc.autovideoddr=1 \
+    persist.intel.ogl.username=Developer \
+    persist.intel.ogl.debug=/data/ufo.prop \
+    persist.intel.ogl.dumpdebugvars=1 \
     ro.ufo.use_msync=1 \
-    ro.ufo.use_coreu=1 \
-    persist.gen_gfxd.enable=0
+    ro.ufo.use_coreu=1
 
 # FRP
 ADDITIONAL_DEFAULT_PROPERTIES += \

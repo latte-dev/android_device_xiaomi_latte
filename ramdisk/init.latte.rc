@@ -162,31 +162,27 @@ on boot
 ##############################################################
 # Source: device/intel/mixins/groups/graphics/ufo_gen8/init.rc
 ##############################################################
-service msync /system/vendor/bin/msync
-    class main
-#    seclabel u:r:msync:s0
+# for hardware accelerated graphics
+service ufo-init /system/bin/sh /system/etc/init.ufo.sh
+    class core
+    oneshot
 
-service coreu /system/vendor/bin/coreu
+#Enable graphic debug information
+service debug_i915 /system/bin/sh /system/etc/ftrace_gpu_request_scheduler.sh
+	class main
+	disabled
+	oneshot
+
+service msync /system/bin/msync
+    class main
+    seclabel u:r:msync:s0
+
+service coreu /system/bin/coreu
     class main
 
 on post-fs-data
     mkdir /data/system 0770 system system
-    mkdir /data/coreu 0770 media root
-
-on boot
-   #Give permission to system to use i915_videostatus sysfs interface
-    chown system system /sys/class/drm/card0/power/i915_videostatus
-
- on property:persist.gen_gfxd.enable=1
-     start gfxd
- 
- on property:persist.gen_gfxd.enable=0
-     stop gfxd
- 
- service gfxd /system/vendor/bin/gfxd
-     class main
-     user root
-     group graphics
+    restart ufo-init
 
 ##############################################################
 # Source: device/intel/mixins/groups/storage/sdcard-mmcblk1-4xUSB-sda-emulated/init.rc
@@ -351,11 +347,6 @@ on boot
     setprop widi.setsocketsize.enable false
     setprop widi.socketpriority.enable false
 
-
- on post-fs-data
-     mkdir /data/misc/dnsmasq 0755 root root
-     mkdir /data/misc/dnsmasq/dalvik-cache 0755 root root
-     restorecon_recursive /data/misc/dnsmasq
 ##############################################################
 # Source: device/intel/mixins/groups/audio/cht-rt5672/init.rc
 ##############################################################
@@ -672,16 +663,14 @@ service keymaster_meid /system/bin/keymaster_meid
 # and once that is set up it will drop all unnecessary capabilities and
 # will not show up as a root process in the steady state.
 
-service hdcpd /system/vendor/bin/hdcpd
+on post-fs-data
+    mkdir /data/hdcp 700 media media
+
+service hdcpd /system/bin/hdcpd
     class main
     user root
     group graphics drmrpc
-
-# mkdir hdcp data folder here, non system service don't have permission
-# to write in /data/
-on post-fs-data
-    mkdir /data/hdcp 0770 media media
-
+    seclabel u:r:hdcpd:s0
 
 ##############################################################
 # Source: device/intel/mixins/groups/bcu/true/init.rc
@@ -772,14 +761,6 @@ on early-init
     # create stack traces, required with newer kernels
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
-
-##############################################################
-# Source: device/intel/mixins/groups/vendor_fw_load/default/init.rc
-##############################################################
- on init
-     #create /lib folder if it does not exist
-     mkdir /lib
-     symlink /system/vendor/firmware /lib/firmware
 
 # ------------------ END MIX-IN DEFINITIONS ------------------
 

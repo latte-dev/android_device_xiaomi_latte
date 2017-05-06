@@ -233,16 +233,42 @@ etc/atomisp/00ov13850.aiqb
 etc/atomisp/01gc0339.aiqb
 
 # Display
-lib/hw/memtrack.gmin.so
-vendor/bin/coreu
-vendor/bin/hdcpd
-vendor/bin/msync
-vendor/bin/gfxd
-vendor/firmware/i915/huc_gen8.bin
+bin/coreu
+bin/hdcpd
+bin/msync
+etc/firmware/i915/huc_gen8.bin
+lib/egl/libGLES_intel8.so
+lib/hw/gralloc.gmin.so
+lib/hw/hwcomposer.gmin.so
+lib/i965_drv_video.so
+lib/igdclbif.bin
+lib/igfxcmjit32.so
+lib/igfxcmrt32.so
+lib/libcoreuclient.so
+lib/libcoreuinterface.so
+lib/libcoreuservice.so
+lib/libgrallocclient.so
+lib/libgrallocgmm.so
+lib/libgsmgr.so
+lib/libhwcservice.so
+lib/libigdbcl.so
+lib/libigdlbva.so
+lib/libigdrsmlc.so
+lib/libigdusc.so
+lib/libivp.so
+lib/libmd.so
+lib/libpavp.so
+lib/libpavpdll.so
+lib/libpcp.so
+lib/libRSDriver_intel.so
+lib/libRSDriverUmd_intel.so
+lib/libskuwa.so
+lib/libuevent.so
 vendor/Khronos/OpenCL/vendors/Intel.icd
-vendor/lib/egl/libGLES_intel8.so
-vendor/lib/hw/gralloc.gmin.so
-vendor/lib/hw/hwcomposer.gmin.so
+vendor/lib/__ocl_svml_g9.so
+vendor/lib/__ocl_svml_n8.so
+vendor/lib/__ocl_svml_s9.so
+vendor/lib/__ocl_svml_v8.so
 vendor/lib/clbltfng9_img_cbk.o
 vendor/lib/clbltfng9_img_cbk.rtl
 vendor/lib/clbltfng9.rtl
@@ -256,51 +282,21 @@ vendor/lib/clbltfnshared.rtl
 vendor/lib/clbltfnv8_img_cbk.o
 vendor/lib/clbltfnv8_img_cbk.rtl
 vendor/lib/clbltfnv8.rtl
-vendor/lib/i965_drv_video.so
-vendor/lib/igdclbif.bin
-vendor/lib/igfxcmjit32.so
-vendor/lib/igfxcmrt32.so
-vendor/lib/libclang_compiler.so
 vendor/lib/libcl_logger.so
+vendor/lib/libclang_compiler.so
 vendor/lib/libcommon_clang.so
-vendor/lib/libcoreuclient.so
-vendor/lib/libcoreuinterface.so
-vendor/lib/libcoreuservice.so
 vendor/lib/libcpu_device.so
 vendor/lib/libgnustl_shared.so
-vendor/lib/libgrallocclient.so
-vendor/lib/libgrallocgmm.so
-vendor/lib/libgsmgr.so
-vendor/lib/libhwcservice.so
-vendor/lib/libigdbcl.so
 vendor/lib/libigdfcl.so
-vendor/lib/libigdlbva.so
 vendor/lib/libigdmcl.so
 vendor/lib/libigdrcl.so
-vendor/lib/libigdrsmlc.so
-vendor/lib/libigdusc.so
-vendor/lib/libigfxcmjit.so
-vendor/lib/libigfxcmrt.so
 vendor/lib/libintelocl.so
 vendor/lib/libIntelOpenCL.so
-vendor/lib/libivp.so
-vendor/lib/libmd.so
 vendor/lib/libOclCpuBackEnd.so
 vendor/lib/libOpenCL.so
-vendor/lib/libpavp.so
-vendor/lib/libpcp.so
-vendor/lib/libplatforminfo.so
-vendor/lib/libRSDriver_intel.so
-vendor/lib/libRSDriverUmd_intel.so
-vendor/lib/libskuwa.so
 vendor/lib/libtask_executor.so
 vendor/lib/libtbb.so
 vendor/lib/libtbbmalloc.so
-vendor/lib/libuevent.so
-vendor/lib/__ocl_svml_g9.so
-vendor/lib/__ocl_svml_n8.so
-vendor/lib/__ocl_svml_s9.so
-vendor/lib/__ocl_svml_v8.so
 
 # Display DRM
 lib/libdrm.so
@@ -309,6 +305,7 @@ lib/libpciaccess.so
 
 # Display widi
 lib/libhwcwidi.so
+lib/libmultidisplay.so
 
 # DRM
 bin/keymaster_meid
