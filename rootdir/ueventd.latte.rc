@@ -16,26 +16,18 @@
 /dev/media*       0660  system  camera
 /dev/v4l-subdev*  0660  system  camera
 ##############################################################
-# Source: device/intel/mixins/groups/rfkill/true/ueventd.rc
-##############################################################
-# Rfkill
-/dev/rfkill                    0660   bluetooth        system
-##############################################################
-# Source: device/intel/mixins/groups/bluetooth/rtl8723bs/ueventd.rc
+# Source: device/intel/mixins/groups/bluetooth/bcm4356/ueventd.rc
 ##############################################################
 #Bluedroid uhid support
-/dev/uhid                                    0660 bluetooth bluetooth
-/dev/ttyHSU0                                 0660 bluetooth net_bt_stack
+/dev/uhid                               0660    bluetooth bluetooth
 
-##############################################################
-# Source: device/intel/mixins/groups/nfc/fdp/ueventd.rc
-##############################################################
-# NFCC node
-/dev/nfcc                                  0660 nfc nfc
+# Device needed by shared transport layer (used by bluetooth, FM and GPS)
+/dev/ttyHSU0                            0660    bluetooth net_bt_stack
 
-# NFC GPT factory partition block device
-/dev/block/platform/*/*/by-name/nfc_nvm 0660 nfc system
-
+# Device needed by FM
+/dev/radio0                             0666    bluetooth bluetooth
+# Bluetooth and V4L2 FM
+/dev/brcm_bt_drv                        0660    bluetooth bluetooth
 ##############################################################
 # Source: device/intel/mixins/groups/disk-bus/mmc-cht/ueventd.rc
 ##############################################################
@@ -45,22 +37,28 @@
 ##############################################################
 # thermal daemon runs as system user and it depends on these nodes
 /sys/devices/virtual/thermal/cooling_device*    cur_state            0644 system system
-/sys/devices/virtual/thermal/thermal_zone*      trip_point_0_temp    0644 system system
 /sys/devices/virtual/thermal/thermal_zone*      trip_point_1_temp    0644 system system
 /dev/acpi_thermal_rel                                                0600 system system
 ##############################################################
-# Source: device/intel/mixins/groups/gps/cg2k/ueventd.rc
+# Source: device/intel/mixins/groups/gps/bcm4752/ueventd.rc
 ##############################################################
-# GPS GPT factory partition block device
-/dev/block/platform/*/*/by-name/gnss_nvm 0660 gps system
+# GPS rfkill nodes
+# /sys/devices/*/8086*:01/BCM4752*:00/rfkill/rfkill* state    0660    gps     system
+# /sys/devices/*/8086*:01/BCM4752*:00/rfkill/rfkill* type     0440    gps     system
 
 # GPS
-/dev/ttyHSU1 0660 gps gps
+# /dev/ttyHSU1                    0660   gps        gps
+##############################################################
+# Source: device/intel/mixins/groups/rfkill/true/ueventd.rc
+##############################################################
+# Rfkill
+/dev/rfkill                    0660   bluetooth        system
 ##############################################################
 # Source: device/intel/mixins/groups/lights/true/ueventd.rc
 ##############################################################
 # i915 backlight driver
-/sys/devices/pci0000:00/0000:00:02.0/drm/card*/card*/intel_backlight brightness 0644 system system
+/sys/devices/pci0000:00/808622C1:01/i2c-1/i2c-LP855600:00/backlight/intel_backlight brightness 0644 system system
+# /sys/devices/pci0000:00/0000:00:02.0/drm/card*/card*/intel_backlight brightness 0644 system system
 
 ##############################################################
 # Source: device/intel/mixins/groups/security/txei/ueventd.rc
@@ -71,33 +69,14 @@
 # Used by WideVine
 /dev/meimm                    0660   system     drmrpc
 ##############################################################
+
 # Source: device/intel/mixins/groups/power/true/ueventd.rc
 ##############################################################
 # For I2C devices with 'enable' sysfs node
 /sys/devices/platform/*/i2c-*/i2c-* power_HAL_suspend 0644 system system
 /sys/bus/i2c/devices/i2c* power_HAL_suspend 0644 system system
 
-##############################################################
-# Source: device/intel/mixins/groups/telephony/default/ueventd.rc
-##############################################################
-# ueventd.rc common to all platforms
-
-# modem tty node change to radio user can read and write
-/dev/gsmtty*              0660   system     radio
-/dev/ttyACM*              0660   root       radio
-/dev/ttyPTI1              0660   root       radio
-/dev/ttyGS0               0660   root       radio
-/dev/mdmTrace             0660   root       radio
-/dev/mdm_ctrl*            0660   root       radio
-/dev/ttyIFX0              0660   root       radio
-/dev/ttyIFX1              0660   root       radio
-
-
 # ------------------ END MIX-IN DEFINITIONS ------------------
 
-/dev/ttyUSB0              0660   root       radio
-/dev/ttyUSB1              0660   root       radio
-/dev/ttyUSB2              0660   root       radio
-/dev/ttyUSB3              0660   root       radio
-/dev/ttyUSB4              0660   root       root
-/dev/ttyUSB*              0666   root       radio
+# Audio: smartPA
+/dev/i2c-1                    0666   root       root
