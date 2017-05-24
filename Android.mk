@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-ifneq ($(filter cht_cr_mrd_w,$(TARGET_DEVICE)),)
+ifneq ($(filter latte,$(TARGET_DEVICE)),)
 
 LOCAL_PATH := $(call my-dir)
 

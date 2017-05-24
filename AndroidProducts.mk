@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_cht_cr_mrd_w.mk
+    $(LOCAL_DIR)/omni_latte.mk

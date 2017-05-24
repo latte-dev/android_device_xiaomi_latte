@@ -17,6 +17,11 @@
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
-$(call inherit-product, device/intel/cht_cr_mrd_w/full_cht_cr_mrd_w.mk)
+$(call inherit-product, device/xiaomi/latte/full_latte.mk)
 
-PRODUCT_NAME := omni_cht_cr_mrd_w
+PRODUCT_NAME := omni_latte
+
+# Boot animation
+TARGET_SCREEN_WIDTH := 2048
+TARGET_SCREEN_HEIGHT := 1536
+TARGET_BOOTANIMATION_HALF_RES := true

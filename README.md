@@ -1,1 +1,1 @@
-TWRP device tree for [Chuwi Vi10 Plus](http://konstakang.com/devices/chuwi_vi10plus/TWRP).
+TWRP 5.1.1 device tree for Xiaomi Mipad 2

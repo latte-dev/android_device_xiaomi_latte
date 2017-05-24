@@ -18,16 +18,16 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from device.mk
-$(call inherit-product, device/intel/cht_cr_mrd_w/device.mk)
+$(call inherit-product, device/xiaomi/latte/device.mk)
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/intel/cht_cr_mrd_w/rootdir,root)
+    $(call find-copy-subdir-files,*,device/xiaomi/latte/rootdir,root)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := cht_cr_mrd_w
-PRODUCT_NAME := full_cht_cr_mrd_w
-PRODUCT_BRAND := CHUWI
-PRODUCT_MODEL := Vi10 plus
-PRODUCT_MANUFACTURER := CHUWI
-PRODUCT_RELEASE_NAME := Chuwi Vi10 Plus
+PRODUCT_DEVICE := latte
+PRODUCT_NAME := full_latte
+PRODUCT_BRAND := Xiaomi
+PRODUCT_MODEL := Mi Pad 2
+PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_RELEASE_NAME := Xiaomi Mi Pad 2

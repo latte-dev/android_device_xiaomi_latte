@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
-PRODUCT_AAPT_PREF_CONFIG := hdpi
+PRODUCT_AAPT_CONFIG := normal
 
 PRODUCT_COPY_FILES += \
-    device/intel/cht_cr_mrd_w/kernel:kernel
+    device/xiaomi/latte/kernel:kernel
 
