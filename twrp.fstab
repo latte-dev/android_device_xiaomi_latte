@@ -6,5 +6,4 @@
 /recovery      emmc  /dev/block/by-name/android_recovery       flags=backup=1
 /misc          emmc  /dev/block/by-name/android_misc
 
-/external_sd   auto  /dev/block/mmcblk1p1  /dev/block/mmcblk1  flags=display="Micro SDcard";storage;wipeingui;removable
 /usb_otg       auto  /dev/block/sda1       /dev/block/sda      flags=display="USB-OTG";storage;wipeingui;removable
