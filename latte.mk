@@ -35,10 +35,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_res_images 
 
-# Ituxd
-PRODUCT_PACKAGES += \
-    ituxd 
-
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=16m \
