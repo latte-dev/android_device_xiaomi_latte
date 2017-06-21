@@ -1,3 +1,3 @@
-add_lunch_combo cm_latte-userdebug
-add_lunch_combo cm_latte-user
-add_lunch_combo cm_latte-eng
+add_lunch_combo aosp_latte-userdebug
+add_lunch_combo aosp_latte-user
+add_lunch_combo aosp_latte-eng
