@@ -124,9 +124,9 @@ WITH_SU := true
 #    device/xiaomi/latte/sepolicy/telephony
 
 # Kernel
-BOARD_KERNEL_IMAGE_NAME := bzImage
-TARGET_KERNEL_ARCH := x86_64
-TARGET_KERNEL_SOURCE := kernel/xiaomi/latte
-TARGET_KERNEL_CONFIG := lineageos_latte_defconfig
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := x86_64-linux-android-
+#BOARD_KERNEL_IMAGE_NAME := bzImage
+#TARGET_KERNEL_ARCH := x86_64
+#TARGET_KERNEL_SOURCE := kernel/xiaomi/latte
+#TARGET_KERNEL_CONFIG := lineageos_latte_defconfig
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := x86_64-linux-android-
 

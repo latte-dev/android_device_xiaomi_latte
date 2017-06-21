@@ -17,11 +17,18 @@
 DEVICE_PACKAGE_OVERLAYS += device/xiaomi/latte/overlay
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-$(call inherit-product, vendor/xiaomi/latte/latte-vendor.mk)
+#$(call inherit-product, vendor/xiaomi/latte/latte-vendor.mk)
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_CHARACTERISTICS := tablet
 PRODUCT_AAPT_PREF_CONFIG := hdpi
+
+#Prebuilt kernel
+TARGET_PREBUILT_KERNEL:= device/xiaomi/latte/kernel
+
+#Copy prebuilt modules to ramdisk
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,device/xiaomi/latte/rootdir-extras,system)
 
 # Audio
 PRODUCT_PACKAGES += \
