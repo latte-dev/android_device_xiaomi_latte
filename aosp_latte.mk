@@ -6,6 +6,9 @@ TARGET_BOOTANIMATION_HALF_RES := true
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
+#64 bit
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+
 # Inherit device configuration
 $(call inherit-product, device/xiaomi/latte/latte.mk)
 
