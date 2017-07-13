@@ -74,12 +74,6 @@ BOARD_FLASH_BLOCK_SIZE := 512
 # Properties
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 
-# Recovery
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/ramdisk/fstab
-TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
-TARGET_USERIMAGES_USE_EXT4 := true
-COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
-
 # SELinux
 BOARD_SEPOLICY_DIRS += \
     device/intel/sepolicy \
@@ -188,4 +182,19 @@ TARGET_OTA_ASSERT_DEVICE := latte
 
 # Partition sizes
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 27783069696
+
+# Recovery
+TARGET_RECOVERY_FSTAB := device/xiaomi/latte/twrp.fstab
+TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
+TARGET_USERIMAGES_USE_EXT4 := true
+BOARD_SUPPRESS_SECURE_ERASE := true
+
+# TWRP
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_BRIGHTNESS_PATH := /sys/class/backlight/intel_backlight/brightness
+TW_CUSTOM_BATTERY_PATH := /sys/class/power_supply/dollar_cove_battery
+TW_EXCLUDE_SUPERSU := true
+TW_INCLUDE_CRYPTO := true
+TW_THEME := portrait_hdpi
+
 
