@@ -23,7 +23,7 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_CHARACTERISTICS := tablet
 
 #Prebuilt kernel
-TARGET_PREBUILT_KERNEL:= $(COMMON_PATH)/zImage
+TARGET_PREBUILT_KERNEL:= device/xiaomi/latte/zImage
 
 # Audio
 PRODUCT_PACKAGES += \

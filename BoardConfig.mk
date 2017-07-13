@@ -15,8 +15,6 @@
 # limitations under the License.
 #
 
-COMMON_PATH := device/xiaomi/latte
-
 # Platform
 TARGET_NO_BOOTLOADER := true
 
@@ -47,7 +45,7 @@ TARGET_USES_64_BIT_BINDER := true
 ENABLE_CPUSETS := true
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/xiaomi/latte/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 
@@ -72,7 +70,7 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
 BOARD_FLASH_BLOCK_SIZE := 512
 
 # Properties
-TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
+TARGET_SYSTEM_PROP += device/xiaomi/latte/system.prop
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
@@ -175,8 +173,6 @@ WIFI_DRIVER_FW_PATH_STA := "/vendor/firmware/brcm/fw_bcmdhd_4356a2_pcie.bin"
 WIFI_DRIVER_FW_PATH_AP := "/vendor/firmware/brcm/fw_bcmdhd_4356a2_pcie_apsta.bin"
 WIFI_DRIVER_FW_PATH_P2P := "/vendor/firmware/brcm/fw_bcmdhd_4356a2_pcie.bin"
 
-DEVICE_PATH := device/xiaomi/latte
-
 # Assert
 TARGET_OTA_ASSERT_DEVICE := latte
 
@@ -184,7 +180,7 @@ TARGET_OTA_ASSERT_DEVICE := latte
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 27783069696
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/xiaomi/latte/twrp.fstab
+TARGET_RECOVERY_FSTAB := device/xiaomi/latte/ramdisk/fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_SUPPRESS_SECURE_ERASE := true
