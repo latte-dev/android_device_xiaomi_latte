@@ -15,5 +15,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_latte.mk \
+    $(LOCAL_DIR)/omni_latte.mk \
     $(LOCAL_DIR)/latte.mk
