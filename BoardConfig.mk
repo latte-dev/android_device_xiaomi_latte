@@ -41,6 +41,10 @@ BOARD_KERNEL_CMDLINE := loglevel=7 androidboot.hardware=latte firmware_class.pat
 # Binder
 TARGET_USES_64_BIT_BINDER := true
 
+#Houdini64
+ENABLE_NATIVEBRIDGE_64BIT := true
+PRODUCT_PROPERTY_OVERRIDES += ro.dalvik.vm.isa.arm64=x86_64 ro.enable.native.bridge.exec64=1
+
 # CPUset
 ENABLE_CPUSETS := true
 

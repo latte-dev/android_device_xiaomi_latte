@@ -183,5 +183,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
    telephony.tcs.sw_folder=generic_nomodem \
    ro.swconf.info=generic_nomodem \
    
-   
+PRODUCT_PROPERTY_OVERRIDES += \
+   ro.dalvik.vm.isa.arm64=x86_64 \
+   ro.enable.native.bridge.exec64=1
    
