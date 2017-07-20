@@ -38,6 +38,13 @@ TARGET_CPU_ABI_LIST_64_BIT:= x86_64,arm64-v8a
 # Kernel
 BOARD_KERNEL_CMDLINE := loglevel=7 androidboot.hardware=latte firmware_class.path=/system/etc/firmware i915.fastboot=1 vga=current i915.modeset=1 drm.vblankoffdelay=1 bootboost=1 pm_suspend_debug=1 pstore.backend=ramoops androidboot.selinux=permissive
 
+#Kernel Build from source
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := x86_64-linux-android-
+TARGET_KERNEL_CONFIG := lineageos_latte_defconfig
+TARGET_KERNEL_SOURCE := kernel/xiaomi/latte
+TARGET_KERNEL_ARCH := x86_64
+BOARD_KERNEL_IMAGE_NAME := bzImage
+
 # Binder
 TARGET_USES_64_BIT_BINDER := true
 
@@ -196,5 +203,4 @@ TW_CUSTOM_BATTERY_PATH := /sys/class/power_supply/dollar_cove_battery
 TW_EXCLUDE_SUPERSU := true
 TW_INCLUDE_CRYPTO := true
 TW_THEME := portrait_hdpi
-
 
