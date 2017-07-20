@@ -31,14 +31,18 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_res_images 
 
+#RIL
+PRODUCT_PACKAGES += \
+    ro.radio.noril=true
+
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=16m \
     dalvik.vm.heapgrowthlimit=200m \
-    dalvik.vm.heapsize=512m \
+    dalvik.vm.heapsize=348m \
     dalvik.vm.heaptargetutilization=0.75 \
     dalvik.vm.heapminfree=512k \
-    dalvik.vm.heapmaxfree=16m
+    dalvik.vm.heapmaxfree=8m
 
 # Display
 ADDITIONAL_DEFAULT_PROPERTIES += \
