@@ -38,7 +38,7 @@ PRODUCT_PACKAGES += \
     charger_res_images
 
 # PowerHAL
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     power.gmin \
     power_hal_helper
 
@@ -54,7 +54,7 @@ PRODUCT_PACKAGES += \
     libstlport
 
 # Lights
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     lights.gmin
 
 # Dalvik
@@ -80,7 +80,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.frp.pst=/dev/block/by-name/android_persistent
 
 # Color conversion
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libI420colorconvert
 
 # Houdini
