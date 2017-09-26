@@ -49,7 +49,7 @@ TARGET_PROVIDES_CAMERA_HAL := true
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 
 # Charger
-BOARD_HAL_STATIC_LIBRARIES := libhealthd.intel
+#BOARD_HAL_STATIC_LIBRARIES := libhealthd.intel
 WITH_CM_CHARGER := false
 
 # Graphics
