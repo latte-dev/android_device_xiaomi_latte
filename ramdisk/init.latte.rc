@@ -161,35 +161,56 @@ service bugreport /system/bin/dumpstate -d -p -B \
 on boot
 	write /sys/devices/pci0000\:00/0000\:00\:02.0/power/control auto
 
+on charger
+    write /sys/devices/pci0000\:00/0000\:00\:02.0/power/control auto
 ##############################################################
 # Source: device/intel/mixins/groups/graphics/ufo_gen8/init.rc
 ##############################################################
+# for hardware accelerated graphics
 service msync /system/vendor/bin/msync
     class main
-#    seclabel u:r:msync:s0
+    user media
+    group media
 
 service coreu /system/vendor/bin/coreu
     class main
+    user media
+    group media shell
 
 on post-fs-data
+    # Change ownership of pci syfs file to 'media', as hdcpd runs as 'media'
+    chown media media /sys/devices/pci0000\:00/0000\:00\:02.0/resource0
     mkdir /data/system 0770 system system
     mkdir /data/coreu 0770 media root
+    chown media media /data/coreu/coreu
 
 on boot
-   #Give permission to system to use i915_videostatus sysfs interface
+    #Give permission to system to use i915_videostatus sysfs interface
     chown system system /sys/class/drm/card0/power/i915_videostatus
+    chown media media /sys/kernel/debug/tracing/events/drm/drm_vblank_event/enable
+    chown media media /sys/kernel/debug/tracing/events/i915/i915_flip_complete/enable
+    chown media media /sys/kernel/debug/tracing/events/i915/i915_flip_request/enable
+    chown media media /sys/kernel/debug/tracing/events/i915/i915_gem_ring_dispatch/enable
+    chown media media /sys/kernel/debug/tracing/events/i915/i915_gem_request_complete/enable
+    chown media media /sys/kernel/debug/tracing/events/i915/i915_gem_request_retire/enable
+    chown media media /sys/kernel/debug/tracing/events/i915/i915_gem_request_wait_begin/enable
+    chown media media /sys/kernel/debug/tracing/events/i915/i915_gem_request_wait_end/enable
+    chown media media /sys/kernel/debug/tracing/events/i915/i915_ring_wait_begin/enable
+    chown media media /sys/kernel/debug/tracing/events/i915/i915_ring_wait_end/enable
+    chown media media /sys/devices/pci0000:00/0000:00:02.0/drm/card0/gt_max_freq_mhz
+    chown media media /sys/devices/pci0000:00/0000:00:02.0/drm/card0/gt_min_freq_mhz
 
- on property:persist.gen_gfxd.enable=1
-     start gfxd
- 
- on property:persist.gen_gfxd.enable=0
-     stop gfxd
- 
- service gfxd /system/vendor/bin/gfxd
-     class main
-     user root
-     group graphics
+on property:persist.gen_gfxd.enable=1
+    start gfxd
 
+on property:persist.gen_gfxd.enable=0
+    stop gfxd
+
+service gfxd /system/vendor/bin/gfxd
+    class main
+    user root
+    group graphics
+    disabled
 ##############################################################
 # Source: device/intel/mixins/groups/storage/sdcard-mmcblk1-4xUSB-sda-emulated/init.rc
 ##############################################################
@@ -633,23 +654,15 @@ on init
 on charger
    write /sys/devices/pci0000:00/0000:00:1a.0/power/control auto
 
-
-##############################################################
-# Source: device/intel/mixins/groups/libiha/true/init.rc
-##############################################################
-service otpserver /system/bin/otpserver
-    class main
-    user drmrpc
-    group drmrpc
 ##############################################################
 # Source: device/intel/mixins/groups/hw-keystore/txei/init.rc
+##############################################################
 ##############################################################
 service keymaster_meid /system/bin/keymaster_meid
     # need to be in core class to be started with vold
     class core
-    # service will drop to keystore user after capabilities set
-    user root
-    group keystore drmrpc system
+    user keystore
+    group keystore drmrpc system wakelock
     socket keymaster_mei stream 0660 keystore drmrpc
 
 ##############################################################
@@ -658,17 +671,15 @@ service keymaster_meid /system/bin/keymaster_meid
 # Note that this service must start as root to set up a mem-mapped region
 # and once that is set up it will drop all unnecessary capabilities and
 # will not show up as a root process in the steady state.
-
 service hdcpd /system/vendor/bin/hdcpd
     class main
-    user root
+    user media
     group graphics drmrpc
 
 # mkdir hdcp data folder here, non system service don't have permission
 # to write in /data/
 on post-fs-data
     mkdir /data/hdcp 0770 media media
-
 
 ##############################################################
 # Source: device/intel/mixins/groups/bcu/true/init.rc
@@ -715,6 +726,8 @@ on late-init
 # Source: device/intel/mixins/groups/intel_prop/true/init.rc
 ##############################################################
 service intel_prop /system/vendor/bin/intel_prop
+    user 5002
+    group root
     class core
     oneshot
 ##############################################################
