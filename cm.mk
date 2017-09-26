@@ -11,7 +11,7 @@ $(call inherit-product, device/xiaomi/latte/latte.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := latte
-PRODUCT_NAME := lineage_latte
+PRODUCT_NAME := cm_latte
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mipad 2
 PRODUCT_MANUFACTURER := Xiaomi
