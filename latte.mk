@@ -72,7 +72,8 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     intel.hwc.autovideoddr=1 \
     ro.ufo.use_msync=1 \
     ro.ufo.use_coreu=1 \
-    persist.gen_gfxd.enable=0
+    persist.gen_gfxd.enable=0 \
+    ro.gnss.sv.status=true
 
 # FRP
 ADDITIONAL_DEFAULT_PROPERTIES += \
