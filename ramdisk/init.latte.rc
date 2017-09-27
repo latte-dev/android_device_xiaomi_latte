@@ -226,7 +226,7 @@ symlink /sdcard /storage/sdcard0
 # of the module init function which will deadlock init.  Load it from
 # a service instead.
 
-service atomisp-init /system/bin/sh /system/etc/init.atomisp.sh
+service atomisp-init /system/bin/sh /system/vendor/bin/init.atomisp.sh
     oneshot
     disabled
 
@@ -695,9 +695,9 @@ service bcu_cpufreqrel /system/bin/bcu_cpufreqrel
 ##############################################################
 # Source: device/intel/mixins/groups/sensor-hubs/ish/init.rc
 ##############################################################
-service sensorhubd /system/bin/sensorhubd
+service sensorhubd /system/vendor/bin/sensorhubd
     class main
-    user root
+    user system
     group root
     socket sensorhubd stream 600 system system
 
@@ -838,7 +838,4 @@ service smeloop /system/bin/smeloop
     user root
     group root
     oneshot
-
-on init
-    export LD_SHIM_LIBS /system/lib/libparameter.so|libshim_audio.so:/system/lib/libpower-subsystem.so|libshim_audio.so:/system/lib/libremoteparameter-subsystem.so|libshim_audio.so:/system/lib/libtinyalsa_custom-subsystem.so|libshim_audio.so:/system/lib/hw/camera.gmin.so|libshim_camera.so:/system/lib/hw/sensors.gmin.so|libshim_sensors.so
 
