@@ -24,3 +24,6 @@ ro.btconfig.chip=BCM4356
 
 #Wi-Fi
 ro.wlan.mimo=1
+
+# Storage
+ro.sys.sdcardfs=true
