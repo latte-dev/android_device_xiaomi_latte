@@ -22,6 +22,6 @@ $(call inherit-product, device/xiaomi/latte/full_latte.mk)
 PRODUCT_NAME := omni_latte
 
 # Boot animation
-TARGET_SCREEN_WIDTH := 2048
-TARGET_SCREEN_HEIGHT := 1536
+TARGET_SCREEN_WIDTH := 1920
+TARGET_SCREEN_HEIGHT := 1080
 TARGET_BOOTANIMATION_HALF_RES := true
