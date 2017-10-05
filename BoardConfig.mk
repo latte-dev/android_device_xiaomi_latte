@@ -21,18 +21,11 @@ TARGET_BOARD_PLATFORM := gmin
 TARGET_BOARD_PLATFORM_GPU := intel_gen8
 TARGET_BOOTLOADER_BOARD_NAME := latte
 
-TARGET_ARCH := x86_64
+TARGET_ARCH := x86
 TARGET_ARCH_VARIANT := silvermont
-TARGET_CPU_ABI := x86_64
-
-TARGET_2ND_CPU_ABI := x86
-TARGET_2ND_ARCH := x86
-TARGET_2ND_ARCH_VARIANT := silvermont
-TARGET_2ND_CPU_VARIANT := silvermont
-
-TARGET_CPU_ABI_LIST := x86_64,x86,armeabi-v7a,armeabi,arm64-v8a
+TARGET_CPU_ABI := x86
+TARGET_CPU_ABI_LIST := x86,armeabi-v7a,armeabi
 TARGET_CPU_ABI_LIST_32_BIT := x86,armeabi-v7a,armeabi
-TARGET_CPU_ABI_LIST_64_BIT:= x86_64,arm64-v8a
 
 # Kernel
 BOARD_KERNEL_CMDLINE := loglevel=7 androidboot.hardware=latte firmware_class.path=/system/etc/firmware i915.fastboot=1 vga=current i915.modeset=1 drm.vblankoffdelay=1 bootboost=1 pm_suspend_debug=1 pstore.backend=ramoops
