@@ -535,6 +535,10 @@ service charger /charger
 service thermal_lite /thermal_lite
     class charger
     seclabel u:r:thermal_lite:s0
+
+service fg_algo_cos /sbin/fg_algo_cos
+  class charger
+  seclabel u:r:fg_algo_cos:s0
 ##############################################################
 # Source: device/intel/mixins/groups/disk-bus/mmc-cht/init.rc
 ##############################################################
@@ -685,6 +689,33 @@ service bcu_cpufreqrel /system/bin/bcu_cpufreqrel
     group system
     oneshot
     disabled
+
+##############################################################
+# Source: device/intel/mixins/groups/pmic/dollar_cove_ti/init.rc
+##############################################################
+on post-fs-data
+    chown system system /sys/devices/virtual/misc/intel_fg_iface
+    chown system system /sys/devices/virtual/misc/intel_fg_iface/volt_now
+    chown system system /sys/devices/virtual/misc/intel_fg_iface/volt_ocv
+    chown system system /sys/devices/virtual/misc/intel_fg_iface/volt_boot
+    chown system system /sys/devices/virtual/misc/intel_fg_iface/ibat_boot
+    chown system system /sys/devices/virtual/misc/intel_fg_iface/cur_now
+    chown system system /sys/devices/virtual/misc/intel_fg_iface/cur_avg
+    chown system system /sys/devices/virtual/misc/intel_fg_iface/batt_temp
+    chown system system /sys/devices/virtual/misc/intel_fg_iface/delta_q
+    chown system system /sys/devices/virtual/misc/intel_fg_iface/capacity
+    chown system system /sys/devices/virtual/misc/intel_fg_iface/nac
+    chown system system /sys/devices/virtual/misc/intel_fg_iface/fcc
+    chown system system /sys/devices/virtual/misc/intel_fg_iface/cyc_cnt
+    chown system system /sys/devices/virtual/misc/intel_fg_iface/cc_calib
+    chown system system /sys/devices/virtual/misc/intel_fg_iface/uevent
+
+    chmod 0664 /sys/devices/virtual/misc/intel_fg_iface/capacity
+    chmod 0664 /sys/devices/virtual/misc/intel_fg_iface/nac
+    chmod 0664 /sys/devices/virtual/misc/intel_fg_iface/fcc
+    chmod 0664 /sys/devices/virtual/misc/intel_fg_iface/cyc_cnt
+    chmod 0664 /sys/devices/virtual/misc/intel_fg_iface/cc_calib
+
 ##############################################################
 # Source: device/intel/mixins/groups/pstore/ram_pram/init.rc
 ##############################################################
