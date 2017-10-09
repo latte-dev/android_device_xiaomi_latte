@@ -70,7 +70,7 @@ on post-fs
     chown system system /persist/LightSensorData.txt
     chmod 600 /persist/LightSensorData.txt
 
-service watchdogd /sbin/watchdogd
+service watchdogd /sbin/watchdogd 10 30
     user root
     class core
     oneshot
