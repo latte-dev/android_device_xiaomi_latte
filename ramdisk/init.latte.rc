@@ -732,6 +732,19 @@ service pstore-clean /system/vendor/bin/pstore-clean
     class late_start
     oneshot
 ##############################################################
+# Source: device/intel/mixins/groups/swap/zram/init.rc
+##############################################################
+
+on boot
+    # Read one page at a time for swap (default is 8)
+    write /proc/sys/vm/page-cluster 0
+   # Avoid evicting pages and use zram disk
+    write /proc/sys/vm/swappiness 100
+
+on post-fs-data
+    # Enable swaps described in the fstab
+    swapon_all /fstab
+##############################################################
 # Source: device/intel/mixins/groups/sensor-hubs/ish/init.rc
 ##############################################################
 service sensorhubd /system/bin/sensorhubd
