@@ -32,7 +32,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap
+    Camera2
 
 # Charger
 PRODUCT_PACKAGES += \

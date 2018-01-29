@@ -6,6 +6,8 @@ ro.hwui.texture_cache_size=24.0f
 ro.hwui.text_large_cache_width=2048
 ro.hwui.text_large_cache_height=512
 ro.opengles.version=196609
+ro.camera.rec.pixel_format=0x10F
+ro.ycbcr.pixel_format=0x10F
 
 # DRM
 drm.service.enabled=true
